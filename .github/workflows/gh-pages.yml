@@ -12,6 +12,8 @@ jobs:
       contents: read
       pages: write
       id-token: write
+    environment:
+      name: github-pages   # 🟢 這一行是關鍵
 
     steps:
       - name: Checkout source
