@@ -12,6 +12,24 @@
       font-family: 'Noto Serif TC', serif;
       background: #f8f5f1;
       color: #333;
+      overflow: hidden;
+    }
+    #intro {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      text-align: center;
+      z-index: 10000;
+      padding: 2rem;
+      box-sizing: border-box;
+      cursor: pointer;
     }
     #particles-js {
       position: fixed;
@@ -52,15 +70,21 @@
   </style>
 </head>
 <body>
+  <div id="intro">
+    "A spinning wheel is meant to turn around, just like fate is bound to happen.<br>
+    In many cases, we don't have a choice."
+    <br><br><small>（點擊任意處進入）</small>
+  </div>
+
   <div id="particles-js"></div>
-  <h1>調諧者</h1>
-  <p>
+  <h1 style="display: none;">調諧者</h1>
+  <p style="display: none;">
     他追求萬事和諧萬物的均衡。和畢達哥拉斯一樣，他認為萬事萬物都要適中，「過度的道德本身就是一種惡」。<br>
     因此，他常常做出矛盾的舉止，在降下懲罰的同時，他總要賜予恩典。<br>
     對他而言，教典的戒律不是絕對的指令，而是能夠維持與平衡所必須的調音。<br>
     對6，世間萬物之間似乎有一個無形的指針，他必須時刻保持清醒與黎明，使這枚跳躍始終位於絕對的中點。<br>
   </p>
-  <div class="gallery">
+  <div class="gallery" style="display: none;">
     <img src="images/angel_blood_crown.png" alt="完備者">
     <img src="images/angel_pose.png" alt="何時何地">
     <img src="images/dark_wing_angel.png" alt="與火中得見">
@@ -72,7 +96,7 @@
       particlesJS("particles-js", {
         particles: {
           number: { value: 100, density: { enable: true, value_area: 800 } },
-          color: { value: "#ffffff" },
+          color: { value: "#ff0000" },
           shape: { type: "circle" },
           opacity: { value: 0.6, random: true },
           size: { value: 2.5, random: true },
@@ -96,6 +120,17 @@
         retina_detect: true
       });
     });
+
+    document.getElementById("intro").addEventListener("click", () => {
+      document.getElementById("intro").style.display = "none";
+      document.querySelector("h1").style.display = "block";
+      document.querySelector("p").style.display = "block";
+      document.querySelector(".gallery").style.display = "flex";
+    });
+  </script>
+  <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+  <script>
+    new window.cursorEffects.bubblesCursor();
   </script>
 </body>
 </html>
