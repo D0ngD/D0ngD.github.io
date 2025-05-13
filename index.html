@@ -13,6 +13,21 @@
       background: #f8f5f1;
       color: #333;
       overflow: hidden;
+      position: relative;
+      z-index: 0;
+    }
+    body::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      min-height: 100%;
+      background-image: url("images/bg.png");
+      background-size: cover;
+      background-position: center;
+      filter: blur(4px);
+      opacity: 0.4;
+      z-index: -2;
     }
     #intro {
       position: fixed;
@@ -31,19 +46,6 @@
       box-sizing: border-box;
       cursor: pointer;
     }
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-image: url("images/bg.png");
-      background-size: cover;
-      background-position: center;
-      filter: blur(4px);
-      z-index: -2;
-    }
-    
     #particles-js {
       position: fixed;
       width: 100%;
@@ -51,8 +53,7 @@
       top: 0;
       left: 0;
       z-index: -1;
-      background-color: rgba(0, 0, 0, 0);  /* 半透明背景 */
-
+      background-color: rgba(0, 0, 0, 0);
     }
     h1 {
       text-align: center;
@@ -82,6 +83,31 @@
     .gallery img:hover {
       transform: scale(1.05);
     }
+    .img-container {
+      position: relative;
+      display: inline-block;
+    }
+    .img-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      color: white;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 12px;
+      text-align: center;
+      padding: 0 10px;
+    }
+    .img-container:hover .img-overlay {
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
@@ -89,6 +115,8 @@
     "A spinning wheel is meant to turn around, just like fate is bound to happen.<br>
     In many cases, we don't have a choice."
   </div>
+
+  <audio id="bgm" src="audio/En_play_hero3079_mainvoc_18.mp3"></audio>
 
   <div id="particles-js"></div>
   <h1 style="display: none;">調諧者</h1>
@@ -99,47 +127,21 @@
     對他而言，教典的戒律不是絕對的指令，而是能夠維持與平衡所必須的調音。<br>
     對6，世間萬物之間似乎有一個無形的指針，他必須時刻保持清醒與黎明，使這枚跳躍始終位於絕對的中點。<br>
   </p>
-  <style>
-  .img-container {
-    position: relative;
-    display: inline-block;
-  }
-  .img-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    color: white;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: 12px;
-    text-align: center;
-    padding: 0 10px;
-  }
-  .img-container:hover .img-overlay {
-    opacity: 1;
-  }
-</style>
-  <div class="gallery">
-  <div class="img-container">
-    <img src="images/angel_blood_crown.png" alt="完備者" title="完備者">
-    <div class="img-overlay">The Perfect Number</div>
+
+  <div class="gallery" style="display: none;">
+    <div class="img-container">
+      <img src="images/angel_blood_crown.png" alt="完備者" title="完備者">
+      <div class="img-overlay">The Perfect Number</div>
+    </div>
+    <div class="img-container">
+      <img src="images/angel_pose.png" alt="何時何地" title="何時何地">
+      <div class="img-overlay">Time and Location</div>
+    </div>
+    <div class="img-container">
+      <img src="images/dark_wing_angel.png" alt="與火中得見" title="與火中得見">
+      <div class="img-overlay">By the Razed Polis</div>
+    </div>
   </div>
-  <div class="img-container">
-    <img src="images/angel_pose.png" alt="何時何地" title="何時何地">
-    <div class="img-overlay">Time and Location</div>
-  </div>
-  <div class="img-container">
-    <img src="images/dark_wing_angel.png" alt="與火中得見" title="與火中得見">
-    <div class="img-overlay">By the Razed Polis</div>
-  </div>
-</div>
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
@@ -147,7 +149,7 @@
       particlesJS("particles-js", {
         particles: {
           number: { value: 100, density: { enable: true, value_area: 800 } },
-          color: { value: "#ff0000" },
+          color: { value: "#ffffff" },
           shape: { type: "circle" },
           opacity: { value: 0.6, random: true },
           size: { value: 2.5, random: true },
@@ -177,8 +179,10 @@
       document.querySelector("h1").style.display = "block";
       document.querySelector("p").style.display = "block";
       document.querySelector(".gallery").style.display = "flex";
+      document.getElementById("bgm").play().catch(e => {
+        console.log("Autoplay failed:", e);
+      });
     });
   </script>
-
 </body>
 </html>
