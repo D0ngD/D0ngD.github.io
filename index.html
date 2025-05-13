@@ -31,6 +31,19 @@
       box-sizing: border-box;
       cursor: pointer;
     }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url("images/bg.png");
+      background-size: cover;
+      background-position: center;
+      filter: blur(4px);
+      z-index: -2;
+    }
+    
     #particles-js {
       position: fixed;
       width: 100%;
