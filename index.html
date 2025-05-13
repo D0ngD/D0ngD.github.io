@@ -5,30 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>角色介紹：血翼天使</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <style>
-    body {
+    html, body {
+      margin: 0;
+      padding: 0;
       font-family: 'Noto Serif TC', serif;
       background: #f8f5f1;
-      margin: 0;
-      padding: 2rem;
       color: #333;
+    }
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
     }
     h1 {
       text-align: center;
       color: #a83232;
+      margin-top: 2rem;
     }
     p {
       max-width: 800px;
       margin: 0 auto 2rem;
       font-size: 1.1rem;
       line-height: 1.8;
+      text-align: center;
     }
     .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1.5rem;
+      padding-bottom: 4rem;
     }
     .gallery img {
       max-width: 300px;
@@ -39,12 +49,6 @@
     .gallery img:hover {
       transform: scale(1.05);
     }
-    #particles-js {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
   </style>
 </head>
 <body>
@@ -54,43 +58,49 @@
     他是墮落與救贖之間徘徊的存在，背負黑翼，頭戴染血的光環。<br>
     在神聖與禁忌交錯的邊界上，他用冷漠掩飾傷痕，散發令人無法靠近的威嚴。<br>
     是審判者？或是被審判的靈魂？<br>
-    他不語，案。
+    他不語，只是望著眾生，等待命運給予的答案。
   </p>
   <div class="gallery">
     <img src="images/angel_blood_crown.png" alt="天使之血皇冠">
     <img src="images/angel_pose.png" alt="天使之姿">
     <img src="images/dark_wing_angel.png" alt="血色天使的黑翼魅影">
   </div>
- <script>
-  window.addEventListener("DOMContentLoaded", () => {
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
-        "color": { "value": "#ffffff" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.6, "random": true },
-        "size": { "value": 2.5, "random": true },
-        "line_linked": { "enable": false },
-        "move": {
-          "enable": true,
-          "speed": 0.6,
-          "random": true,
-          "out_mode": "out"
-        }
-      },
-      "interactivity": {
-        "events": {
-          "onhover": { "enable": true, "mode": "grab" },
-          "resize": true
+
+  <!-- CDN 放最底部，確保 DOM 載入完畢 -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 100, density: { enable: true, value_area: 800 } },
+          color: { value: "#ffffff" },
+          shape: { type: "circle" },
+          opacity: { value: 0.6, random: true },
+          size: { value: 2.5, random: true },
+          line_linked: { enable: false },
+          move: {
+            enable: true,
+            speed: 0.6,
+            random: true,
+            out_mode: "out"
+          }
         },
-        "modes": {
-          "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } }
-        }
-      },
-      "retina_detect": true
+        interactivity: {
+          events: {
+            onhover: { enable: true, mode: "grab" },
+            resize: true
+          },
+          modes: {
+            grab: { distance: 140, line_linked: { opacity: 0.5 } }
+          }
+        },
+        retina_detect: true
+      });
     });
-  });
-</script>
+  </script>
+</body>
+</html>
+
 
 </body>
 </html>
