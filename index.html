@@ -61,25 +61,27 @@
     <img src="images/angel_pose.png" alt="天使之姿">
     <img src="images/dark_wing_angel.png" alt="血色天使的黑翼魅影">
   </div>
-  <script>
+ <script>
+  window.addEventListener("DOMContentLoaded", () => {
     particlesJS("particles-js", {
       "particles": {
         "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
         "color": { "value": "#ffffff" },
-        "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" } },
+        "shape": { "type": "circle" },
         "opacity": { "value": 0.6, "random": true },
         "size": { "value": 2.5, "random": true },
         "line_linked": { "enable": false },
         "move": {
-          "enable": true, "speed": 0.6, "direction": "none",
-          "random": true, "straight": false, "out_mode": "out", "bounce": false
+          "enable": true,
+          "speed": 0.6,
+          "random": true,
+          "out_mode": "out"
         }
       },
       "interactivity": {
-        "detect_on": "canvas",
         "events": {
           "onhover": { "enable": true, "mode": "grab" },
-          "onclick": { "enable": false }, "resize": true
+          "resize": true
         },
         "modes": {
           "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } }
@@ -87,7 +89,9 @@
       },
       "retina_detect": true
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
 
