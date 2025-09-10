@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     clickTarget.addEventListener('click', (e) => {
       if (e.metaKey || e.ctrlKey) return; // 允許 Ctrl/Cmd 新分頁
       e.preventDefault();
-      window.location.href = '/about/';
+      window.location.href = '/about.html';
     });
   });
 });
