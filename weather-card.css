@@ -1,0 +1,88 @@
+.kira-right-column .kira-widget-wrap.card-weather{ width:100%; }
+
+/* 玻璃感容器 */
+.card-weather .weather-body{
+  border-radius:16px;
+  background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
+  border:1px solid var(--card-border, rgba(255,255,255,.18));
+  box-shadow:0 10px 22px rgba(0,0,0,.06);
+  padding:14px 16px;
+}
+
+/* 頂部：左大溫度、右圖示/描述/時間 */
+.card-weather .w-top{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.card-weather .w-left{ display:flex; flex-direction:column; gap:4px; }
+.card-weather .w-temp{ font-weight:900; line-height:1; letter-spacing:.5px; }
+.card-weather .w-temp #w-now{ font-size:36px; }
+.card-weather .w-temp .unit{ font-size:16px; opacity:.85; margin-left:2px; }
+.card-weather .w-hilo{ opacity:.9 }
+
+.card-weather .w-right{ display:flex; flex-direction:column; align-items:flex-end; gap:2px; text-align:right; }
+.card-weather .w-icon{ font-size:28px; line-height:1; }
+.card-weather .w-desc{ font-size:.95rem; opacity:.95; }
+.card-weather .w-time{ font-size:.85rem; opacity:.7 }
+
+/* 底部：資訊膠囊 */
+.card-weather .w-grid{
+  margin-top:12px;
+  display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:8px;
+}
+.card-weather .chip{
+  border-radius:999px;
+  padding:6px 10px;
+  background: rgba(255,255,255,.10);
+  border:1px solid var(--card-border, rgba(255,255,255,.18));
+  display:flex; align-items:center; justify-content:space-between;
+  font-size:.93rem;
+}
+.card-weather .chip .label{ opacity:.78; }
+
+@media (prefers-color-scheme: light){
+  .card-weather .weather-body{ background:#fff; border-color:rgba(0,0,0,.08); box-shadow:0 10px 22px rgba(0,0,0,.05); }
+  .card-weather .chip{ background:#f7f9fb; border-color:rgba(0,0,0,.06); }
+}
+/* 統一膠囊字型與對齊 */
+.card-weather .chip{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  border-radius:12px; padding:10px 12px;
+  background: rgba(255,255,255,.10);
+  border:1px solid var(--card-border, rgba(255,255,255,.18));
+  font-size:.95rem; line-height:1;
+}
+.card-weather .chip .label{
+  font-weight:600; letter-spacing:.3px; white-space:nowrap; opacity:.85;
+}
+.card-weather .chip .value{
+  font-weight:800; font-variant-numeric: tabular-nums; white-space:nowrap;
+}
+
+/* 兩條長膠囊：每條佔滿一行 */
+.card-weather .w-grid.chips-wide{
+  margin-top:12px;
+  display:grid; grid-template-columns: 1fr; gap:8px;
+}
+
+/* 亮色模式 */
+@media (prefers-color-scheme: light){
+  .card-weather .chip{ background:#f7f9fb; border-color:rgba(0,0,0,.06); }
+}
+/* === 天氣卡：膠囊一行一個（強制單欄） === */
+.card-weather .w-grid.chips-wide{
+  display: grid;
+  grid-template-columns: 1fr !important; /* 壓掉先前 repeat(2,...) */
+  row-gap: 8px;
+}
+
+/* 每個膠囊吃滿整行，避免超出 */
+.card-weather .w-grid.chips-wide .chip{
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 數值與單位（%）併排，不換行、不掉到容器外 */
+.card-weather .chip .value{
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;                /* 3 和 % 之間的間距 */
+  white-space: nowrap;     /* 整個「58 %」不換行 */
+}

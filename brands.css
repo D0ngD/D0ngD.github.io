@@ -1,0 +1,65 @@
+/* 隱藏原本 kirafont 的文字 */
+.kira-social i.kirafont { display: none !important; }
+
+/* 用官方 SVG 畫圖示（沿用 Kira 的顏色/hover） */
+.kira-social a::before{
+  content:"";
+  display:inline-block;
+  width:1em;height:1em;
+  background-color:currentColor;
+  -webkit-mask-size:contain; mask-size:contain;
+  -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+  -webkit-mask-position:center; mask-position:center;
+}
+
+/* 依網址對應三個 SVG（記得用絕對路徑 /img/...） */
+.kira-social a[href*="x.com"]::before,
+.kira-social a[href*="twitter.com"]::before{
+  -webkit-mask-image:url("/img/brands/x.svg");
+  mask-image:url("/img/brands/x.svg");
+}
+.kira-social a[href*="youtube.com"]::before{
+  -webkit-mask-image:url("/img/brands/youtube.svg");
+  mask-image:url("/img/brands/youtube.svg");
+}
+.kira-social a[href*="threads.net"]::before{
+  -webkit-mask-image:url("/img/brands/threads.svg");
+  mask-image:url("/img/brands/threads.svg");
+}
+
+/* 置中整排社群按鈕 */
+.kira-sidebar .kira-social{
+  text-align: center;
+}
+
+/* 統一每顆按鈕的字級與間距（1em=圖示大小） */
+.kira-sidebar .kira-social a{
+  font-size: 18px;          /* 讓 1em 有尺寸，不受父層 font-size:0 影響 */
+  display: inline-flex;      /* 置中 icon */
+  align-items: center;
+  justify-content: center;
+  margin: 0 6px;             /* 左右留點空隙 */
+}
+
+/* 只讓圖示旋轉，不轉灰色圓底 */
+.kira-sidebar .kira-social a > span{
+  transition: transform .45s ease;
+  will-change: transform;
+}
+.kira-sidebar .kira-social a:hover > span,
+.kira-sidebar .kira-social a:focus-visible > span{
+  transform: rotate(360deg);
+}
+
+/* 有些使用者不喜歡動畫：尊重系統偏好 */
+@media (prefers-reduced-motion: reduce){
+  .kira-sidebar .kira-social a > span{
+    transition: none;
+  }
+}
+
+/* 關掉先前用的偽元素圖示，避免重複 */
+.kira-social a::before{
+  content: none !important;
+  display: none !important;
+}

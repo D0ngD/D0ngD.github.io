@@ -1,0 +1,52 @@
+:root{
+  --history-h: 200px;   /* 固定內容區高度，可調 120~160 */
+  --history-lines: 8;   /* 每則顯示行數 */
+}
+
+/* 讓這張卡外觀、寬度跟其他一致（kira-widget-wrap 會吃主題的邊框/底色） */
+.kira-right-column .kira-widget-wrap.card-history{ width:100%; }
+
+/* 標題列對齊 */
+.kira-widget-wrap.card-history .kira-widget-title{
+  display:flex; align-items:center; gap:.5rem;
+  margin:0 0 12px;
+}
+.kira-widget-wrap.card-history .kira-widget-title .kirafont{ font-size:1.05em; }
+
+/* ✅ 只固定內容區高度；外層不要鎖高，否則會把標題切掉 */
+.kira-widget-wrap.card-history .history-card{ height:var(--history-h); overflow:hidden; }
+.kira-widget-wrap.card-history .swiper{ width:100%; height:var(--history-h); }
+#history_container_wrapper{ height:100% !important; }
+
+.kira-widget-wrap.card-history .swiper-slide{
+  height:var(--history-h);
+  padding:8px 0;
+  box-sizing:border-box;
+  position:relative;
+}
+
+/* 多行顯示 + 截斷（不爆版） */
+.kira-widget-wrap.card-history .history-year{ font-weight:700; letter-spacing:.5px; opacity:.85; }
+.kira-widget-wrap.card-history .history-text{
+  white-space:normal;
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--history-lines);
+  line-height:1.45;
+  font-size:.95rem;
+}
+
+/* 分隔線用偽元素，不影響高度，翻頁更準 */
+.kira-widget-wrap.card-history .swiper-slide::after{
+  content:""; position:absolute; left:0; right:0; bottom:0; height:1px;
+  background: var(--card-border, rgba(255,255,255,.15)); pointer-events:none;
+}
+@media (prefers-color-scheme: light){
+  .kira-widget-wrap.card-history .swiper-slide::after{ background: rgba(0,0,0,.08); }
+}
+/* history-today.css 追加或覆蓋 */
+.kira-widget-wrap.card-history .swiper-slide{
+  padding: 8px 14px;      /* ← 調這個數字，左右內距 */
+  box-sizing: border-box; /* 保持既有固定高度不變 */
+}

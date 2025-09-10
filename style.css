@@ -1,0 +1,254 @@
+/* 列表/首頁卡片的封面：維持 1669:770 比例，但顯示整張圖（可能會出現上下/左右留白） */
+.kira-post-cover {
+  width: 100% !important;           /* 跟著容器寬 */
+  max-width: 1669px;                /* 想限制最大寬可以留著；不要就刪掉 */
+  aspect-ratio: 1669 / 770 !important;
+  overflow: hidden;
+  margin: 0 auto;
+  background: transparent;          /* 想用黑色遮幅就改成 #000 */
+}
+.kira-post-cover img {
+  width: 100% !important;
+  height: 100% !important;          /* 讓圖片撐滿容器高度 */
+  object-fit: contain !important;   /* 顯示整張圖，不裁切 */
+  object-position: center !important;
+  display: block;
+}
+
+/* 文章頁內文圖片：顯示整張圖、不超出版面 */
+.post .kira-article img,
+.kira-image img {
+  display: block;
+  max-width: 100% !important;       /* 不超過內文寬 */
+  height: auto !important;          /* 等比縮放 */
+  object-fit: contain !important;   /* 不裁切 */
+  object-position: center !important;
+}
+
+/* 若先前有設定固定 1669×770 導致暴衝，先把寬高強制還原 */
+.kira-post-cover,
+.kira-post-cover img,
+.post .kira-article img,
+.kira-image img {
+  box-sizing: border-box;
+}
+
+/* Avatar hover 旋轉一圈 */
+.site-avatar img,
+.avatar img,
+.kira-avatar img,
+.site-author-image img {
+  transition: transform .3s cubic-bezier(.22,.61,.36,1);
+  transform-origin: center center;
+  will-change: transform;
+}
+.site-avatar:hover img,
+.avatar:hover img,
+.kira-avatar:hover img,
+.site-author-image:hover img {
+  transform: rotate(360deg);
+}
+
+/* 有「偏好減少動態」的裝置就停用動畫（友善無障礙） */
+@media (prefers-reduced-motion: reduce) {
+  .site-avatar img,
+  .avatar img,
+  .kira-avatar img,
+  .site-author-image img { transition: none; }
+  .site-avatar:hover img,
+  .avatar:hover img,
+  .kira-avatar:hover img,
+  .site-author-image:hover img { transform: none; }
+}
+
+
+/* 讓 canvas-nest 鋪滿整個視窗（覆蓋它的 inline style） */
+body > canvas[style*="pointer-events: none"] {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  pointer-events: none !important;
+  z-index: 0 !important; /* 看不到就改 1~10 試試 */
+}
+
+/* 文章示意圖：用父層 figure.demo-rotate 來套，避免 <img> 被主題改寫 class */
+figure.demo-rotate img{
+  transition: transform .6s cubic-bezier(.22,.61,.36,1) !important;
+  transform-origin: center center !important;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+figure.demo-rotate img:hover{
+  transform: rotate(360deg) !important;
+}
+
+
+
+/* 統一旋轉速度：頭像 + 示意圖都 0.3s */
+header .site-avatar img,
+header .avatar img,
+header .kira-avatar img,
+header .site-author-image img,
+.sidebar .site-avatar img,
+.sidebar .avatar img,
+.sidebar .kira-avatar img,
+.sidebar .site-author-image img,
+figure.demo-rotate img{
+  transition: transform .3s ease !important;
+}
+
+/* 歸檔頁：分類卡片背景圖（用結尾 $ 精準匹配） */
+.kira-archives .categories a[href$="/Hexo/"] .bg{
+  background: url("/images/hero.jpg") center/cover no-repeat !important;
+}
+/* 個人網站（中文與 URL 編碼兩種都寫） */
+.kira-archives .categories a[href$="/個人網站/"] .bg,
+.kira-archives .categories a[href$="/%E5%80%8B%E4%BA%BA%E7%B6%B2%E7%AB%99/"] .bg{
+  background: url("/images/bird.jpg") center/cover no-repeat !important;
+}
+
+/* （可選）淡一點的遮罩，讓字更清楚 
+.kira-archives .categories a::before{ background-color: rgba(0,0,0,.25) !important; } */
+
+
+/* 統一封面比例 + 強制視覺裁切（cover） */
+:root { --cover-w: 16; --cover-h: 9; }        /* 想 21:9 就改 21/9；想 4:3 就 4/3 */
+
+/* 1) 固定封面容器比例（覆蓋主題在元素上的 inline padding-bottom） */
+.kira-post-cover{
+  padding-bottom: calc(var(--cover-h) / var(--cover-w) * 100%) !important;
+}
+
+/* 2) 封面圖裁切填滿 */
+.kira-post-cover img,
+.kira-post-cover-image{
+  position: absolute !important;
+  inset: 0 !important;              /* = top/right/bottom/left:0 */
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;     /* 視覺裁切 */
+  object-position: center !important;
+  display: block !important;
+}
+
+/* 文章內的 StreetVoice 內嵌播放器：滿版 + 圓角 */
+article iframe[src*="streetvoice.com/music/embed"]{
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  height: 120px !important;      /* 想高一點改這裡，100~140px 都可 */
+  display: block !important;
+  border: 0 !important;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,.08);
+  overflow: hidden;
+}
+
+/* StreetVoice 漂亮卡片外觀 */
+.sv-card{
+  background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.75));
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  padding: 14px 16px;
+  margin: 12px 0 18px;
+  backdrop-filter: blur(6px);
+}
+.sv-card .sv-embed{
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.sv-card .sv-embed iframe{
+  border: 0; display: block;
+}
+
+/* 可選：上方加一條標題列（若你想自己寫歌名/歌手） */
+.sv-card .sv-header{
+  display: flex; align-items: center; gap: 12px; margin-bottom: 10px;
+}
+.sv-card .sv-cover{
+  width: 44px; height: 44px; border-radius: 12px; background: center/cover no-repeat;
+  box-shadow: 0 1px 6px rgba(0,0,0,.12);
+}
+.sv-card .sv-title{ font-weight: 700; font-size: 16px; line-height: 1.1; }
+.sv-card .sv-sub{ font-size: 12px; opacity: .7; }
+
+/* StreetVoice 卡片外觀與 hover 動效 */
+.sv-card{
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.sv-card:hover{
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 12px 28px rgba(0,0,0,.12);
+}
+
+/* 標題列樣式 */
+.sv-titlebar{
+  font-weight: 700;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+.sv-titlebar::before{
+  content: "🎵";
+  font-size: 16px;
+  opacity: .9;
+}
+
+/* 內嵌容器，維持圓角 */
+.sv-embed{ width:100%; overflow:hidden; border-radius:12px; }
+.sv-embed iframe{ border:0; display:block; }
+
+/* YouTube 影片容器（自適應 16:9、圓角、裁切） */
+.yt-wrap{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.yt-wrap iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+@supports not (aspect-ratio: 1) {
+  .yt-wrap{ height: 0; padding-bottom: 56.25%; }
+}
+
+/* 封面：維持 1669:770，顯示整張（contain） */
+.kira-post-cover {
+  position: relative !important;
+  aspect-ratio: 1669 / 770 !important;  /* 若想沿用主題的 padding-bottom 比例法，則把這行改成 padding-bottom 計算 */
+  padding-bottom: 0 !important;         /* 用 aspect-ratio 時記得把 pb 清零 */
+  height: auto !important;
+  overflow: hidden !important;
+  margin: 0 auto !important;
+}
+.kira-post-cover img,
+.kira-post-cover-image {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;       /* 關鍵：顯示整張 */
+  object-position: center !important;
+  display: block !important;
+}
+
+/* 文章內文圖片：不超出版面、顯示整張 */
+.post .kira-article img,
+.kira-image img {
+  display: block !important;
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
