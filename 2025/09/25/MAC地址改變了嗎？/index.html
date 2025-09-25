@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/css/layout.css">
 
 		
-		<title> 標籤：Python -  Atom&#39;s Blog</title>
+		<title> MAC地址改變了嗎？ -  Atom&#39;s Blog</title>
 		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
 		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
 		
@@ -306,49 +306,217 @@
 			<div class="kira-content">
 				<div id="kira-top-header"></div>
 				<div class="kira-main-content">
-					<div class="kira-posts">
-    
-        <div class="kira-post">
-            <a href="/2025/09/24/oneMP3%EF%BC%9A%E5%90%88%E4%BD%B5%E9%9F%B3%E6%AA%94%E4%B8%A6%E8%87%AA%E5%8B%95%E5%8A%A0%E5%85%A5%E5%B0%81%E9%9D%A2%EF%BC%88%E5%90%AB-ffmpeg-%E9%81%B8%E6%93%87%E5%99%A8%EF%BC%89/">
-                
-                <div
-                    class="kira-post-cover mdui-ripple"
-                    style="padding-bottom: '46.3855421686747%'"
-                >
-                    <img
-                        data-src="/images/mm.jpg"
-                        data-sizes="auto"
-                        alt="oneMP3：合併音檔並自動加入封面"
-                        class="lazyload kira-post-cover-image"
-                    />
-                    <h1>oneMP3：合併音檔並自動加入封面</h1>
-                </div>
-                
-            </a>
+					
+<link rel="stylesheet" href="/css/kira-image.css">
 
-            <div class="kira-post-meta kira-rainbow">
-                <a>
-                    <i class="kirafont icon-calendar-fill"></i>
-                    2025年09月24日
-                </a>
-                <a>
-                    <i class="kirafont icon-edit-fill"></i>
-                    434 字
-                </a>
-                <a>
-                    <i class="kirafont icon-time-circle-fill"></i>大概
-                    1 分鐘
-                </a>
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
             </div>
-    
-            
-                <article>
-                    <p>其實是很久之前寫的小工具了，在dlsite買的廣播劇不是都會依照章節分成不同音檔嗎？因為覺得這樣太多檔案所以寫了一個合併工具。</p>
-                </article>
-            
         </div>
-        <div class="kira-hr"></div>
-    
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div class="kira-post-cover">
+			<img
+				data-src="https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20250902/657%202436%C3%971125_fd9454a376e242a18d25c026dc24fa22.jpg"
+				data-sizes="auto"
+				alt="MAC地址改變了嗎？"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>MAC地址改變了嗎？</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2025年09月25日</a>
+			<a><i class="kirafont icon-edit-fill"></i>579 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 2 分鐘</a>
+		</div>
+		<html><head></head><body><p>這是之前朋友去面試的題目,我自己網路也不好所以就針對這個稍微聊了一下</p>
+<span id="more"></span>
+
+
+<h2><span id="%F0%9F%97%BA-%E7%B6%B2%E8%B7%AF%E6%9E%B6%E6%A7%8B%E8%AA%AA%E6%98%8E">🗺 網路架構說明</span></h2><p>圖片是朋友大致畫的<br>面試的問題：host1 ping host2 途中src dest mac會變嗎？<br>但這個問的不夠準確(其實是我漏聽)，他問的是封包上的mac會改變嗎？</p>
+<p><img src="/images/t.png"></p>
+<p>整個網路架構如下：</p>
+<ul>
+<li><p><strong>Host 1</strong></p>
+<ul>
+<li>IP：<code>192.168.10.1/24</code></li>
+<li>MAC：<code>0000:0000:0000:0010</code></li>
+<li>所屬 VLAN：V10</li>
+</ul>
+</li>
+<li><p><strong>Host 2</strong></p>
+<ul>
+<li>IP：<code>192.168.20.1/24</code></li>
+<li>MAC：<code>0000:0000:0000:0020</code></li>
+<li>所屬 VLAN：V20</li>
+</ul>
+</li>
+<li><p><strong>Router</strong></p>
+<ul>
+<li>MAC：<code>0000:0000:0000:0030</code></li>
+<li>同時接管 VLAN 10 和 VLAN 20</li>
+<li>負責 Layer 3 路由轉發</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2><span id="%E5%B0%81%E5%8C%85%E6%B5%81%E7%A8%8Bhost-1-%E8%A6%81-ping-host-2">封包流程：Host 1 要 Ping Host 2</span></h2><h3><span id="1%EF%B8%8F%E2%83%A3-host-1-%E7%99%BC%E9%80%81-ping-%E5%B0%81%E5%8C%85">1️⃣ Host 1 發送 Ping 封包</span></h3><ul>
+<li>發現目標 IP <code>192.168.20.1</code> 不在同一個子網</li>
+<li>將封包送給預設閘道（Router），假設是 <code>192.168.10.254</code></li>
+<li>查詢 ARP，得到 MAC 為：<code>0000:0000:0000:0030</code></li>
+<li>封包會長這樣：<br>Source MAC: 0000:0000:0000:0010 (Host 1)<br>Destination MAC: 0000:0000:0000:0030 (Router)</li>
+</ul>
+<h3><span id="2%EF%B8%8F%E2%83%A3-router-%E8%BD%89%E7%99%BC%E5%B0%81%E5%8C%85">2️⃣ Router 轉發封包</span></h3><ul>
+<li>看到目標 IP 屬於 VLAN 20，從 VLAN 20 出口轉送</li>
+<li>查詢 ARP 得到 Host 2 的 MAC：<code>0000:0000:0000:0020</code></li>
+<li>修改封包為：<br>Source MAC: 0000:0000:0000:0030 (Router)<br>Destination MAC: 0000:0000:0000:0020 (Host 2)</li>
+</ul>
+<h3><span id="3%EF%B8%8F%E2%83%A3-host-2-%E5%9B%9E%E8%A6%86-ping">3️⃣ Host 2 回覆 Ping</span></h3><ul>
+<li>Host 2 傳回封包給自己的預設閘道（Router）</li>
+<li>封包會是：<br>Source MAC: 0000:0000:0000:0020 (Host 2)<br>Destination MAC: 0000:0000:0000:0030 (Router)</li>
+</ul>
+<h3><span id="4%EF%B8%8F%E2%83%A3-router-%E5%B0%87%E5%9B%9E%E8%A6%86%E9%80%81%E5%9B%9E-host-1">4️⃣ Router 將回覆送回 Host 1</span></h3><ul>
+<li>查詢 ARP，找到 Host 1 的 MAC：<code>0000:0000:0000:0010</code></li>
+<li>修改回應封包為：<br>Source MAC: 0000:0000:0000:0030 (Router)<br>Destination MAC: 0000:0000:0000:0010 (Host 1)</li>
+</ul>
+<hr>
+<h2><span id="%E7%B5%90%E8%AB%96mac-%E6%9C%89%E6%B2%92%E6%9C%89%E6%94%B9%E8%AE%8A">結論：MAC 有沒有改變？</span></h2><p>答案是有改變的</p>
+<table>
+<thead>
+<tr>
+<th>步驟</th>
+<th>目的 MAC</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Host 1 → Router</td>
+<td><code>0000:0000:0000:0030</code></td>
+<td>不知道 Host 2，傳給 Router</td>
+</tr>
+<tr>
+<td>Router → Host 2</td>
+<td><code>0000:0000:0000:0020</code></td>
+<td>Router 查 ARP 得知 Host 2 MAC</td>
+</tr>
+<tr>
+<td>Host 2 → Router</td>
+<td><code>0000:0000:0000:0030</code></td>
+<td>一樣傳給預設閘道</td>
+</tr>
+<tr>
+<td>Router → Host 1</td>
+<td><code>0000:0000:0000:0010</code></td>
+<td>Router 幫忙回覆封包給 Host 1</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p> <strong>Host 1 永遠看不到 Host 2 的 MAC，反之亦然。兩者都只知道 Router 的 MAC。</strong></p>
+</blockquote>
+<hr>
+<h2><span id="%E5%BB%B6%E4%BC%B8%E8%A3%9C%E5%85%85">延伸補充</span></h2><p>這是典型的 <strong>Router-on-a-stick</strong>（單線路由）或 Layer 3 Switch 的通訊範例。在這類設計中：</p>
+<ul>
+<li>MAC 是 L2 層資訊，跨 VLAN 傳輸時會被 Router 重新寫入</li>
+<li>IP 是不變的，但 MAC 是跳點間變換的</li>
+<li>可以在主機上執行 <code>arp -a</code> 來觀察目前的 ARP 快取表，驗證只會看到 Router 的 MAC</li>
+</ul>
+<hr>
+</body></html>
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>Atom<br>
+        <strong>本文鏈接：</strong><a href="https://d0ngd.github.io/2025/09/25/MAC%E5%9C%B0%E5%9D%80%E6%94%B9%E8%AE%8A%E4%BA%86%E5%97%8E%EF%BC%9F/" title="https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;09&#x2F;25&#x2F;MAC地址改變了嗎？&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;09&#x2F;25&#x2F;MAC地址改變了嗎？&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			          
+			<!-- 先找到与当前文字相同的目录 -->
+			   
+			<!-- 在找到当前文章所在的 index -->
+			              
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+			<a class="kirafont icon-container-fill -link" href="/categories/%E7%B6%B2%E8%B7%AF%E6%8A%80%E8%A1%93/">網路技術</a>
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/%E7%B6%B2%E8%B7%AF%E6%8A%80%E8%A1%93/" rel="tag">網路技術</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+		<div id="tcomment"></div>
+<script src="https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js"></script>
+<script>
+  twikoo.init({
+    envId: 'https://twikoo-vercel-green-six.vercel.app/api',  // 從 _config.yml 讀取
+    el: '#tcomment',
+    lang: 'zh-TW'
+  })
+</script>
+
+	</div>
+	
 </div>
 
 				</div>
