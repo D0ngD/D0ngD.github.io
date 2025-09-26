@@ -205,7 +205,7 @@
 <a class="mdui-ripple"
    href="https://medium.com/@dd565345421"
    target="_blank"
-   mdui-tooltip="{content: 'Threads（脆）'}"
+   mdui-tooltip="{content: 'Medium(EN)'}"
    style="color:rgb(0,0,0);background-color:rgba(0,0,0,.10);font-size:18px">
   
     <span style="
@@ -374,7 +374,7 @@
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
 			<a><i class="kirafont icon-calendar-fill"></i>2025年09月26日</a>
-			<a><i class="kirafont icon-edit-fill"></i>422 字</a>
+			<a><i class="kirafont icon-edit-fill"></i>409 字</a>
 			<a><i class="kirafont icon-time-circle-fill"></i>大概 1 分鐘</a>
 		</div>
 		<html><head></head><body><p>每次要回放封包時都會忘記指令，所以寫成文章記在這邊。</p>
@@ -387,8 +387,9 @@
 <li>一個或多個 <code>.pcap</code> 封包擷取檔</li>
 </ul>
 <hr>
-<h2><span id="%E5%96%AE%E4%B8%80%E5%B0%81%E5%8C%85%E5%9B%9E%E6%94%BE%E6%8C%87%E4%BB%A4">單一封包回放指令</span></h2><p>Maltrail 本身提供 <code>--pcap</code> 參數，可讓我們將 PCAP 封包導入 <code>sensor.py</code> 進行離線分析，不需連線網路、也不會發出封包。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> python3 sensor.py --pcap /path/to/capture.pcap<br><br></code></pre></td></tr></tbody></table></figure>
+<h2><span id="%E5%96%AE%E4%B8%80%E5%B0%81%E5%8C%85%E5%9B%9E%E6%94%BE%E6%8C%87%E4%BB%A4">單一封包回放指令</span></h2><p>Maltrail 本身提供 <code>--pcap</code> 參數，可讓我們將 PCAP 封包導入 <code>sensor.py</code> 進行離線分析。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> python3 sensor.py --pcap /path/to/capture.pcap<br></code></pre></td></tr></tbody></table></figure>
+
 <p>執行後你會看到類似以下訊息：<br><code>using '/var/log/maltrail' for log storage</code><br><code>running...</code><br><code>cleaning up...</code><br>多個封包批次回放：使用 for 迴圈<br>如果你有大量封包需要回放，可以使用 bash 腳本批次處理：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><br>PCAP_DIR=<span class="hljs-string">"/path/to/pcap"</span><br>MALTRAIL_DIR=<span class="hljs-string">"/path/to/maltrail"</span><br><br><span class="hljs-built_in">cd</span> <span class="hljs-string">"<span class="hljs-variable">$MALTRAIL_DIR</span>"</span> || <span class="hljs-built_in">exit</span><br><br><span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> <span class="hljs-string">"<span class="hljs-variable">$PCAP_DIR</span>"</span>/*.pcap; <span class="hljs-keyword">do</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">"[*] 分析中：<span class="hljs-variable">$file</span>"</span><br>    <span class="hljs-built_in">sudo</span> python3 sensor.py --pcap <span class="hljs-string">"<span class="hljs-variable">$file</span>"</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">"[+] 完成：<span class="hljs-variable">$file</span>"</span><br>    <span class="hljs-built_in">echo</span><br><span class="hljs-keyword">done</span><br></code></pre></td></tr></tbody></table></figure>
 
