@@ -377,8 +377,8 @@
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
 			<a><i class="kirafont icon-calendar-fill"></i>2025年09月01日</a>
-			<a><i class="kirafont icon-edit-fill"></i>382 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 1 分鐘</a>
+			<a><i class="kirafont icon-edit-fill"></i>425 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 2 分鐘</a>
 		</div>
 		<html><head></head><body><p>這篇記錄我如何在 <strong>Kira 主題</strong> 加上 <strong>Butterfly 風格</strong> 的「頭像滑過旋轉、點擊跳轉自介頁」效果。<br>同時示範：<strong>標籤/分類</strong>、<strong>摘要分隔</strong>、<strong>程式碼上色</strong>、<strong>圖片資產夾</strong>等常用排版。</p>
 <blockquote>
@@ -402,51 +402,40 @@
 <h2><span id="1-%E5%85%A9%E6%AE%B5%E5%B0%8F%E6%94%B9%E5%8B%95css--js">1) 兩段小改動（CSS + JS）</span></h2><blockquote>
 <p>檔名：<code>source/style.css</code>（或你的自訂樣式檔）<br>功能：滑過旋轉一圈</p>
 </blockquote>
-<pre><code class="css">/* Avatar hover 旋轉一圈 */
-.site-avatar img,
-.avatar img,
-.kira-avatar img,
-.site-author-image img {
-  transition: transform .6s cubic-bezier(.22,.61,.36,1);
-  transform-origin: center center;
-  will-change: transform;
-}
-.site-avatar:hover img,
-.avatar:hover img,
-.kira-avatar:hover img,
-.site-author-image:hover img {
-  transform: rotate(360deg);
-}
+<figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* Avatar hover 旋轉一圈 */</span><br><span class="hljs-selector-class">.site-avatar</span> <span class="hljs-selector-tag">img</span>,<br><span class="hljs-selector-class">.avatar</span> <span class="hljs-selector-tag">img</span>,<br><span class="hljs-selector-class">.kira-avatar</span> <span class="hljs-selector-tag">img</span>,<br><span class="hljs-selector-class">.site-author-image</span> <span class="hljs-selector-tag">img</span> {<br>  <span class="hljs-attribute">transition</span>: transform .<span class="hljs-number">6s</span> <span class="hljs-built_in">cubic-bezier</span>(.<span class="hljs-number">22</span>,.<span class="hljs-number">61</span>,.<span class="hljs-number">36</span>,<span class="hljs-number">1</span>);<br>  <span class="hljs-attribute">transform-origin</span>: center center;<br>  <span class="hljs-attribute">will-change</span>: transform;<br>}<br><span class="hljs-selector-class">.site-avatar</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">img</span>,<br><span class="hljs-selector-class">.avatar</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">img</span>,<br><span class="hljs-selector-class">.kira-avatar</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">img</span>,<br><span class="hljs-selector-class">.site-author-image</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">img</span> {<br>  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(<span class="hljs-number">360deg</span>);<br>}<br><br><span class="hljs-comment">/* 無障礙：偏好減少動態時停用動畫 */</span><br><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">prefers-reduced-motion</span>: reduce) {<br>  <span class="hljs-selector-class">.site-avatar</span> <span class="hljs-selector-tag">img</span>,<br>  <span class="hljs-selector-class">.avatar</span> <span class="hljs-selector-tag">img</span>,<br>  <span class="hljs-selector-class">.kira-avatar</span> <span class="hljs-selector-tag">img</span>,<br>  <span class="hljs-selector-class">.site-author-image</span> <span class="hljs-selector-tag">img</span> { <span class="hljs-attribute">transition</span>: none; }<br>  <span class="hljs-selector-class">.site-avatar</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">img</span>,<br>  <span class="hljs-selector-class">.avatar</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">img</span>,<br>  <span class="hljs-selector-class">.kira-avatar</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">img</span>,<br>  <span class="hljs-selector-class">.site-author-image</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">img</span> { <span class="hljs-attribute">transform</span>: none; }<br>}<br></code></pre></td></tr></tbody></table></figure>
 
-/* 無障礙：偏好減少動態時停用動畫 */
-@media (prefers-reduced-motion: reduce) {
-  .site-avatar img,
-  .avatar img,
-  .kira-avatar img,
-  .site-author-image img { transition: none; }
-  .site-avatar:hover img,
-  .avatar:hover img,
-  .kira-avatar:hover img,
-  .site-author-image:hover img { transform: none; }
-}```
+<h2><span id="%E5%85%B6%E4%BB%96%E5%8A%9F%E8%83%BD%E5%B1%95%E7%A4%BA">其他功能展示</span></h2><h2><span id="%E6%92%AD%E6%94%BE%E8%87%AA%E5%B7%B1%E9%9F%B3%E6%A8%82">播放自己音樂</span></h2>
+        <div id="aplayer-wlBylvPR" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-wlBylvPR"),
+            narrow: false,
+            autoplay: false,
+            showlrc: false,
+            music: {
+              title: "Lo-Fi Demo",
+              author: "Anon",
+              url: "By Myself - The Grey Room _ Clark Sims.mp3",
+              pic: "https://www.loliapi.com/pp",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
 
-## 其他功能展示
+<h2><span id="%E6%92%A5%E6%94%BE%E8%A1%97%E8%81%B2%E9%9F%B3%E6%A8%82">撥放街聲音樂</span></h2><iframe src="https://streetvoice.com/music/embed/?id=609974" frameborder="0" scrolling="no" allow="autoplay" data-sv-title="來聽點音樂吧～" <!--="" 顯示在卡片上方；不寫則用預設句="" --="">
+  data-sv-crop="0.5"               <!-- 顯示 50% 高度；0.35~0.8 都可 -->
+  data-sv-align="center"           <!-- top / center / bottom -->
+></iframe>
 
-## 播放自己音樂
-{% aplayer "Lo-Fi Demo" "Anon" "By Myself - The Grey Room _ Clark Sims.mp3" "https://www.loliapi.com/pp" %}
+<h2><span id="%E6%92%A5%E6%94%BEbilibili%E5%BD%B1%E7%89%87">撥放bilibili影片</span></h2><iframe src="https://player.bilibili.com/player.html?bvid=BV1Yb411a7ty&amp;page=1&amp;as_wide=1&amp;high_quality=1&amp;danmaku=0" style="width: 62em; height: 35em;" allowfullscreen="allowfullscreen" width="100%" height="100%" scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
 
-## 撥放街聲音樂
-&lt;iframe
-  src="https://streetvoice.com/music/embed/?id=609974"
-  frameborder="0" scrolling="no" allow="autoplay"
-  data-sv-title="來聽點音樂吧～"  &lt;!-- 顯示在卡片上方；不寫則用預設句 --&gt;
-  data-sv-crop="0.5"               &lt;!-- 顯示 50% 高度；0.35~0.8 都可 --&gt;
-  data-sv-align="center"           &lt;!-- top / center / bottom --&gt;
-&gt;&lt;/iframe&gt;
-
-## 撥放bilibili影片
-{% biliplayer BV1Yb411a7ty 1 %}
-</code></pre>
+<hr>
+<p>留言區從原本需要登入github才能留言的方式改成使用 <code>Twikoo</code> 不須登入即可留言<br>如果你要匿名的話姓名、郵箱、網址可以隨便打沒關係<br>留QQ郵箱的話可以自動偵測郵箱頭像<br>有想多交流的話可以留網址我看到會過去逛逛</p>
+<hr>
 </body></html>
 	</article>
 
@@ -462,11 +451,11 @@
   
 	<div class="kira-post-nav">
 		<nav class="post-nav">
-			  
+			      
 			<!-- 先找到与当前文字相同的目录 -->
 			   
 			<!-- 在找到当前文章所在的 index -->
-			                      
+			                  
 		</nav>
 	</div>
 	
