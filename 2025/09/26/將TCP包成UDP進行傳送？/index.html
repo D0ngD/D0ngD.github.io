@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/css/layout.css">
 
 		
-		<title> 好用網站 -  Atom&#39;s Blog</title>
+		<title> 將TCP包成UDP進行傳送? -  Atom&#39;s Blog</title>
 		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
 		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
 		
@@ -146,7 +146,7 @@
 		</a>
 		
 		<a
-			class="kira-list-item mdui-ripple true"
+			class="kira-list-item mdui-ripple false"
 			href="/friends.html"
 			title="書籤列"
 		>
@@ -306,28 +306,209 @@
 			<div class="kira-content">
 				<div id="kira-top-header"></div>
 				<div class="kira-main-content">
-					<div class="kira-post">
-	<article class="kira-friend">
-		<html><head></head><body><h2><span id="%E6%88%91%E7%9A%84%E6%9B%B8%E7%B1%A4%E5%88%97">我的書籤列</span></h2><blockquote>
-<p>遊戲網站：重返未來</p>
-</blockquote>
-<p>  <a target="_blank" rel="noopener" href="https://re.bluepoch.com/home/"><img data-fancybox="gallery" data-sizes="auto" data-src="https://re.bluepoch.com/home/img/logo.png" alt="重返未來 LOGO" class="lazyload"></a> </p>
-<hr>
-<blockquote>
-<p>情資網站：Greensnow</p>
-</blockquote>
-<p>  <a target="_blank" rel="noopener" href="https://greensnow.co/"><img data-fancybox="gallery" data-sizes="auto" data-src="https://greensnow.co/img/logo.png" alt="greensnow LOGO" class="lazyload"></a></p>
-</body></html>
-        
+					
+<link rel="stylesheet" href="/css/kira-image.css">
 
-	</article>
-	
-        <div class="kira-post-footer">
-            
 
-            
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
         </div>
-    
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div class="kira-post-cover">
+			<img
+				data-src="https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20250610/542%202436x1125_3da95bc68a8f4da69e1b2f93bab37a42.jpg"
+				data-sizes="auto"
+				alt="將TCP包成UDP進行傳送?"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>將TCP包成UDP進行傳送?</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2025年09月26日</a>
+			<a><i class="kirafont icon-edit-fill"></i>749 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 3 分鐘</a>
+		</div>
+		<html><head></head><body><p>在看論文時發現了某篇作者使用了TCP over UDP這個技術，所以把看完的資料整理一下。</p>
+<span id="more"></span>
+
+<h1><span id="tcp-over-udp-%E6%98%AF%E4%BB%80%E9%BA%BC">TCP over UDP 是什麼？</span></h1><p>簡單來說就是將「TCP 封裝在 UDP 裡」進行傳輸<br>在 <strong>VPN、零信任網路、工控安全與穿透防火牆</strong> 等應用場景中比較常見。</p>
+<hr>
+<h2><span id="%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81-tcp-over-udp">為什麼要 TCP over UDP？</span></h2><p>你可以把它想成：</p>
+<blockquote>
+<p><strong>本來該用 TCP 傳的資料，用 UDP 傳送出去，但內容仍然是 TCP 封包格式。</strong></p>
+</blockquote>
+<p>這樣做有什麼好處？</p>
+<ul>
+<li><strong>穿越防火牆與 NAT</strong>：許多網路只開放 UDP（如 DNS、VoIP）或只有特定端口（如 443），UDP over TCP 或 TCP over UDP 可以繞過這些限制。</li>
+<li><strong>自己控制重傳與連線狀態</strong>：UDP 沒有連線狀態，可以讓應用層自行決定傳輸策略（例如 QUIC、WireGuard、Nebula）。</li>
+<li><strong>降低封包處理延遲</strong>：某些場景下 UDP 封裝反而延遲更低，並減少核心堆疊負擔。</li>
+</ul>
+<hr>
+<h2><span id="%E5%AF%A6%E9%9A%9B%E9%81%8B%E4%BD%9C%E6%96%B9%E5%BC%8F">實際運作方式</span></h2><p>在 <strong>TCP over UDP</strong> 的情境下，流程大致如下：</p>
+<ol>
+<li>應用程式建立一條「虛擬 TCP 連線」，例如 Web 連線或資料同步。</li>
+<li>中間的傳輸協定（例如 VPN、Proxy、Overlay Network）<strong>將這些 TCP 封包重新打包成 UDP 封包</strong>。</li>
+<li>這些 UDP 封包透過網路傳送出去，到另一端後再**還原成原始 TCP **。</li>
+</ol>
+<hr>
+<h2><span id="%E5%AF%A6%E9%9A%9B%E6%A1%88%E4%BE%8B">實際案例</span></h2><h3><span id="1%EF%B8%8Fnebula-overlay-network">1️.Nebula Overlay Network</span></h3><p>Nebula 是一套基於 UDP 的點對點加密 Overlay，雖然實際上應用程式跑的是 TCP，但它會透過 UDP 傳送所有封包，實現加密與跨網段連線功能。</p>
+<h3><span id="2%EF%B8%8Fwireguard-vpn">2️.WireGuard VPN</span></h3><p>WireGuard 使用 UDP 傳輸封包，但可以封裝任意協定（TCP、UDP、ICMP）在其中，確保端對端加密、隧道化與低延遲。</p>
+<h3><span id="3%EF%B8%8Fcloudflare-tunnel--zerotier--tailscale">3️.Cloudflare Tunnel / ZeroTier / Tailscale</span></h3><p>這些軟體會將 TCP 封包轉換成 UDP 流，確保可以穿透 NAT、躲過封包審查，並達成私網穿透與節點對接。</p>
+<hr>
+<h2><span id="%E8%B3%87%E5%AE%89%E9%A2%A8%E9%9A%AA%E8%88%87%E5%B0%8D%E7%AD%96">資安風險與對策</span></h2><p>由於 UDP 本身<strong>不保證順序、不保證傳達</strong>，所以：</p>
+<ul>
+<li>有中間人攻擊（MitM）或重送攻擊風險</li>
+<li>必須透過<strong>加密與驗證（例如 TLS、Noise 協定）</strong>來確保安全性</li>
+<li>如果搭配了憑證機制，就能確認彼此身份，避免偽造連線</li>
+</ul>
+<hr>
+<h2><span id="%E7%B5%90%E8%AB%96">結論</span></h2><table>
+<thead>
+<tr>
+<th>特性</th>
+<th>傳統 TCP</th>
+<th>UDP</th>
+<th>TCP over UDP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>穿透防火牆</td>
+<td>難</td>
+<td>較容易</td>
+<td>V</td>
+</tr>
+<tr>
+<td>加密靈活性</td>
+<td>限 TLS</td>
+<td>自訂</td>
+<td>高度可控</td>
+</tr>
+<tr>
+<td>封包順序控制</td>
+<td>自帶</td>
+<td>X</td>
+<td>應用層控制</td>
+</tr>
+<tr>
+<td>適用場景</td>
+<td>一般網站</td>
+<td>影音/遊戲</td>
+<td>VPN、Overlay、安全通訊</td>
+</tr>
+</tbody></table>
+<hr>
+<h2><span id="%F0%9F%97%92-%E5%BB%B6%E4%BC%B8%E9%96%B1%E8%AE%80">🗒 延伸閱讀</span></h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/slackhq/nebula">Nebula 官方文件</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.wireguard.com/protocol/">WireGuard Protocol</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.cloudflare.com/warp-wireguard-and-webrtc/">Cloudflare Warp 使用 QUIC</a></li>
+<li>我讀的那篇論文：<a target="_blank" rel="noopener" href="https://www.sciencedirect.com/science/article/pii/S1570870524000258">Flexible zero trust architecture for the cybersecurity of industrial IoT infrastructures</a></li>
+</ul>
+<hr>
+<p>留言區從原本需要登入github才能留言的方式改成使用 <code>Twikoo</code> 不須登入即可留言<br>如果你要匿名的話姓名、郵箱、網址可以隨便打沒關係<br>留QQ郵箱的話可以自動偵測郵箱頭像<br>有想多交流的話可以留網址我看到會過去逛逛</p>
+<hr>
+</body></html>
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>Atom<br>
+        <strong>本文鏈接：</strong><a href="https://d0ngd.github.io/2025/09/26/%E5%B0%87TCP%E5%8C%85%E6%88%90UDP%E9%80%B2%E8%A1%8C%E5%82%B3%E9%80%81%EF%BC%9F/" title="https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;09&#x2F;26&#x2F;將TCP包成UDP進行傳送？&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;09&#x2F;26&#x2F;將TCP包成UDP進行傳送？&#x2F;</a><br>
+        
+            <strong>版權聲明：</strong>本文採用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 協議進行許可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			  
+			<!-- 先找到与当前文字相同的目录 -->
+			      
+			<!-- 在找到当前文章所在的 index -->
+			    
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2025/09/25/MAC%E5%9C%B0%E5%9D%80%E6%94%B9%E8%AE%8A%E4%BA%86%E5%97%8E%EF%BC%9F/"> MAC地址改變了嗎？</a>
+			</div>
+			                      
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+			<a class="kirafont icon-container-fill -link" href="/categories/%E7%B6%B2%E8%B7%AF%E6%8A%80%E8%A1%93/">網路技術</a>
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/%E7%B6%B2%E8%B7%AF%E6%8A%80%E8%A1%93/" rel="tag">網路技術</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+		<div id="tcomment"></div>
+<script src="https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js"></script>
+<script>
+  twikoo.init({
+    envId: 'https://twikoo-vercel-green-six.vercel.app/api',  // 從 _config.yml 讀取
+    el: '#tcomment',
+    lang: 'zh-TW'
+  })
+</script>
+
+	</div>
+	
 </div>
 
 				</div>
