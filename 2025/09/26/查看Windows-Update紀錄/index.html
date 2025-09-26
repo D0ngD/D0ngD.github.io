@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/css/layout.css">
 
 		
-		<title> 將TCP包成UDP進行傳送? -  Atom&#39;s Blog</title>
+		<title> 查看Windows Update更新紀錄以及關閉更新 -  Atom&#39;s Blog</title>
 		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
 		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
 		
@@ -107,9 +107,9 @@
 		</a>
 	</div>
 	<div class="kira-count">
-		<div><span>文章</span>6</div>
+		<div><span>文章</span>7</div>
 		<div><span>標籤</span>6</div>
-		<div><span>分類</span>4</div>
+		<div><span>分類</span>6</div>
 	</div>
 	<div class="kira-list">
 		
@@ -226,7 +226,7 @@
 			
 	<div class="kira-widget-wrap">
 		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
-			<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/IDS/" style="font-size: 10px;">IDS</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E6%95%99%E5%AD%B8/" style="font-size: 10px;">教學</a> <a href="/tags/%E7%B6%B2%E8%B7%AF%E6%8A%80%E8%A1%93/" style="font-size: 20px;">網路技術</a>
+			<a href="/tags/IDS/" style="font-size: 15px;">IDS</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E7%B6%B2%E7%AB%99%E7%BE%8E%E5%8C%96/" style="font-size: 10px;">網站美化</a> <a href="/tags/%E7%B6%B2%E8%B7%AF%E6%8A%80%E8%A1%93/" style="font-size: 20px;">網路技術</a>
 		</div>
 		
 	</div>
@@ -362,96 +362,88 @@
 <div class="kira-post">
 	<article>
 		
-		<div class="kira-post-cover">
+		<div
+			class="kira-post-cover"
+			style="padding-bottom: '46.3855421686747%'"
+		>
 			<img
-				data-src="https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20250610/542%202436x1125_3da95bc68a8f4da69e1b2f93bab37a42.jpg"
+				data-src="https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20231114/91%202560x1440_b85ff564ff554921ab1089ccfdafec6a.jpg"
 				data-sizes="auto"
-				alt="將TCP包成UDP進行傳送?"
+				alt="查看Windows Update更新紀錄以及關閉更新"
 				class="lazyload kira-post-cover-image disabled-kira-image"
 			/>
-			<h1>將TCP包成UDP進行傳送?</h1>
+			<h1>查看Windows Update更新紀錄以及關閉更新</h1>
 		</div>
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
 			<a><i class="kirafont icon-calendar-fill"></i>2025年09月26日</a>
-			<a><i class="kirafont icon-edit-fill"></i>749 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 3 分鐘</a>
+			<a><i class="kirafont icon-edit-fill"></i>593 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 2 分鐘</a>
 		</div>
-		<html><head></head><body><p>在看論文時發現了某篇作者使用了TCP over UDP這個技術，所以把看完的資料整理一下。</p>
+		<html><head></head><body><p>每次都被微軟的更新搞到，今天紀錄一下檢查更新紀錄方法，以及關閉更新的方式。</p>
 <span id="more"></span>
 
-<h1><span id="tcp-over-udp-%E6%98%AF%E4%BB%80%E9%BA%BC">TCP over UDP 是什麼？</span></h1><p>簡單來說就是將「TCP 封裝在 UDP 裡」進行傳輸<br>在 <strong>VPN、零信任網路、工控安全與穿透防火牆</strong> 等應用場景中比較常見。</p>
-<hr>
-<h2><span id="%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81-tcp-over-udp">為什麼要 TCP over UDP？</span></h2><p>你可以把它想成：</p>
-<blockquote>
-<p><strong>本來該用 TCP 傳的資料，用 UDP 傳送出去，但內容仍然是 TCP 封包格式。</strong></p>
-</blockquote>
-<p>這樣做有什麼好處？</p>
-<ul>
-<li><strong>穿越防火牆與 NAT</strong>：許多網路只開放 UDP（如 DNS、VoIP）或只有特定端口（如 443），UDP over TCP 或 TCP over UDP 可以繞過這些限制。</li>
-<li><strong>自己控制重傳與連線狀態</strong>：UDP 沒有連線狀態，可以讓應用層自行決定傳輸策略（例如 QUIC、WireGuard、Nebula）。</li>
-<li><strong>降低封包處理延遲</strong>：某些場景下 UDP 封裝反而延遲更低，並減少核心堆疊負擔。</li>
-</ul>
-<hr>
-<h2><span id="%E5%AF%A6%E9%9A%9B%E9%81%8B%E4%BD%9C%E6%96%B9%E5%BC%8F">實際運作方式</span></h2><p>在 <strong>TCP over UDP</strong> 的情境下，流程大致如下：</p>
-<ol>
-<li>應用程式建立一條「虛擬 TCP 連線」，例如 Web 連線或資料同步。</li>
-<li>中間的傳輸協定（例如 VPN、Proxy、Overlay Network）<strong>將這些 TCP 封包重新打包成 UDP 封包</strong>。</li>
-<li>這些 UDP 封包透過網路傳送出去，到另一端後再**還原成原始 TCP **。</li>
+<h2><span id="%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B-windows-update-%E7%9A%84%E6%9B%B4%E6%96%B0%E6%99%82%E9%96%93%E8%88%87%E6%88%90%E5%8A%9F%E8%88%87%E5%90%A6">如何查看 Windows Update 的更新時間與成功與否</span></h2><h3><span id="%E6%96%B9%E6%B3%95%E4%B8%80%E4%BD%BF%E7%94%A8%E4%BA%8B%E4%BB%B6%E6%AA%A2%E8%A6%96%E5%99%A8-event-viewer">方法一：使用事件檢視器 (Event Viewer)</span></h3><ol>
+<li>打開「<strong>事件檢視器</strong>」（在搜尋列輸入 <code>事件檢視器</code> 或 <code>Event Viewer</code>）。</li>
+<li>展開左側選單到：</li>
 </ol>
-<hr>
-<h2><span id="%E5%AF%A6%E9%9A%9B%E6%A1%88%E4%BE%8B">實際案例</span></h2><h3><span id="1%EF%B8%8Fnebula-overlay-network">1️.Nebula Overlay Network</span></h3><p>Nebula 是一套基於 UDP 的點對點加密 Overlay，雖然實際上應用程式跑的是 TCP，但它會透過 UDP 傳送所有封包，實現加密與跨網段連線功能。</p>
-<h3><span id="2%EF%B8%8Fwireguard-vpn">2️.WireGuard VPN</span></h3><p>WireGuard 使用 UDP 傳輸封包，但可以封裝任意協定（TCP、UDP、ICMP）在其中，確保端對端加密、隧道化與低延遲。</p>
-<h3><span id="3%EF%B8%8Fcloudflare-tunnel--zerotier--tailscale">3️.Cloudflare Tunnel / ZeroTier / Tailscale</span></h3><p>這些軟體會將 TCP 封包轉換成 UDP 流，確保可以穿透 NAT、躲過封包審查，並達成私網穿透與節點對接。</p>
-<hr>
-<h2><span id="%E8%B3%87%E5%AE%89%E9%A2%A8%E9%9A%AA%E8%88%87%E5%B0%8D%E7%AD%96">資安風險與對策</span></h2><p>由於 UDP 本身<strong>不保證順序、不保證傳達</strong>，所以：</p>
-<ul>
-<li>有中間人攻擊（MitM）或重送攻擊風險</li>
-<li>必須透過<strong>加密與驗證（例如 TLS、Noise 協定）</strong>來確保安全性</li>
-<li>如果搭配了憑證機制，就能確認彼此身份，避免偽造連線</li>
-</ul>
-<hr>
-<h2><span id="%E7%B5%90%E8%AB%96">結論</span></h2><table>
+<p>事件檢視器 &gt; 應用程式與服務記錄 &gt; Microsoft &gt; Windows &gt; WindowsUpdateClient &gt; Operational</p>
+<ol start="3">
+<li><p>常見的事件 ID：</p>
+<table>
 <thead>
 <tr>
-<th>特性</th>
-<th>傳統 TCP</th>
-<th>UDP</th>
-<th>TCP over UDP</th>
+<th>事件 ID</th>
+<th>意義</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>穿透防火牆</td>
-<td>難</td>
-<td>較容易</td>
-<td>V</td>
+<td>19</td>
+<td>更新成功安裝</td>
 </tr>
 <tr>
-<td>加密靈活性</td>
-<td>限 TLS</td>
-<td>自訂</td>
-<td>高度可控</td>
+<td>20</td>
+<td>更新安裝失敗</td>
 </tr>
 <tr>
-<td>封包順序控制</td>
-<td>自帶</td>
-<td>X</td>
-<td>應用層控制</td>
+<td>21</td>
+<td>開始下載</td>
 </tr>
 <tr>
-<td>適用場景</td>
-<td>一般網站</td>
-<td>影音/遊戲</td>
-<td>VPN、Overlay、安全通訊</td>
+<td>22</td>
+<td>開始安裝</td>
+</tr>
+<tr>
+<td>31</td>
+<td>安裝完成（需重新啟動）</td>
 </tr>
 </tbody></table>
+</li>
+<li><p>點選任一事件可查看詳細資訊，包括 <strong>時間、更新名稱、結果碼</strong> 等。</p>
+</li>
+</ol>
 <hr>
-<h2><span id="%F0%9F%97%92-%E5%BB%B6%E4%BC%B8%E9%96%B1%E8%AE%80">🗒 延伸閱讀</span></h2><ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/slackhq/nebula">Nebula 官方文件</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.wireguard.com/protocol/">WireGuard Protocol</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.cloudflare.com/warp-wireguard-and-webrtc/">Cloudflare Warp 使用 QUIC</a></li>
-<li>我讀的那篇論文：<a target="_blank" rel="noopener" href="https://www.sciencedirect.com/science/article/pii/S1570870524000258">Flexible zero trust architecture for the cybersecurity of industrial IoT infrastructures</a></li>
-</ul>
+<h3><span id="%E6%96%B9%E6%B3%95%E4%BA%8Creliability-monitor%E7%A9%A9%E5%AE%9A%E6%80%A7%E7%9B%A3%E8%A6%96%E5%99%A8">方法二：Reliability Monitor（穩定性監視器）</span></h3><ol>
+<li>在搜尋欄輸入 <code>Reliability Monitor</code> 或「<strong>穩定性歷程記錄檢視器</strong>」。</li>
+<li>查看時間軸上的「Windows Update」事件。</li>
+<li>點擊任一事件，可查看詳細更新記錄與錯誤訊息。</li>
+</ol>
+<p>這是最直覺的 GUI 工具。</p>
+<hr>
+<h3><span id="%E6%96%B9%E6%B3%95%E4%B8%89%E4%BD%BF%E7%94%A8-powershell-%E6%9F%A5%E8%A9%A2%E5%B7%B2%E5%AE%89%E8%A3%9D%E6%9B%B4%E6%96%B0">方法三：使用 PowerShell 查詢已安裝更新</span></h3><p>打開 PowerShell 輸入以下指令可查看已安裝更新列表：</p>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">Get-HotFix</span> | <span class="hljs-built_in">Sort-Object</span> InstalledOn <span class="hljs-literal">-Descending</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>也可列出更新日誌：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Get-WindowsUpdateLog<br></code></pre></td></tr></tbody></table></figure>
+
+<h2><span id="%E5%A6%82%E4%BD%95%E9%97%9C%E9%96%89%E6%88%96%E5%BB%B6%E5%BE%8C-windows-update">如何關閉或延後 Windows Update</span></h2><h3><span id="%E6%96%B9%E6%B3%95%E4%B8%80%E5%BE%9E%E8%A8%AD%E5%AE%9A%E4%B8%AD%E6%9A%AB%E5%81%9C%E6%9B%B4%E6%96%B0%E9%81%A9%E7%94%A8%E6%96%BC%E5%AE%B6%E5%BA%AD%E7%89%88%E5%B0%88%E6%A5%AD%E7%89%88">方法一：從設定中暫停更新（適用於家庭版/專業版）</span></h3><p>開啟「設定」 &gt;「Windows Update」</p>
+<p>點選「暫停更新」，可選擇 1～5 週不更新</p>
+<h3><span id="%E6%96%B9%E6%B3%95%E4%BA%8C%E9%80%8F%E9%81%8E%E7%BE%A4%E7%B5%84%E5%8E%9F%E5%89%87%E5%81%9C%E7%94%A8%E6%9B%B4%E6%96%B0%E5%83%85%E9%99%90-windows-%E5%B0%88%E6%A5%AD%E7%89%88%E4%BC%81%E6%A5%AD%E7%89%88">方法二：透過群組原則停用更新（僅限 Windows 專業版/企業版）</span></h3><p>執行 gpedit.msc</p>
+<p>進入<code>電腦設定 &gt; 系統管理範本 &gt; Windows 元件 &gt; Windows Update &gt; 管理的更新安裝</code><br>雙擊「設定自動更新」，選擇「已停用」或改為「通知下載與安裝」。</p>
+<h3><span id="%E6%96%B9%E6%B3%95%E4%B8%89%E5%81%9C%E7%94%A8-windows-update-%E6%9C%8D%E5%8B%99%E9%81%A9%E7%94%A8%E6%96%BC%E6%89%80%E6%9C%89%E7%89%88%E6%9C%AC%E4%BD%86%E4%B8%8D%E6%8E%A8%E8%96%A6">方法三：停用 Windows Update 服務（適用於所有版本，但不推薦）</span></h3><p>執行 services.msc</p>
+<p>找到 Windows Update 服務</p>
+<p>右鍵 &gt; 停用，啟動類型改為「停用」</p>
+<p><code>注意：某些版本的 Windows 會在重開機後自動重啟該服務，建議與群組原則搭配使用。</code></p>
 <hr>
 <p>留言區從原本需要登入github才能留言的方式改成使用 <code>Twikoo</code> 不須登入即可留言<br>如果你要匿名的話姓名、郵箱、網址可以隨便打沒關係<br>留QQ郵箱的話可以自動偵測郵箱頭像<br>有想多交流的話可以留網址我看到會過去逛逛</p>
 <hr>
@@ -461,7 +453,7 @@
 	 
     <div class="kira-post-copyright">
         <strong>本文作者：</strong>Atom<br>
-        <strong>本文鏈接：</strong><a href="https://d0ngd.github.io/2025/09/26/%E5%B0%87TCP%E5%8C%85%E6%88%90UDP%E9%80%B2%E8%A1%8C%E5%82%B3%E9%80%81%EF%BC%9F/" title="https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;09&#x2F;26&#x2F;將TCP包成UDP進行傳送？&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;09&#x2F;26&#x2F;將TCP包成UDP進行傳送？&#x2F;</a><br>
+        <strong>本文鏈接：</strong><a href="https://d0ngd.github.io/2025/09/26/%E6%9F%A5%E7%9C%8BWindows-Update%E7%B4%80%E9%8C%84/" title="https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;09&#x2F;26&#x2F;查看Windows-Update紀錄&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;09&#x2F;26&#x2F;查看Windows-Update紀錄&#x2F;</a><br>
         
             <strong>版權聲明：</strong>本文採用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 協議進行許可
         
@@ -470,32 +462,20 @@
   
 	<div class="kira-post-nav">
 		<nav class="post-nav">
-			  
-			<!-- 先找到与当前文字相同的目录 -->
-			      
-			<!-- 在找到当前文章所在的 index -->
-			    
-			<!-- 上一篇文章 -->
-			<div class="old">
-				<span>上一章</span>
-				<a href="/2025/09/25/MAC%E5%9C%B0%E5%9D%80%E6%94%B9%E8%AE%8A%E4%BA%86%E5%97%8E%EF%BC%9F/"> MAC地址改變了嗎？</a>
-			</div>
-			       
-			<!-- 下一篇文章 -->
-			<div class="new">
-				<span>下一章</span>
-				<a href="/2025/09/28/%E9%80%9A%E9%81%8EUDP%E6%A8%A1%E6%93%ACGTP%EF%BC%9F/"> 通過UDP模擬GTP?</a>
-			</div>
 			                      
+			<!-- 先找到与当前文字相同的目录 -->
+			   
+			<!-- 在找到当前文章所在的 index -->
+			          
 		</nav>
 	</div>
 	
 	<div class="kira-post-meta kira-rainbow">
 		
-			<a class="kirafont icon-container-fill -link" href="/categories/%E7%B6%B2%E8%B7%AF%E6%8A%80%E8%A1%93/">網路技術</a>
+			<a class="kirafont icon-container-fill -link" href="/categories/Windows/">Windows</a>
 		
 		
-			<a class="kirafont icon-tag-fill -none-link" href="/tags/%E7%B6%B2%E8%B7%AF%E6%8A%80%E8%A1%93/" rel="tag">網路技術</a>
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/Windows/" rel="tag">Windows</a>
 		
 	</div>
 	
