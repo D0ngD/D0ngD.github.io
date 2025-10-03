@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/css/layout.css">
 
 		
-		<title> 在 Maltrail 上回放封包 -  Atom&#39;s Blog</title>
+		<title> 安裝不同Python版本的Spyder(Anaconda)環境 -  Atom&#39;s Blog</title>
 		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
 		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
 		
@@ -364,59 +364,56 @@
 		
 		<div class="kira-post-cover">
 			<img
-				data-src="https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20250722/607%202436x1125_f7f268a2cd9f4dad9f1da8bba5cfc1ee.jpg"
+				data-src="https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20250902/622%202436%C3%971125_1529d15137fb4895835aabeea2ee7164.jpg"
 				data-sizes="auto"
-				alt="在 Maltrail 上回放封包"
+				alt="安裝不同Python版本的Spyder(Anaconda)環境"
 				class="lazyload kira-post-cover-image disabled-kira-image"
 			/>
-			<h1>在 Maltrail 上回放封包</h1>
+			<h1>安裝不同Python版本的Spyder(Anaconda)環境</h1>
 		</div>
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
-			<a><i class="kirafont icon-calendar-fill"></i>2025年09月29日</a>
-			<a><i class="kirafont icon-edit-fill"></i>409 字</a>
+			<a><i class="kirafont icon-calendar-fill"></i>2025年10月03日</a>
+			<a><i class="kirafont icon-edit-fill"></i>325 字</a>
 			<a><i class="kirafont icon-time-circle-fill"></i>大概 1 分鐘</a>
 		</div>
-		<html><head></head><body><p>每次要回放封包時都會忘記指令，所以寫成文章記在這邊。</p>
+		<html><head></head><body><p>將以前的舊文搬運過來，設定不同版本的環境現在還是常常會用到</p>
 <span id="more"></span>
 
-<h2><span id="%E5%89%8D%E7%BD%AE%E6%BA%96%E5%82%99">前置準備</span></h2><p>需要先有準備以下環境與檔案：</p>
-<ul>
-<li>安裝好 Python 3 的 Linux 環境</li>
-<li>安裝完成的 <a target="_blank" rel="noopener" href="https://github.com/stamparm/maltrail">Maltrail</a></li>
-<li>一個或多個 <code>.pcap</code> 封包擷取檔</li>
-</ul>
+
+<h1><span id="%E5%AE%89%E8%A3%9D%E4%B8%8D%E5%90%8C-python-%E7%89%88%E6%9C%AC%E7%9A%84-spyder">安裝不同 Python 版本的 Spyder</span></h1><p>最近換了一台電腦來寫程式，要用到 Python <code>3.9</code> 版本的 Spyder，所以紀錄一下。  </p>
+<p>環境：Windows 10，已安裝 Python <code>3.7 </code> </p>
 <hr>
-<h2><span id="%E5%96%AE%E4%B8%80%E5%B0%81%E5%8C%85%E5%9B%9E%E6%94%BE%E6%8C%87%E4%BB%A4">單一封包回放指令</span></h2><p>Maltrail 本身提供 <code>--pcap</code> 參數，可讓我們將 PCAP 封包導入 <code>sensor.py</code> 進行離線分析。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> python3 sensor.py --pcap /path/to/capture.pcap<br></code></pre></td></tr></tbody></table></figure>
-
-<p>執行後你會看到類似以下訊息：<br><code>using '/var/log/maltrail' for log storage</code><br><code>running...</code><br><code>cleaning up...</code><br>多個封包批次回放：使用 for 迴圈<br>如果你有大量封包需要回放，可以使用 bash 腳本批次處理：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><br>PCAP_DIR=<span class="hljs-string">"/path/to/pcap"</span><br>MALTRAIL_DIR=<span class="hljs-string">"/path/to/maltrail"</span><br><br><span class="hljs-built_in">cd</span> <span class="hljs-string">"<span class="hljs-variable">$MALTRAIL_DIR</span>"</span> || <span class="hljs-built_in">exit</span><br><br><span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> <span class="hljs-string">"<span class="hljs-variable">$PCAP_DIR</span>"</span>/*.pcap; <span class="hljs-keyword">do</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">"[*] 分析中：<span class="hljs-variable">$file</span>"</span><br>    <span class="hljs-built_in">sudo</span> python3 sensor.py --pcap <span class="hljs-string">"<span class="hljs-variable">$file</span>"</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">"[+] 完成：<span class="hljs-variable">$file</span>"</span><br>    <span class="hljs-built_in">echo</span><br><span class="hljs-keyword">done</span><br></code></pre></td></tr></tbody></table></figure>
-
-<p>儲存為 replay_pcap.sh 並執行：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> +x replay_pcap.sh<br>./replay_pcap.sh<br></code></pre></td></tr></tbody></table></figure>
-
-<p>或是不寫成腳本，直接執行</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> 封包路徑; <span class="hljs-keyword">do</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">"Processing: <span class="hljs-variable">$file</span>"</span><br><span class="hljs-built_in">sudo</span> python3 sensor.py -r <span class="hljs-string">"<span class="hljs-variable">$file</span>"</span><br><span class="hljs-keyword">done</span><br></code></pre></td></tr></tbody></table></figure>
-
-<p>若你的封包為 <code>.pcapng</code> 格式，可使用 <code>editcap</code> 轉檔：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">editcap input.pcapng output.pcap<br></code></pre></td></tr></tbody></table></figure>
-<h2><span id="%E5%88%86%E6%9E%90%E7%B5%90%E6%9E%9C%E4%BD%8D%E7%BD%AE">分析結果位置</span></h2><p>Maltrail 預設會將分析結果記錄在：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">/var/log/maltrail/YYYY-MM-DD.<span class="hljs-built_in">log</span><br></code></pre></td></tr></tbody></table></figure>
-
-<p>要是回放中斷了可以下指令檢查最後讀到的檔案：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ls</span> -ltu 封包路徑 | <span class="hljs-built_in">head</span> -n 5<br></code></pre></td></tr></tbody></table></figure>
-
-<hr>
-<p>留言區從原本需要登入github才能留言的方式改成使用 <code>Twikoo</code> 不須登入即可留言<br>如果你要匿名的話姓名、郵箱、網址可以隨便打沒關係<br>留QQ郵箱的話可以自動偵測郵箱頭像<br>有想多交流的話可以留網址我看到會過去逛逛</p>
-<hr>
+<h2><span id="1-%E5%AE%89%E8%A3%9D-anaconda">1. 安裝 Anaconda</span></h2><p><a target="_blank" rel="noopener" href="https://www.anaconda.com/">Anaconda 官網</a></p>
+<h2><span id="2-%E5%AE%89%E8%A3%9D-spyder">2. 安裝 Spyder</span></h2><p><a target="_blank" rel="noopener" href="https://www.spyder-ide.org/">Spyder 官網</a></p>
+<p>此時安裝好會是 Python <code>3.7</code> 版本的環境：  </p>
+<p><code>PYTHON 3.7.9</code></p>
+<h2><span id="3-%E6%96%B0%E5%BB%BA-python-39-%E7%92%B0%E5%A2%83%E4%B8%A6%E5%AE%89%E8%A3%9D-spyder">3. 新建 Python 3.9 環境並安裝 Spyder</span></h2><p>打開 <strong>Anaconda Powershell</strong>（這裡我把環境命名為 <code>ai</code>，主要用來寫機器學習程式）。<br>此時預設還是在 <code>3.7</code> 的環境。</p>
+<ol>
+<li>先更新 conda：<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update -n base -c defaults conda<br></code></pre></td></tr></tbody></table></figure>
+建立新的 <code>3.9</code> 環境：</li>
+</ol>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create -n python39 python=3.9<br></code></pre></td></tr></tbody></table></figure>
+<p>安裝 Spyder：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install spyder<br></code></pre></td></tr></tbody></table></figure>
+<p>安裝完成後，出現了 Python <code>3.9</code> 版本的 Spyder。<br>打開後顯示為 Python <code>3.9.7</code></p>
+<ol start="2">
+<li>在新環境安裝套件<br>切換到 python39 環境：</li>
+</ol>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda activate python39<br></code></pre></td></tr></tbody></table></figure>
+<p>進入後即可使用 pip 安裝需要的套件。</p>
+<p>小記<br>平時我會使用 Python <code>2.7</code> 與 <code>3.7</code>：</p>
+<p><code>2.7</code> 主要是寫一些有漏洞的程式</p>
+<p><code>3.7</code> 則是日常開發用</p>
+<p>最近因為要寫機器學習程式，所以新增了 <code>3.9</code></p>
+<p>當需要經常切換不同版本時，推薦建立獨立環境來避免混淆。</p>
 </body></html>
 	</article>
 
 	 
     <div class="kira-post-copyright">
         <strong>本文作者：</strong>Atom<br>
-        <strong>本文鏈接：</strong><a href="https://d0ngd.github.io/2025/09/29/%E4%BD%BF%E7%94%A8Maltrail%E5%9B%9E%E6%94%BE%E5%B0%81%E5%8C%85/" title="https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;09&#x2F;29&#x2F;使用Maltrail回放封包&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;09&#x2F;29&#x2F;使用Maltrail回放封包&#x2F;</a><br>
+        <strong>本文鏈接：</strong><a href="https://d0ngd.github.io/2025/10/03/%E5%AE%89%E8%A3%9D%E4%B8%8D%E5%90%8CPython%E7%89%88%E6%9C%AC%E7%9A%84Spyder(Anaconda)%E7%92%B0%E5%A2%83/" title="https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;10&#x2F;03&#x2F;安裝不同Python版本的Spyder(Anaconda)環境&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;10&#x2F;03&#x2F;安裝不同Python版本的Spyder(Anaconda)環境&#x2F;</a><br>
         
             <strong>版權聲明：</strong>本文採用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 協議進行許可
         
@@ -425,26 +422,30 @@
   
 	<div class="kira-post-nav">
 		<nav class="post-nav">
-			              
+			                    
+			<!-- 先找到与当前文字相同的目录 -->
+			      
+			<!-- 在找到当前文章所在的 index -->
+			    
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2025/09/29/%E4%BD%BF%E7%94%A8Maltrail%E5%9B%9E%E6%94%BE%E5%B0%81%E5%8C%85/"> 在 Maltrail 上回放封包</a>
+			</div>
+			                      
 			<!-- 先找到与当前文字相同的目录 -->
 			   
 			<!-- 在找到当前文章所在的 index -->
-			       
-			<!-- 下一篇文章 -->
-			<div class="new">
-				<span>下一章</span>
-				<a href="/2025/10/03/%E5%AE%89%E8%A3%9D%E4%B8%8D%E5%90%8CPython%E7%89%88%E6%9C%AC%E7%9A%84Spyder(Anaconda)%E7%92%B0%E5%A2%83/"> 安裝不同Python版本的Spyder(Anaconda)環境</a>
-			</div>
-			                      
+			                
 		</nav>
 	</div>
 	
 	<div class="kira-post-meta kira-rainbow">
 		
-			<a class="kirafont icon-container-fill -link" href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">工具使用</a>
+			<a class="kirafont icon-container-fill -link" href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">工具使用</a><a class="kirafont icon-container-fill -link" href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/Python/">Python</a>
 		
 		
-			<a class="kirafont icon-tag-fill -none-link" href="/tags/IDS/" rel="tag">IDS</a>
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/Python/" rel="tag">Python</a> <a class="kirafont icon-tag-fill -none-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a>
 		
 	</div>
 	
