@@ -388,17 +388,22 @@
 <h2><span id="2-%E5%AE%89%E8%A3%9D-spyder">2. 安裝 Spyder</span></h2><p><a target="_blank" rel="noopener" href="https://www.spyder-ide.org/">Spyder 官網</a></p>
 <p>此時安裝好會是 Python <code>3.7</code> 版本的環境：  </p>
 <p><code>PYTHON 3.7.9</code></p>
-<h2><span id="3-%E6%96%B0%E5%BB%BA-python-39-%E7%92%B0%E5%A2%83%E4%B8%A6%E5%AE%89%E8%A3%9D-spyder">3. 新建 Python 3.9 環境並安裝 Spyder</span></h2><p>打開 <strong>Anaconda Powershell</strong>（這裡我把環境命名為 <code>ai</code>，主要用來寫機器學習程式）。<br>此時預設還是在 <code>3.7</code> 的環境。</p>
-<ol>
-<li>先更新 conda：<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update -n base -c defaults conda<br></code></pre></td></tr></tbody></table></figure>
-建立新的 <code>3.9</code> 環境：</li>
+<h2><span id="3-%E6%96%B0%E5%BB%BA-python-39-%E7%92%B0%E5%A2%83%E4%B8%A6%E5%AE%89%E8%A3%9D-spyder">3. 新建 Python 3.9 環境並安裝 Spyder</span></h2><ol>
+<li><p>打開 <strong>Anaconda Powershell</strong>（這裡我把環境命名為 <code>ai</code>，主要用來寫機器學習程式）。<br>此時預設還是在 <code>3.7</code> 的環境。</p>
+</li>
+<li><p>先更新 conda：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update -n base -c defaults conda<br></code></pre></td></tr></tbody></table></figure></li>
+<li><p>建立新的 <code>3.9</code> 環境：</p>
+</li>
 </ol>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create -n python39 python=3.9<br></code></pre></td></tr></tbody></table></figure>
-<p>安裝 Spyder：</p>
+<ol start="4">
+<li><p>安裝 Spyder：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install spyder<br></code></pre></td></tr></tbody></table></figure>
 <p>安裝完成後，出現了 Python <code>3.9</code> 版本的 Spyder。<br>打開後顯示為 Python <code>3.9.7</code></p>
-<ol start="2">
-<li>在新環境安裝套件<br>切換到 python39 環境：</li>
+</li>
+<li><p>在新環境安裝套件<br>切換到 python39 環境：</p>
+</li>
 </ol>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda activate python39<br></code></pre></td></tr></tbody></table></figure>
 <p>進入後即可使用 pip 安裝需要的套件。</p>
@@ -432,11 +437,11 @@
 				<span>上一章</span>
 				<a href="/2025/09/29/%E4%BD%BF%E7%94%A8Maltrail%E5%9B%9E%E6%94%BE%E5%B0%81%E5%8C%85/"> 在 Maltrail 上回放封包</a>
 			</div>
-			                      
+			                            
 			<!-- 先找到与当前文字相同的目录 -->
 			   
 			<!-- 在找到当前文章所在的 index -->
-			                
+			          
 		</nav>
 	</div>
 	
