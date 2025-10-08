@@ -301,6 +301,89 @@ document.addEventListener('dragstart', function (e) {
 </div>
 
 		
+			<div class="kira-widget site-info-card">
+  <div class="site-info-title">網站資訊</div>
+  <ul class="site-info-list">
+    <li>
+      <span class="label">文章數目：</span>
+      <span class="value">10</span>
+    </li>
+    <li>
+      <span class="label">已運行時間：</span>
+      <span class="value"><span id="run-days">0</span> 天</span>
+    </li>
+    <li>
+      <span class="label">本站訪客數：</span>
+      <span class="value"><span id="busuanzi_value_site_uv">0</span></span>
+    </li>
+    <li>
+      <span class="label">本站訪問量：</span>
+      <span class="value"><span id="busuanzi_value_site_pv">0</span></span>
+    </li>
+  </ul>
+</div>
+
+<!-- 若你不想用第三方可刪除；這支只會填 UV/PV 數字 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+(function () {
+  // ① 建站日起算：改成你的建站日期
+  var siteStartDate = new Date('2025-09-01');
+
+  // 已運行天數
+  var days = Math.floor((Date.now() - siteStartDate.getTime()) / 86400000);
+  var elRun = document.getElementById('run-days');
+  if (elRun) elRun.textContent = days;
+})();
+</script>
+
+<style>
+/* 卡片外觀：半透明、圓角、陰影，與上方小工具一致 */
+.site-info-card{
+  background: rgba(80, 80, 80, 0.45);
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
+  padding: 14px 16px;
+  margin-top: 14px;
+}
+.site-info-title{
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: .05em;
+  margin-bottom: 8px;
+}
+.site-info-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-info-list li{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.site-info-list li:last-child{ border-bottom: none; }
+.site-info-list .label{
+  color: rgba(255,255,255,.9);
+}
+.site-info-list .value{
+  color: #fff;
+  font-weight: 700;
+}
+/* 縮小裝置保留排版 */
+@media(max-width: 420px){
+  .site-info-card{ border-radius: 12px; padding: 12px 14px; }
+  .site-info-title{ font-size: 1rem; }
+}
+</style>
+
+		
 	</aside>
 	<div class="kira-copyright">
 		&copy; 2025
@@ -449,7 +532,7 @@ document.addEventListener('dragstart', function (e) {
   
 	<div class="kira-post-nav">
 		<nav class="post-nav">
-			          
+			      
 			<!-- 先找到与当前文字相同的目录 -->
 			   
 			<!-- 在找到当前文章所在的 index -->
@@ -459,7 +542,7 @@ document.addEventListener('dragstart', function (e) {
 				<span>下一章</span>
 				<a href="/2025/10/02/%E5%81%B5%E6%B8%AC%E5%AE%B6%E4%B8%AD%E8%B2%93%E5%92%AA%E8%A1%8C%E7%82%BA/"> 偵測家中貓咪行為</a>
 			</div>
-			                  
+			                      
 		</nav>
 	</div>
 	
