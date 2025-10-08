@@ -93,6 +93,23 @@
 
 	<script src="/js/weather-card.js" defer></script>
 
+<script>
+// 禁止右鍵選單
+document.addEventListener('contextmenu', function (e) {
+  e.preventDefault();
+});
+
+// 禁止文字選取
+document.addEventListener('selectstart', function (e) {
+  e.preventDefault();
+});
+
+// 禁止拖曳圖片
+document.addEventListener('dragstart', function (e) {
+  e.preventDefault();
+});
+</script>
+
 
 </div>
 		<div class="kira-body">
@@ -382,7 +399,7 @@
 
 
 <h2><span id="%F0%9F%97%BA-%E7%B6%B2%E8%B7%AF%E6%9E%B6%E6%A7%8B%E8%AA%AA%E6%98%8E">🗺 網路架構說明</span></h2><p>圖片是朋友大致畫的<br>面試的問題：host1 ping host2 途中src dest mac會變嗎？<br>但這個問的不夠準確(其實是我漏聽)，他問的是封包上的mac會改變嗎？</p>
-<p><img src="/images/t.png"></p>
+<p><img src="/./images/t.png"></p>
 <p>整個網路架構如下：</p>
 <ul>
 <li><p><strong>Host 1</strong></p>
@@ -486,7 +503,7 @@
   
 	<div class="kira-post-nav">
 		<nav class="post-nav">
-			          
+			  
 			<!-- 先找到与当前文字相同的目录 -->
 			   
 			<!-- 在找到当前文章所在的 index -->
@@ -496,7 +513,7 @@
 				<span>下一章</span>
 				<a href="/2025/09/27/%E5%B0%87TCP%E5%8C%85%E6%88%90UDP%E9%80%B2%E8%A1%8C%E5%82%B3%E9%80%81/"> 將TCP包成UDP進行傳送</a>
 			</div>
-			                         
+			                                 
 		</nav>
 	</div>
 	

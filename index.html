@@ -212,6 +212,23 @@ if (btn){
 
 	<script src="/js/weather-card.js" defer></script>
 
+<script>
+// 禁止右鍵選單
+document.addEventListener('contextmenu', function (e) {
+  e.preventDefault();
+});
+
+// 禁止文字選取
+document.addEventListener('selectstart', function (e) {
+  e.preventDefault();
+});
+
+// 禁止拖曳圖片
+document.addEventListener('dragstart', function (e) {
+  e.preventDefault();
+});
+</script>
+
 
 </div>
 		<div class="kira-body">
@@ -452,7 +469,7 @@ if (btn){
                 </a>
                 <a>
                     <i class="kirafont icon-edit-fill"></i>
-                    701 字
+                    724 字
                 </a>
                 <a>
                     <i class="kirafont icon-time-circle-fill"></i>大概

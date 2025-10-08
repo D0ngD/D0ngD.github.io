@@ -93,6 +93,23 @@
 
 	<script src="/js/weather-card.js" defer></script>
 
+<script>
+// 禁止右鍵選單
+document.addEventListener('contextmenu', function (e) {
+  e.preventDefault();
+});
+
+// 禁止文字選取
+document.addEventListener('selectstart', function (e) {
+  e.preventDefault();
+});
+
+// 禁止拖曳圖片
+document.addEventListener('dragstart', function (e) {
+  e.preventDefault();
+});
+</script>
+
 
 </div>
 		<div class="kira-body">
@@ -432,7 +449,7 @@
   
 	<div class="kira-post-nav">
 		<nav class="post-nav">
-			      
+			          
 			<!-- 先找到与当前文字相同的目录 -->
 			   
 			<!-- 在找到当前文章所在的 index -->
@@ -442,7 +459,7 @@
 				<span>下一章</span>
 				<a href="/2025/10/02/%E5%81%B5%E6%B8%AC%E5%AE%B6%E4%B8%AD%E8%B2%93%E5%92%AA%E8%A1%8C%E7%82%BA/"> 偵測家中貓咪行為</a>
 			</div>
-			                      
+			                  
 		</nav>
 	</div>
 	

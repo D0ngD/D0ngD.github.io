@@ -93,6 +93,23 @@
 
 	<script src="/js/weather-card.js" defer></script>
 
+<script>
+// 禁止右鍵選單
+document.addEventListener('contextmenu', function (e) {
+  e.preventDefault();
+});
+
+// 禁止文字選取
+document.addEventListener('selectstart', function (e) {
+  e.preventDefault();
+});
+
+// 禁止拖曳圖片
+document.addEventListener('dragstart', function (e) {
+  e.preventDefault();
+});
+</script>
+
 
 </div>
 		<div class="kira-body">
@@ -374,7 +391,7 @@
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
 			<a><i class="kirafont icon-calendar-fill"></i>2025年10月04日</a>
-			<a><i class="kirafont icon-edit-fill"></i>701 字</a>
+			<a><i class="kirafont icon-edit-fill"></i>724 字</a>
 			<a><i class="kirafont icon-time-circle-fill"></i>大概 3 分鐘</a>
 		</div>
 		<html><head></head><body><p>這篇整理日常 90% 會用到的 Hexo 指令與用法，方便快速查找。</p>
@@ -462,6 +479,9 @@
 <p>把文字寫在這個<code>&lt;!-- more --&gt;</code>前面<br>ex:這是文章的簡介<br><code>&lt;!-- more --&gt;</code></p>
 </blockquote>
 <p>最後，雖然markdown有代辦事項等等功能，但本網頁並沒有加進去，有興趣研究更多markdown的可以參考這裡<br><a target="_blank" rel="noopener" href="https://markdown.tw/">Mrakdown</a></p>
+<p>最重要指令(放在最後方便我平時複製):</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">hexo clean &amp;&amp; hexo g -d<br></code></pre></td></tr></tbody></table></figure>
+
 <hr>
 <p>留言區從原本需要登入github才能留言的方式改成使用 <code>Twikoo</code> 不須登入即可留言<br>如果你要匿名的話姓名、郵箱、網址可以隨便打沒關係<br>留QQ郵箱的話可以自動偵測郵箱頭像<br>有想多交流的話可以留網址我看到會過去逛逛</p>
 <hr>
@@ -480,7 +500,7 @@
   
 	<div class="kira-post-nav">
 		<nav class="post-nav">
-			  
+			      
 			<!-- 先找到与当前文字相同的目录 -->
 			      
 			<!-- 在找到当前文章所在的 index -->
@@ -490,7 +510,7 @@
 				<span>上一章</span>
 				<a href="/2025/09/01/Kira%20%E4%B8%BB%E9%A1%8C%E5%8A%A0%E4%B8%8A%E6%97%8B%E8%BD%89%E9%A0%AD%E5%83%8F%E8%88%87%E5%B0%8E%E5%90%91/"> 鐵人賽介紹用文章</a>
 			</div>
-			                          
+			                      
 		</nav>
 	</div>
 	
