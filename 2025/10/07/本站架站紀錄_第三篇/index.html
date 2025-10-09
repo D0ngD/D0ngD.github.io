@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html 
+	lang="zh-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+<link rel="stylesheet" href="/css/layout.css">
+
+		
+		<title> 本站架站紀錄_第三篇 -  Atom&#39;s Blog</title>
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
+
+		
+<script src="/lib/mdui/mdui.min.js"></script>
+
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
+
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
+
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="/images/head.png"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+			
+				
+<link rel="stylesheet" href="/style.css">
+
+			
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+	<meta name="generator" content="Hexo 7.3.0"></head>
+
+	<body>
+		<div id="particles-js" aria-hidden="true"></div>
+		<div
+			class="kira-background"
+			style="background-image: url('https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20231114/91%202560x1440_b85ff564ff554921ab1089ccfdafec6a.jpg')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="導航"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="Atom&#39;s Blog">
+        <img
+			src="/images/head.png"
+			alt="Atom"
+		/>
+    </a>
+	
+	<script src="/js/avatar-redirect.js"></script>
+	<script src="/js/fit-embeds.js"></script>
+	<link rel="stylesheet" href="/brands.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+	<link rel="stylesheet" href="/history-today.css">
+
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+	<script src="/js/history-today.js" defer></script>
+	
+<link rel="stylesheet" href="/weather-card.css">
+
+	<script src="/js/weather-card.js" defer></script>
+
+<script>
+// 禁止右鍵選單
+document.addEventListener('contextmenu', function (e) {
+  e.preventDefault();
+});
+
+// 禁止文字選取
+document.addEventListener('selectstart', function (e) {
+  e.preventDefault();
+});
+
+// 禁止拖曳圖片
+document.addEventListener('dragstart', function (e) {
+  e.preventDefault();
+});
+</script>
+
+
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+
+	<div class="kira-avatar mdui-ripple">
+		<a href="/images/head.png" title="Atom">
+			<img
+				src="/images/head.png"
+				alt="Atom"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>13</div>
+		<div><span>標籤</span>8</div>
+		<div><span>分類</span>5</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/"
+			title="回到首頁"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				回到首頁
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章分類"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章分類
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/friends.html"
+			title="書籤列"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				書籤列
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget kira-social">
+  
+<a class="mdui-ripple"
+   href="https://x.com"
+   target="_blank"
+   mdui-tooltip="{content: 'X / Twitter'}"
+   style="color:rgb(0,0,0);background-color:rgba(0,0,0,.10);font-size:18px">
+  
+    <span style="
+      display:inline-block;width:1em;height:1em;background-color:currentColor;
+      -webkit-mask-image:url('/img/brands/x.svg');
+      mask-image:url('/img/brands/x.svg');
+      -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+      -webkit-mask-position:center;mask-position:center;
+      -webkit-mask-size:contain;mask-size:contain;
+    "></span>
+  
+</a>
+
+  
+<a class="mdui-ripple"
+   href="https://www.youtube.com/"
+   target="_blank"
+   mdui-tooltip="{content: 'YouTube'}"
+   style="color:rgb(255,0,0);background-color:rgba(255,0,0,.12);font-size:18px">
+  
+    <span style="
+      display:inline-block;width:1em;height:1em;background-color:currentColor;
+      -webkit-mask-image:url('/img/brands/youtube.svg');
+      mask-image:url('/img/brands/youtube.svg');
+      -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+      -webkit-mask-position:center;mask-position:center;
+      -webkit-mask-size:contain;mask-size:contain;
+    "></span>
+  
+</a>
+
+  
+<a class="mdui-ripple"
+   href="https://medium.com/@dd565345421"
+   target="_blank"
+   mdui-tooltip="{content: 'Medium(EN)'}"
+   style="color:rgb(0,0,0);background-color:rgba(0,0,0,.10);font-size:18px">
+  
+    <span style="
+      display:inline-block;width:1em;height:1em;background-color:currentColor;
+      -webkit-mask-image:url('/img/brands/threads.svg');
+      mask-image:url('/img/brands/threads.svg');
+      -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+      -webkit-mask-position:center;mask-position:center;
+      -webkit-mask-size:contain;mask-size:contain;
+    "></span>
+  
+</a>
+
+  
+</div>
+
+		
+			
+	<div class="kira-widget-wrap">
+		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
+			<a href="/tags/AI/" style="font-size: 10px;">AI</a> <a href="/tags/IDS/" style="font-size: 13.33px;">IDS</a> <a href="/tags/Python/" style="font-size: 16.67px;">Python</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 16.67px;">工具</a> <a href="/tags/%E7%B6%B2%E7%AB%99%E7%BE%8E%E5%8C%96/" style="font-size: 20px;">網站美化</a> <a href="/tags/%E7%B6%B2%E8%B7%AF%E6%8A%80%E8%A1%93/" style="font-size: 16.67px;">網路技術</a> <a href="/tags/%E9%9D%A2%E8%A9%A6%E9%A1%8C%E7%9B%AE/" style="font-size: 10px;">面試題目</a>
+		</div>
+		
+	</div>
+
+
+		
+			<div class="kira-widget-wrap card-history">
+  <h3 class="kira-widget-title">
+    <i class="kirafont icon-time"></i>
+    歷史上的今天
+  </h3>
+
+  <!-- 只固定內容區高度 -->
+  <div class="history-card">
+    <div class="swiper" id="history-container" aria-live="off">
+      <div class="swiper-wrapper" id="history_container_wrapper"></div>
+    </div>
+    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+  </div>
+</div>
+
+		
+			<div class="kira-widget-wrap card-weather" data-lat="25.0375" data-lon="121.5637" data-city="台北">
+  <h3 class="kira-widget-title">
+    <i class="kirafont icon-weather"></i>
+    台北 · 今日天氣
+  </h3>
+
+  <div class="weather-body">
+    <div class="w-top">
+      <div class="w-left">
+        <div class="w-temp"><span id="w-now">--</span><span class="unit">°C</span></div>
+        <div class="w-hilo">H <span id="w-max">--</span>° · L <span id="w-min">--</span>°</div>
+      </div>
+      <div class="w-right">
+        <div id="w-icon" class="w-icon">⛅</div>
+        <div id="w-desc" class="w-desc">--</div>
+        <div id="w-time" class="w-time">--:--</div>
+      </div>
+    </div>
+
+    <!-- 原本是 <div class="w-grid"> -->
+<div class="w-grid chips-wide">
+  <div class="chip">
+    <span class="label">降雨</span>
+    <span class="value"><span id="w-pop">--</span><span class="unit">%</span></span>
+  </div>
+  <div class="chip">
+    <span class="label">濕度</span>
+    <span class="value"><span id="w-rh">--</span><span class="unit">%</span></span>
+  </div>
+</div>
+
+  </div>
+</div>
+
+		
+			<div class="kira-widget-wrap card-weather site-info-card">
+  <h3 class="kira-widget-title">
+    <i class="kirafont icon-chart"></i>
+    網站資訊
+  </h3>
+
+  <div class="weather-body">
+    <div class="w-grid chips-wide">
+      <div class="chip">
+        <span class="label">我寫的文章</span>
+        <span class="value">13</span> 篇
+      </div>
+      <div class="chip">
+        <span class="label">分類數</span>
+        <span class="value">5</span>
+      </div>
+      <div class="chip">
+        <span class="label">網站存活</span>
+        <span class="value"><span id="run-days">--</span> 天</span>
+      </div>
+      <div class="chip">
+        <span class="label">訪客數</span>
+        <span class="value"><span id="busuanzi_value_site_uv">讀取中…</span></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Busuanzi 統計 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+(function () {
+  const siteStartDate = new Date('2025-09-10');
+  const diff = Math.floor((new Date() - siteStartDate) / (1000 * 60 * 60 * 24));
+  document.getElementById('run-days').textContent = diff;
+})();
+</script>
+
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2025
+		<a href="/">Atom</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+		
+	</div>
+</div>
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
+        </div>
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div class="kira-post-cover">
+			<img
+				data-src="https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20250610/558%202436x1125_974bc60716c3449cb4a30040a17cca9d.jpg"
+				data-sizes="auto"
+				alt="本站架站紀錄_第三篇"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>本站架站紀錄_第三篇</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2025年10月07日</a>
+			<a><i class="kirafont icon-edit-fill"></i>1.2k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 5 分鐘</a>
+		</div>
+		<html><head></head><body><p>修改配色、旋轉特效、修改平台連結、自我介紹頁面。</p>
+<span id="more"></span>
+
+
+<p>在配置教學中有寫到</p>
+<p>在<a target="_blank" rel="noopener" href="https://kira.host/hexo/config/colors.html">Kira-Hexo</a> 中，為開發者預置了一套豐富的彩虹配色方案，同時允許開發者自行修改彩虹色配置。</p>
+<p>以下是這是預設配色的code</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">color: # 配色方案，从first到seventh为优先级为1-7的颜色，默认为彩虹配色<br>    first: # 同时作为主题色<br>        r: 49<br>        g: 174<br>        b: 255<br>    second:<br>        r: 255<br>        g: 78<br>        b: 106<br>    third:<br>        r: 255<br>        g: 185<br>        b: 0<br>    fourth:<br>        r: 51<br>        g: 213<br>        b: 122<br>    fifth:<br>        r: 0<br>        g: 219<br>        b: 255<br>    sixth:<br>        r: 255<br>        g: 69<br>        b: 0<br>    seventh:<br>        r: 144<br>        g: 144<br>        b: 255<br></code></pre></td></tr></tbody></table></figure>
+
+<p>修改配色就是修改數值即可<br>數值可以參考這個網站：<a target="_blank" rel="noopener" href="https://tool.oschina.net/commons?type=3">oschina</a><br>將色相環拉到你要的顏色後把數字填上去就行</p>
+<ul>
+<li>我使用的配色(就是配合37的顏色XD)：<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">color:<br>  first:   { r: 101, g: 153, b: 179 }   # 主題色：霧藍青 #6599B3（髮色系）<br>  second:  { r: 188, g: 173, b: 118 }   # 暖金：花冠金 #BCAD76<br>  third:   { r: 129, g: 177, b: 177 }   # 海沫青 #81B1B1<br>  fourth:  { r: 127, g: 145, b:  85 }   # 橄欖綠 #7F9155<br>  fifth:   { r: 183, g: 150, b: 133 }   # 暖膚色 #B79685<br>  sixth:   { r:  72, g:  88, b: 104 }   # 石板藍 #485868（深色陰影/文字襯色）<br>  seventh: { r:  56, g:  72, b:  88 }   # 墨藍灰 #384858（備用深色）<br></code></pre></td></tr></tbody></table></figure></li>
+</ul>
+<h2><span id="%E4%BF%AE%E6%94%B9%E5%AA%92%E9%AB%94%E5%B9%B3%E5%8F%B0">修改媒體平台</span></h2><p>這邊提其中一個的修改方式，你要改成其他的直接以此類推即可<br>(像是領英、信箱等等)</p>
+<p>先在<a target="_blank" rel="noopener" href="https://www.svgrepo.com/">svgrepo</a>找到你要放的連結圖標</p>
+<ul>
+<li>接下來以youtube為例<br>下載下來然後儲存到<code>source/img/brands/youtube.svg</code></li>
+</ul>
+<p>在<code>_config.kira.yml</code>新增你要放的網站</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">widgets:<br>  - social<br><br>social:<br><br>  YouTube:<br>    - https://www.youtube.com/@你的頻道<br>    - icon-youtube<br>    - rgb(255,0,0)<br>    - rgba(255,0,0,.12)<br></code></pre></td></tr></tbody></table></figure>
+
+<p>接下來修改 <code>myblog\node_modules\hexo-theme-kira\layout\_widget\social.ejs</code></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;div class="kira-widget kira-social"&gt;<br>  &lt;%<br>    // Name: [ href, icon, color, bg ]<br>    const MAP = {<br>      'icon-youtube':  '/img/brands/youtube.svg',<br>    };<br>    for (var name in theme.social) {<br>      const item  = theme.social[name] || [];<br>      const href  = item[0] || '#';<br>      const icon  = item[1] || '';<br>      const color = item[2] || 'inherit';<br>      const bg    = item[3] || 'transparent';<br>  %&gt;<br>    &lt;a class="mdui-ripple"<br>       href="&lt;%- href %&gt;"<br>       target="_blank"<br>       mdui-tooltip="{content: '&lt;%- name %&gt;'}"<br>       style="color:&lt;%- color %&gt;;background-color:&lt;%- bg %&gt;;font-size:18px"&gt;<br>      &lt;% if (MAP[icon]) { %&gt;<br>        &lt;span style="<br>          display:inline-block;width:18px;height:18px;background-color:currentColor;<br>          -webkit-mask-image:url('&lt;%= MAP[icon] %&gt;');<br>          mask-image:url('&lt;%= MAP[icon] %&gt;');<br>          -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;<br>          -webkit-mask-position:center;mask-position:center;<br>          -webkit-mask-size:contain;mask-size:contain;<br>        "&gt;&lt;/span&gt;<br>      &lt;% } else { %&gt;<br>        &lt;i class="kirafont"&gt;&lt;%= icon %&gt;&lt;/i&gt;<br>      &lt;% } %&gt;<br>    &lt;/a&gt;<br>  &lt;% } %&gt;<br>&lt;/div&gt;<br></code></pre></td></tr></tbody></table></figure>
+
+<p>除錯：<br>Kira 原本把 .kira-social 設為 font-size:0，若我們用 1em 會被吃掉，所以這裡直接在 <a> 設 font-size:18px，並把 <span> 的寬高寫死為 18px，不然LOGO會消失。<br>MAP 內把 icon-twitter / icon-youtube / icon-threads 對應到剛放好的 SVG 路徑。</span></a></p><a>
+</a><h2><span id="%E6%97%8B%E8%BD%89%E7%89%B9%E6%95%88">旋轉特效</span></h2><p>滑鼠移到社交媒體icon時會轉一圈，個人加上 <del>沒什麼用的</del> 小東西<br>加上<code>source/brands.css</code></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">.kira-sidebar .kira-social{<br>  text-align: center;<br>}<br>.kira-sidebar .kira-social a{<br>  display: inline-flex;<br>  align-items: center;<br>  justify-content: center;<br>  margin: 0 6px;<br>}<br>.kira-sidebar .kira-social a &gt; span{<br>  transition: transform .45s ease;<br>  will-change: transform;<br>}<br>.kira-sidebar .kira-social a:hover &gt; span,<br>.kira-sidebar .kira-social a:focus-visible &gt; span{<br>  transform: rotate(360deg);<br>}<br>.kira-social a::before{<br>  content: none !important;<br>  display: none !important;<br>}<br>@media (prefers-reduced-motion: reduce){<br>  .kira-sidebar .kira-social a &gt; span{<br>    transition: none;<br>  }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p>最後記得在header加入引用：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;link rel="stylesheet" href="&lt;%- url_for('/brands.css') %&gt;"&gt;<br></code></pre></td></tr></tbody></table></figure>
+
+<p>然後是頭像的旋轉特效<br>在<code>source/style.css</code>中新增</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/* Avatar hover 旋轉一圈 */<br>.site-avatar img,<br>.avatar img,<br>.kira-avatar img,<br>.site-author-image img {<br>  transition: transform .6s cubic-bezier(.22,.61,.36,1);<br>  transform-origin: center center;<br>  will-change: transform;<br>}<br>.site-avatar:hover img,<br>.avatar:hover img,<br>.kira-avatar:hover img,<br>.site-author-image:hover img {<br>  transform: rotate(360deg);<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<h2><span id="%E8%87%AA%E6%88%91%E4%BB%8B%E7%B4%B9%E9%A0%81%E9%9D%A2">自我介紹頁面。</span></h2><p>我把自我介紹頁面移到頭像，點擊我的頭像就會進到自我介紹頁面。</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">// source/js/avatar-redirect.js<br>document.addEventListener('DOMContentLoaded', () =&gt; {<br>  const selectors = [<br>    'header .site-avatar img',<br>    'header .avatar img',<br>    'header .kira-avatar img',<br>    'header .site-author-image img',<br>    '.sidebar .site-avatar img',<br>    '.sidebar .avatar img',<br>    '.sidebar .kira-avatar img',<br>    '.sidebar .site-author-image img',<br>    '.site-avatar img',<br>    '.avatar img',<br>    '.kira-avatar img',<br>    '.site-author-image img',<br>  ].join(', ');<br><br>  const avatars = document.querySelectorAll(selectors);<br>  if (!avatars.length) return;<br><br>  avatars.forEach((img) =&gt; {<br>    const clickTarget = img.closest('a') || img;<br>    clickTarget.style.cursor = 'pointer';<br>    clickTarget.addEventListener('click', (e) =&gt; {<br>      if (e.metaKey || e.ctrlKey) return; // 允許 Ctrl/Cmd 新分頁<br>      e.preventDefault();<br>      window.location.href = '/about/';<br>    });<br>  });<br>});<br></code></pre></td></tr></tbody></table></figure>
+
+<p>同樣寫完後在header.ejs內引用</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;script src="&lt;%= url_for('/js/avatar-redirect.js') %&gt;"&gt;&lt;/script&gt;<br></code></pre></td></tr></tbody></table></figure>
+<p>這樣就能跳轉至自我介紹頁面了。</p>
+<p>文章待續。</p>
+<hr>
+<p>留言區從原本需要登入github才能留言的方式改成使用 <code>Twikoo</code> 不須登入即可留言<br>如果你要匿名的話姓名、郵箱、網址可以隨便打沒關係<br>留QQ郵箱的話可以自動偵測郵箱頭像<br>有想多交流的話可以留網址我看到會過去逛逛</p>
+<hr>
+</body></html>
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>Atom<br>
+        <strong>本文鏈接：</strong><a href="https://d0ngd.github.io/2025/10/07/%E6%9C%AC%E7%AB%99%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84_%E7%AC%AC%E4%B8%89%E7%AF%87/" title="https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;10&#x2F;07&#x2F;本站架站紀錄_第三篇&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;10&#x2F;07&#x2F;本站架站紀錄_第三篇&#x2F;</a><br>
+        
+            <strong>版權聲明：</strong>本文採用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 協議進行許可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			  
+			<!-- 先找到与当前文字相同的目录 -->
+			               
+			<!-- 在找到当前文章所在的 index -->
+			                
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2025/10/06/%E6%9C%AC%E7%AB%99%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84_%E7%AC%AC%E4%BA%8C%E7%AF%87/"> 本站架站紀錄_第二篇</a>
+			</div>
+			                          
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+			<a class="kirafont icon-container-fill -link" href="/categories/Hexo/">Hexo</a>
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/%E7%B6%B2%E7%AB%99%E7%BE%8E%E5%8C%96/" rel="tag">網站美化</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+		<div id="tcomment"></div>
+<script src="https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js"></script>
+<script>
+  twikoo.init({
+    envId: 'https://twikoo-vercel-green-six.vercel.app/api',  // 從 _config.yml 讀取
+    el: '#tcomment',
+    lang: 'zh-TW'
+  })
+</script>
+
+	</div>
+	
+</div>
+
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到頂部" title="回到頂部">
+		<button class="mdui-fab mdui-ripple">
+			<i class="kirafont icon-caret-up"></i>
+		</button>
+	</a>
+</div>
+
+		</div>
+		
+		<script>
+		(function () {
+			var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+			var isMobile = Math.min(window.innerWidth, window.innerHeight) < 640;
+			if (prefersReduced || isMobile) return;
+
+			var s = document.createElement('script');
+			s.src = 'https://cdnjs.cloudflare.com/ajax/libs/canvas-nest.js/2.0.0/canvas-nest.js';
+
+			// 深藍色系（線條與節點）
+			s.setAttribute('color', '0,0,0');      // #0D47A1
+			s.setAttribute('pointColor', '0,0,0'); // #1565C0（比線條稍亮）
+			s.setAttribute('opacity', '0.40');          // 需要更顯眼可調到 0.35
+			s.setAttribute('count', '120');             // 太吃資源可降到 80~100
+			s.setAttribute('zIndex', '-1');             // 在最底層
+
+			document.body.appendChild(s);
+		})();
+		</script>
+	
+	</body>
+</html>
