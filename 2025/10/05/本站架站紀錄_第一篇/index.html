@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html 
+	lang="zh-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+<link rel="stylesheet" href="/css/layout.css">
+
+		
+		<title> 本站架站紀錄_第一篇 -  Atom&#39;s Blog</title>
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
+
+		
+<script src="/lib/mdui/mdui.min.js"></script>
+
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
+
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
+
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="/images/head.png"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+			
+				
+<link rel="stylesheet" href="/style.css">
+
+			
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+	<meta name="generator" content="Hexo 7.3.0"></head>
+
+	<body>
+		<div id="particles-js" aria-hidden="true"></div>
+		<div
+			class="kira-background"
+			style="background-image: url('https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20231114/91%202560x1440_b85ff564ff554921ab1089ccfdafec6a.jpg')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="導航"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="Atom&#39;s Blog">
+        <img
+			src="/images/head.png"
+			alt="Atom"
+		/>
+    </a>
+	
+	<script src="/js/avatar-redirect.js"></script>
+	<script src="/js/fit-embeds.js"></script>
+	<link rel="stylesheet" href="/brands.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+	<link rel="stylesheet" href="/history-today.css">
+
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+	<script src="/js/history-today.js" defer></script>
+	
+<link rel="stylesheet" href="/weather-card.css">
+
+	<script src="/js/weather-card.js" defer></script>
+
+<script>
+// 禁止右鍵選單
+document.addEventListener('contextmenu', function (e) {
+  e.preventDefault();
+});
+
+// 禁止文字選取
+document.addEventListener('selectstart', function (e) {
+  e.preventDefault();
+});
+
+// 禁止拖曳圖片
+document.addEventListener('dragstart', function (e) {
+  e.preventDefault();
+});
+</script>
+
+
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+
+	<div class="kira-avatar mdui-ripple">
+		<a href="/images/head.png" title="Atom">
+			<img
+				src="/images/head.png"
+				alt="Atom"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>11</div>
+		<div><span>標籤</span>8</div>
+		<div><span>分類</span>5</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/"
+			title="回到首頁"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				回到首頁
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章分類"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章分類
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/friends.html"
+			title="書籤列"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				書籤列
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget kira-social">
+  
+<a class="mdui-ripple"
+   href="https://x.com"
+   target="_blank"
+   mdui-tooltip="{content: 'X / Twitter'}"
+   style="color:rgb(0,0,0);background-color:rgba(0,0,0,.10);font-size:18px">
+  
+    <span style="
+      display:inline-block;width:1em;height:1em;background-color:currentColor;
+      -webkit-mask-image:url('/img/brands/x.svg');
+      mask-image:url('/img/brands/x.svg');
+      -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+      -webkit-mask-position:center;mask-position:center;
+      -webkit-mask-size:contain;mask-size:contain;
+    "></span>
+  
+</a>
+
+  
+<a class="mdui-ripple"
+   href="https://www.youtube.com/"
+   target="_blank"
+   mdui-tooltip="{content: 'YouTube'}"
+   style="color:rgb(255,0,0);background-color:rgba(255,0,0,.12);font-size:18px">
+  
+    <span style="
+      display:inline-block;width:1em;height:1em;background-color:currentColor;
+      -webkit-mask-image:url('/img/brands/youtube.svg');
+      mask-image:url('/img/brands/youtube.svg');
+      -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+      -webkit-mask-position:center;mask-position:center;
+      -webkit-mask-size:contain;mask-size:contain;
+    "></span>
+  
+</a>
+
+  
+<a class="mdui-ripple"
+   href="https://medium.com/@dd565345421"
+   target="_blank"
+   mdui-tooltip="{content: 'Medium(EN)'}"
+   style="color:rgb(0,0,0);background-color:rgba(0,0,0,.10);font-size:18px">
+  
+    <span style="
+      display:inline-block;width:1em;height:1em;background-color:currentColor;
+      -webkit-mask-image:url('/img/brands/threads.svg');
+      mask-image:url('/img/brands/threads.svg');
+      -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+      -webkit-mask-position:center;mask-position:center;
+      -webkit-mask-size:contain;mask-size:contain;
+    "></span>
+  
+</a>
+
+  
+</div>
+
+		
+			
+	<div class="kira-widget-wrap">
+		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
+			<a href="/tags/AI/" style="font-size: 10px;">AI</a> <a href="/tags/IDS/" style="font-size: 15px;">IDS</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 20px;">工具</a> <a href="/tags/%E7%B6%B2%E7%AB%99%E7%BE%8E%E5%8C%96/" style="font-size: 20px;">網站美化</a> <a href="/tags/%E7%B6%B2%E8%B7%AF%E6%8A%80%E8%A1%93/" style="font-size: 20px;">網路技術</a> <a href="/tags/%E9%9D%A2%E8%A9%A6%E9%A1%8C%E7%9B%AE/" style="font-size: 10px;">面試題目</a>
+		</div>
+		
+	</div>
+
+
+		
+			<div class="kira-widget-wrap card-history">
+  <h3 class="kira-widget-title">
+    <i class="kirafont icon-time"></i>
+    歷史上的今天
+  </h3>
+
+  <!-- 只固定內容區高度 -->
+  <div class="history-card">
+    <div class="swiper" id="history-container" aria-live="off">
+      <div class="swiper-wrapper" id="history_container_wrapper"></div>
+    </div>
+    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+  </div>
+</div>
+
+		
+			<div class="kira-widget-wrap card-weather" data-lat="25.0375" data-lon="121.5637" data-city="台北">
+  <h3 class="kira-widget-title">
+    <i class="kirafont icon-weather"></i>
+    台北 · 今日天氣
+  </h3>
+
+  <div class="weather-body">
+    <div class="w-top">
+      <div class="w-left">
+        <div class="w-temp"><span id="w-now">--</span><span class="unit">°C</span></div>
+        <div class="w-hilo">H <span id="w-max">--</span>° · L <span id="w-min">--</span>°</div>
+      </div>
+      <div class="w-right">
+        <div id="w-icon" class="w-icon">⛅</div>
+        <div id="w-desc" class="w-desc">--</div>
+        <div id="w-time" class="w-time">--:--</div>
+      </div>
+    </div>
+
+    <!-- 原本是 <div class="w-grid"> -->
+<div class="w-grid chips-wide">
+  <div class="chip">
+    <span class="label">降雨</span>
+    <span class="value"><span id="w-pop">--</span><span class="unit">%</span></span>
+  </div>
+  <div class="chip">
+    <span class="label">濕度</span>
+    <span class="value"><span id="w-rh">--</span><span class="unit">%</span></span>
+  </div>
+</div>
+
+  </div>
+</div>
+
+		
+			<div class="kira-widget-wrap card-weather site-info-card">
+  <h3 class="kira-widget-title">
+    <i class="kirafont icon-chart"></i>
+    網站資訊
+  </h3>
+
+  <div class="weather-body">
+    <div class="w-grid chips-wide">
+      <div class="chip">
+        <span class="label">我寫的文章</span>
+        <span class="value">11</span> 篇
+      </div>
+      <div class="chip">
+        <span class="label">分類數</span>
+        <span class="value">5</span>
+      </div>
+      <div class="chip">
+        <span class="label">網站存活</span>
+        <span class="value"><span id="run-days">--</span> 天</span>
+      </div>
+      <div class="chip">
+        <span class="label">訪客數</span>
+        <span class="value"><span id="busuanzi_value_site_uv">讀取中…</span></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Busuanzi 統計 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+(function () {
+  const siteStartDate = new Date('2025-09-01');
+  const diff = Math.floor((new Date() - siteStartDate) / (1000 * 60 * 60 * 24));
+  document.getElementById('run-days').textContent = diff;
+})();
+</script>
+
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2025
+		<a href="/">Atom</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+		
+	</div>
+</div>
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
+        </div>
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div class="kira-post-cover">
+			<img
+				data-src="https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20250722/603%202436x1125_a5a3e720431a48f1b31542d4470f104c.jpg"
+				data-sizes="auto"
+				alt="本站架站紀錄_第一篇"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>本站架站紀錄_第一篇</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2025年10月05日</a>
+			<a><i class="kirafont icon-edit-fill"></i>2.1k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 10 分鐘</a>
+		</div>
+		<html><head></head><body><p>紀錄我架站後修改了什麼東西，部分內容從原本鐵人賽那邊複製過來的。</p>
+<span id="more"></span>
+
+<h2><span id="%E5%A5%97%E7%94%A8%E4%B8%BB%E9%A1%8C">套用主題</span></h2><p>本網站套用主題： <a target="_blank" rel="noopener" href="https://github.com/ch1ny/kira-hexo">KIRA</a></p>
+<p>安裝<code>KIRA</code>主題<br>打開你的終端機運行：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">yarn create kira-hexo &lt;放網站用的資料夾&gt;<br></code></pre></td></tr></tbody></table></figure>
+<p>等待安裝完成後</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">hexo s<br></code></pre></td></tr></tbody></table></figure>
+<p>前往<code>http://localhost:4000</code>就能查看安裝完的網頁了。</p>
+<h2><span id="%E4%BF%AE%E6%94%B9%E8%83%8C%E6%99%AF">修改背景</span></h2><p>打開資料夾中的<code>_config.kira.yml</code></p>
+<ul>
+<li>你的大頭貼，直接修改圖片網址就行<br><code>avatar: &lt;圖片路徑或是網址&gt;</code></li>
+<li>背景圖與文章默認圖，直接修改圖片網址就行<br><code>background:</code><br>  <code>path: &lt;圖片路徑或是網址&gt;</code><br>  <code>width: 1280</code><br>  <code>height: 720</code></li>
+</ul>
+<p>可以用記事本或是各種編輯器(我是Notepad++愛好者)打開編輯，記得存檔。</p>
+<h2><span id="%E4%BF%AE%E6%94%B9%E6%96%87%E7%AB%A0%E5%9C%96%E7%89%87%E5%A4%A7%E5%B0%8F">修改文章圖片大小</span></h2><p>由於1999的圖片大小與原主題的不同裁切到LOGO，所以我另外寫固定大小樣式。<br>可以直接依照你圖片大小下去修改。</p>
+<ul>
+<li>自訂義樣式<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">customStyles:<br>     - style<br></code></pre></td></tr></tbody></table></figure>
+在<code>source</code>底下新增<code>style.css</code>這個檔案</li>
+</ul>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">#維持 1669:770 比例，但顯示整張圖<br>.kira-post-cover {<br>  width: 100% !important;<br>  max-width: 1669px;<br>  aspect-ratio: 1669 / 770 !important;<br>  overflow: hidden;<br>  margin: 0 auto;<br>  background: transparent;<br>}<br>.kira-post-cover img {<br>  width: 100% !important;<br>  height: 100% !important;<br>  object-fit: contain !important;<br>  object-position: center !important;<br>  display: block;<br>}<br><br>#文章頁內文圖片：顯示整張圖、不超出版面<br>.post .kira-article img,<br>.kira-image img {<br>  display: block;<br>  max-width: 100% !important;<br>  height: auto !important;<br>  object-fit: contain !important;<br>  object-position: center !important;<br>}<br></code></pre></td></tr></tbody></table></figure>
+<p>這樣就能顯示整張圖了，可以依照你圖片的大小去修改<code>kira-post-cover</code>的數值。</p>
+<h2><span id="%E5%8A%A0%E5%85%A5%E9%A6%96%E9%A0%81%E7%89%B9%E6%95%88">加入首頁特效</span></h2><p>我個人很喜歡Butterfly主題一進去後就是一張大圖片很有震撼感，加上會出現打字特效顯示名言金句，所以打算將這個效果也套過來我的網站。<br>在<code>_config.kira.yml</code>中入以下設定</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">hero:<br>  enable: true<br>  image: /images/&lt;圖片名稱&gt;    # 首屏大圖<br>  title: &lt;大標題&gt;            # 不填會用 site.title<br>  typing: true               # true=打字特效；false=淡入/淡出輪播<br>  typingSpeed: 32             # 打字速度（毫秒/字；typing=true 才有效）<br>  rotateInterval: 4000        # 每句停留毫秒（typing=false 用）<br>  subtitles:                  # 你要輪播的句子（可放多句）<br>    - 我最擅長的就是一蹶不振。<br>    - 任何困難都能將我擊倒。<br></code></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>之後只改 subtitles 就能換輪播內容；想改速度、是否打字也都在這裡調。</p>
+</blockquote>
+<p>也可以加入<strong>隨機句</strong><br>butterfly是使用Hitokoto這個網站進行隨機產生句子的，類似的網站也有其他可以自己選擇。<br><a target="_blank" rel="noopener" href="https://hitokoto.cn/">Hitokoto</a><br>可以自己選擇要電影、動畫、詩詞等等句子</p>
+<p><a target="_blank" rel="noopener" href="https://zenquotes.io/">英文的一言網</a></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"> #加上Hitokoto舉例<br>hero:<br>  enable: true<br>  image: /images/&lt;圖片名稱&gt;    # 首屏大圖<br>  title: &lt;大標題&gt;            # 不填會用 site.title<br>  typing: true               # true=打字特效；false=淡入/淡出輪播<br>  typingSpeed: 32             # 打字速度（毫秒/字；typing=true 才有效）<br>  rotateInterval: 4000        # 每句停留毫秒（typing=false 用）<br>  subtitles:                  # 你要輪播的句子（可放多句）<br>    - 我最擅長的就是一蹶不振。<br>    - 任何困難都能將我擊倒。<br>  hitokoto:                    # （可選）要的分類，留空代表全隨機<br>    categories: [a, b, c]      # a動畫 b漫畫 c遊戲 d文學 e原創 f網路 g其他 h影視 i詩詞 j諺語 k歌詞 l成語<br></code></pre></td></tr></tbody></table></figure>
+
+<p>將以上設定注入，以及加入特效<br>我加的效果有：<strong>模擬打字效果</strong>、<strong>文字輪播</strong><br>然後在中下的地方放了一個按鈕，按下去後就會直接到網站頁面<br>建立資料夾與檔案：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">mkdir -p scripts<br>touch scripts/home-hero.js<br></code></pre></td></tr></tbody></table></figure>
+<p>寫入設定檔</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/* global hexo */<br>// 讀 hero 設定（優先 _config.kira.yml）<br>function getHeroCfg(ctx) {<br>  return (ctx.theme &amp;&amp; ctx.theme.config &amp;&amp; ctx.theme.config.hero) ||<br>         (ctx.config &amp;&amp; ctx.config.hero) || {};<br>}<br>function esc(s=''){return String(s).replace(/[&amp;&lt;&gt;"']/g, m=&gt;({ '&amp;':'&amp;amp;','&lt;':'&amp;lt;','&gt;':'&amp;gt;','"':'&amp;quot;',"'":'&amp;#39;' }[m]));}<br><br>hexo.extend.filter.register('after_render:html', function (html, data) {<br>  if (!data || !data.path) return html;<br>  const isHome = String(data.path).replace(/\\/g,'/') === 'index.html';<br>  if (!isHome) return html;<br><br>  const cfg   = getHeroCfg(this);<br>  if (cfg.enable === false) return html;<br><br>  const img   = esc(cfg.image || '/images/hero.jpg');<br>  const title = esc(cfg.title || this.config.title || 'Welcome');<br>  const typing = !!cfg.typing;<br>  const speed  = Number(cfg.typingSpeed || 32);<br>  const hold   = Number(cfg.rotateInterval || 4000);<br>  const list   = Array.isArray(cfg.subtitles) &amp;&amp; cfg.subtitles.length ? cfg.subtitles : ['Welcome.'];<br>  const json   = JSON.stringify(list);<br><br>  const headInject = `<br>&lt;style id="home-hero-css"&gt;<br>  .hero-banner{<br>    position:relative;<br>    width:100vw;<br>    height:100svh;<br>    margin:0 0 28px;<br>    margin-left:calc(50% - 50vw);<br>    overflow:hidden;<br>  }<br>  .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.82)}<br>  .hero-bg::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.25)}<br>  .hero-inner{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;padding:0 1rem}<br>  .hero-title{font-weight:800;line-height:1.1;font-size:clamp(36px,5vw,64px);text-shadow:0 4px 24px rgba(0,0,0,.5)}<br>  .hero-sub-wrap{display:inline-flex;align-items:baseline;gap:.25rem;opacity:0;transition:opacity .6s ease}<br>  .hero-sub{margin-top:.75rem;font-size:clamp(14px,2vw,20px);opacity:.92;text-shadow:0 2px 12px rgba(0,0,0,.4);min-height:1.6em}<br>  .typed-cursor{display:${typing ? 'inline-block' : 'none'};margin-left:2px;opacity:1;animation:typed-cursor-blink .7s infinite}<br>  @keyframes typed-cursor-blink{0%,45%{opacity:1}46%,100%{opacity:0}}<br><br>  /* ↓ 向下箭頭按鈕（置底中） */<br>  .hero-down{<br>    position:absolute; left:50%; bottom:18px; transform:translateX(-50%);<br>    width:42px; height:42px; border-radius:9999px;<br>    border:2px solid rgba(255,255,255,.9);<br>    color:#fff; background:rgba(0,0,0,.18);<br>    display:flex; align-items:center; justify-content:center;<br>    cursor:pointer; transition:background .2s ease, transform .2s ease, opacity .2s ease;<br>    backdrop-filter:blur(2px);<br>    animation:hero-bounce 1.8s infinite;<br>  }<br>  .hero-down:hover{ background:rgba(0,0,0,.28); transform:translateX(-50%) translateY(2px); }<br>  @keyframes hero-bounce{ 0%,100%{ bottom:18px } 50%{ bottom:24px } }<br>  .hero-down svg{ display:block }<br>&lt;/style&gt;`;<br><br>  const bodyInject = `<br>&lt;div class="hero-banner" role="banner" aria-label="Site hero"&gt;<br>  &lt;div class="hero-bg" style="background-image:url('${img}')"&gt;&lt;/div&gt;<br>  &lt;div class="hero-inner"&gt;<br>    &lt;h1 class="hero-title"&gt;${title}&lt;/h1&gt;<br>    &lt;div class="hero-sub-wrap" id="hero-sub-wrap"&gt;<br>      &lt;div class="hero-sub" id="hero-sub" aria-live="polite"&gt;&lt;/div&gt;<br>      &lt;span class="typed-cursor"&gt;|&lt;/span&gt;<br>    &lt;/div&gt;<br>    &lt;!-- 向下箭頭 --&gt;<br>    &lt;button class="hero-down" id="hero-down" aria-label="捲動到內容"&gt;<br>      &lt;svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"&gt;<br>        &lt;path fill="currentColor" d="M12 16.5L4.5 9l1.4-1.4L12 13.7l6.1-6.1L19.5 9z"/&gt;<br>      &lt;/svg&gt;<br>    &lt;/button&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>(function(){<br>  var items = ${json};<br>  var el = document.getElementById('hero-sub');<br>  var wrap = document.getElementById('hero-sub-wrap');<br>  var typing = ${typing ? 'true' : 'false'};<br>  var speed = ${speed};<br>  var hold = ${hold};<br>  var i = 0;<br><br>  function setOpacity(v){ wrap.style.opacity = v; }<br>  function fadeIn(cb){ requestAnimationFrame(function(){ setOpacity(1); if(cb) setTimeout(cb, 600); }); }<br>  function fadeOut(cb){ setOpacity(0); if(cb) setTimeout(cb, 600); }<br><br>  function typeText(text, done){<br>    el.textContent = '';<br>    var j = 0;<br>    (function tick(){<br>      if (j &lt; text.length){<br>        el.textContent += text.charAt(j++);<br>        setTimeout(tick, speed);<br>      } else { if (done) done(); }<br>    })();<br>  }<br><br>  function show(idx){<br>    var text = String(items[idx]);<br>    if (typing){<br>      setOpacity(1);<br>      typeText(text, function(){ setTimeout(next, hold); });<br>    } else {<br>      el.textContent = text;<br>      fadeIn(function(){ setTimeout(function(){ fadeOut(next); }, hold); });<br>    }<br>  }<br><br>  function next(){<br>    i = (i + 1) % items.length;<br>    if (typing){ fadeOut(function(){ show(i); }); }<br>    else { show(i); }<br>  }<br><br>  if (!items.length) items = ['Welcome.'];<br>  if (typing){ setOpacity(0); fadeOut(function(){ show(0); }); } else { show(0); }<br><br>  // ↓ 點擊向下箭頭，平滑捲到下一個區塊<br>  // ↓ 點擊向下箭頭，平滑捲到 Hero 底部（自動扣固定導覽列）<br>var btn = document.getElementById('hero-down');<br>if (btn){<br>  btn.addEventListener('click', function(){<br>    var hero = document.querySelector('.hero-banner');<br>    if (!hero) return;<br><br>    // Hero 底部的頁面座標<br>    var y = hero.getBoundingClientRect().bottom + window.pageYOffset;<br><br>    // 如果有固定 header，就扣掉高度（常見 class/元素都掃過）<br>    var header = document.querySelector('.kira-header, header, .navbar, .site-header');<br>    if (header &amp;&amp; getComputedStyle(header).position === 'fixed') {<br>      y -= header.offsetHeight || 0;<br>    }<br><br>    window.scrollTo({ top: Math.max(0, Math.round(y)), behavior: 'smooth' });<br>  });<br>}<br><br>})();<br>&lt;/script&gt;`;<br><br>  html = html.replace('&lt;/head&gt;', headInject + '\n&lt;/head&gt;');<br>  html = html.replace('&lt;body&gt;', '&lt;body&gt;\n' + bodyInject);<br>  return html;<br>});<br></code></pre></td></tr></tbody></table></figure>
+<p>如果你是使用一言網或是其他網站的話需要額外加function</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">#加上Hitokoto舉例<br> // JSONP 取得 Hitokoto<br>  function jsonp(url, cb){<br>    var fn = 'jp_' + Math.random().toString(36).slice(2);<br>    window[fn] = function(d){ cb(d); delete window[fn]; s.remove(); };<br>    var s = document.createElement('script');<br>    s.src = url + (url.indexOf('?')&gt;-1?'&amp;':'?') + 'callback=' + fn;<br>    document.body.appendChild(s);<br>  }<br><br>  var toTW = (window.OpenCC &amp;&amp; OpenCC.Converter) ? OpenCC.Converter({ from: 'cn', to: 'tw' }) : function(s){return s;};<br><br>  jsonp('${hitokotoUrl}', function(d){<br>    var s = (d &amp;&amp; d.hitokoto) ? ('「' + d.hitokoto + '」 — ' + (d.from_who || d.from || '一言')) :<br>            (fallback.length ? rand(fallback) : 'Welcome.');<br>    s = toTW(s);   // 轉繁體<br>    start(s);<br>  });<br>})();<br></code></pre></td></tr></tbody></table></figure>
+
+<p>一些數值設定說明：</p>
+<ul>
+<li>改高度：把 height:100svh 換成 82vh 或 560px (依照你要的大小)</li>
+<li>遮罩深淺：改 .hero-bg::after 的 rgba(0,0,0,.25)（越大越暗）</li>
+<li>只要版心寬度、不要全幅：把 .hero-banner 的width:100vw 改成 width:100%，並刪掉 margin-left:calc(50% - 50vw)</li>
+<li>字幕只顯示一行：在 .hero-sub 補 white-space: nowrap; overflow: hidden; text-overflow: ellipsis;</li>
+</ul>
+<h2><span id="%E4%B9%8B%E5%BE%8C%E6%9B%B4%E6%96%B0%E5%9C%A8%E7%AC%AC%E4%BA%8C%E7%AF%87">之後更新在第二篇。</span></h2><p>留言區從原本需要登入github才能留言的方式改成使用 <code>Twikoo</code> 不須登入即可留言<br>如果你要匿名的話姓名、郵箱、網址可以隨便打沒關係<br>留QQ郵箱的話可以自動偵測郵箱頭像<br>有想多交流的話可以留網址我看到會過去逛逛</p>
+<hr>
+</body></html>
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>Atom<br>
+        <strong>本文鏈接：</strong><a href="https://d0ngd.github.io/2025/10/05/%E6%9C%AC%E7%AB%99%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84_%E7%AC%AC%E4%B8%80%E7%AF%87/" title="https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;10&#x2F;05&#x2F;本站架站紀錄_第一篇&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;10&#x2F;05&#x2F;本站架站紀錄_第一篇&#x2F;</a><br>
+        
+            <strong>版權聲明：</strong>本文採用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 協議進行許可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			  
+			<!-- 先找到与当前文字相同的目录 -->
+			         
+			<!-- 在找到当前文章所在的 index -->
+			        
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2025/10/04/%E6%96%87%E7%AB%A0%E7%99%BC%E8%A1%A8%E6%A0%BC%E5%BC%8F%E8%88%87%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/"> 文章發表格式與注意事項</a>
+			</div>
+			                          
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+			<a class="kirafont icon-container-fill -link" href="/categories/Hexo/">Hexo</a>
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/%E7%B6%B2%E7%AB%99%E7%BE%8E%E5%8C%96/" rel="tag">網站美化</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+		<div id="tcomment"></div>
+<script src="https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js"></script>
+<script>
+  twikoo.init({
+    envId: 'https://twikoo-vercel-green-six.vercel.app/api',  // 從 _config.yml 讀取
+    el: '#tcomment',
+    lang: 'zh-TW'
+  })
+</script>
+
+	</div>
+	
+</div>
+
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到頂部" title="回到頂部">
+		<button class="mdui-fab mdui-ripple">
+			<i class="kirafont icon-caret-up"></i>
+		</button>
+	</a>
+</div>
+
+		</div>
+		
+		<script>
+		(function () {
+			var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+			var isMobile = Math.min(window.innerWidth, window.innerHeight) < 640;
+			if (prefersReduced || isMobile) return;
+
+			var s = document.createElement('script');
+			s.src = 'https://cdnjs.cloudflare.com/ajax/libs/canvas-nest.js/2.0.0/canvas-nest.js';
+
+			// 深藍色系（線條與節點）
+			s.setAttribute('color', '0,0,0');      // #0D47A1
+			s.setAttribute('pointColor', '0,0,0'); // #1565C0（比線條稍亮）
+			s.setAttribute('opacity', '0.40');          // 需要更顯眼可調到 0.35
+			s.setAttribute('count', '120');             // 太吃資源可降到 80~100
+			s.setAttribute('zIndex', '-1');             // 在最底層
+
+			document.body.appendChild(s);
+		})();
+		</script>
+	
+	</body>
+</html>
