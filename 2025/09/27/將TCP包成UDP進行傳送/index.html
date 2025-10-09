@@ -301,87 +301,44 @@ document.addEventListener('dragstart', function (e) {
 </div>
 
 		
-			<div class="kira-widget site-info-card">
-  <div class="site-info-title">網站資訊</div>
-  <ul class="site-info-list">
-    <li>
-      <span class="label">文章數目：</span>
-      <span class="value">10</span>
-    </li>
-    <li>
-      <span class="label">已運行時間：</span>
-      <span class="value"><span id="run-days">0</span> 天</span>
-    </li>
-    <li>
-      <span class="label">本站訪客數：</span>
-      <span class="value"><span id="busuanzi_value_site_uv">0</span></span>
-    </li>
-    <li>
-      <span class="label">本站訪問量：</span>
-      <span class="value"><span id="busuanzi_value_site_pv">0</span></span>
-    </li>
-  </ul>
+			<div class="kira-widget-wrap card-weather site-info-card">
+  <h3 class="kira-widget-title">
+    <i class="kirafont icon-chart"></i>
+    網站資訊
+  </h3>
+
+  <div class="weather-body">
+    <div class="w-grid chips-wide">
+      <div class="chip">
+        <span class="label">我寫的文章</span>
+        <span class="value">10</span> 篇</span>
+      </div>
+      <div class="chip">
+        <span class="label">分類數</span>
+        <span class="value">5</span>
+      </div>
+      <div class="chip">
+        <span class="label">網站存活</span>
+        <span class="value"><span id="run-days">--</span> 天</span>
+      </div>
+      <div class="chip">
+        <span class="label">訪客數</span>
+        <span class="value"><span id="busuanzi_value_site_uv">0</span></span>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- 若你不想用第三方可刪除；這支只會填 UV/PV 數字 -->
+<!-- Busuanzi 統計 -->
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <script>
 (function () {
-  // ① 建站日起算：改成你的建站日期
-  var siteStartDate = new Date('2025-09-01');
-
-  // 已運行天數
-  var days = Math.floor((Date.now() - siteStartDate.getTime()) / 86400000);
-  var elRun = document.getElementById('run-days');
-  if (elRun) elRun.textContent = days;
+  const siteStartDate = new Date('2025-09-01'); // ← 改成你的建站日期
+  const diff = Math.floor((new Date() - siteStartDate) / (1000 * 60 * 60 * 24));
+  document.getElementById('run-days').textContent = diff;
 })();
 </script>
-
-<style>
-/* 卡片外觀：半透明、圓角、陰影，與上方小工具一致 */
-.site-info-card{
-  background: rgba(80, 80, 80, 0.45);
-  border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(0,0,0,.25);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  color: #fff;
-  padding: 14px 16px;
-  margin-top: 14px;
-}
-.site-info-title{
-  font-weight: 800;
-  font-size: 1.05rem;
-  letter-spacing: .05em;
-  margin-bottom: 8px;
-}
-.site-info-list{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.site-info-list li{
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 6px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-.site-info-list li:last-child{ border-bottom: none; }
-.site-info-list .label{
-  color: rgba(255,255,255,.9);
-}
-.site-info-list .value{
-  color: #fff;
-  font-weight: 700;
-}
-/* 縮小裝置保留排版 */
-@media(max-width: 420px){
-  .site-info-card{ border-radius: 12px; padding: 12px 14px; }
-  .site-info-title{ font-size: 1rem; }
-}
-</style>
 
 		
 	</aside>
@@ -570,7 +527,7 @@ document.addEventListener('dragstart', function (e) {
   
 	<div class="kira-post-nav">
 		<nav class="post-nav">
-			          
+			      
 			<!-- 先找到与当前文字相同的目录 -->
 			      
 			<!-- 在找到当前文章所在的 index -->
@@ -586,7 +543,7 @@ document.addEventListener('dragstart', function (e) {
 				<span>下一章</span>
 				<a href="/2025/09/28/%E9%80%9A%E9%81%8EUDP%E6%A8%A1%E6%93%ACGTP/"> 通過UDP模擬GTP</a>
 			</div>
-			                  
+			                      
 		</nav>
 	</div>
 	
