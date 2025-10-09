@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html 
+	lang="zh-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+<link rel="stylesheet" href="/css/layout.css">
+
+		
+		<title> 本站架站紀錄_第四篇 -  Atom&#39;s Blog</title>
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
+
+		
+<script src="/lib/mdui/mdui.min.js"></script>
+
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
+
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
+
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="/images/head.png"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+			
+				
+<link rel="stylesheet" href="/style.css">
+
+			
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+	<meta name="generator" content="Hexo 7.3.0"></head>
+
+	<body>
+		<div id="particles-js" aria-hidden="true"></div>
+		<div
+			class="kira-background"
+			style="background-image: url('https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20231114/91%202560x1440_b85ff564ff554921ab1089ccfdafec6a.jpg')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="導航"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="Atom&#39;s Blog">
+        <img
+			src="/images/head.png"
+			alt="Atom"
+		/>
+    </a>
+	
+	<script src="/js/avatar-redirect.js"></script>
+	<script src="/js/fit-embeds.js"></script>
+	<link rel="stylesheet" href="/brands.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+	<link rel="stylesheet" href="/history-today.css">
+
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+	<script src="/js/history-today.js" defer></script>
+	
+<link rel="stylesheet" href="/weather-card.css">
+
+	<script src="/js/weather-card.js" defer></script>
+
+<script>
+// 禁止右鍵選單
+document.addEventListener('contextmenu', function (e) {
+  e.preventDefault();
+});
+
+// 禁止文字選取
+document.addEventListener('selectstart', function (e) {
+  e.preventDefault();
+});
+
+// 禁止拖曳圖片
+document.addEventListener('dragstart', function (e) {
+  e.preventDefault();
+});
+</script>
+
+
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+
+	<div class="kira-avatar mdui-ripple">
+		<a href="/images/head.png" title="Atom">
+			<img
+				src="/images/head.png"
+				alt="Atom"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>14</div>
+		<div><span>標籤</span>8</div>
+		<div><span>分類</span>5</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/"
+			title="回到首頁"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				回到首頁
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章分類"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章分類
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/friends.html"
+			title="書籤列"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				書籤列
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget kira-social">
+  
+<a class="mdui-ripple"
+   href="https://x.com"
+   target="_blank"
+   mdui-tooltip="{content: 'X / Twitter'}"
+   style="color:rgb(0,0,0);background-color:rgba(0,0,0,.10);font-size:18px">
+  
+    <span style="
+      display:inline-block;width:1em;height:1em;background-color:currentColor;
+      -webkit-mask-image:url('/img/brands/x.svg');
+      mask-image:url('/img/brands/x.svg');
+      -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+      -webkit-mask-position:center;mask-position:center;
+      -webkit-mask-size:contain;mask-size:contain;
+    "></span>
+  
+</a>
+
+  
+<a class="mdui-ripple"
+   href="https://www.youtube.com/"
+   target="_blank"
+   mdui-tooltip="{content: 'YouTube'}"
+   style="color:rgb(255,0,0);background-color:rgba(255,0,0,.12);font-size:18px">
+  
+    <span style="
+      display:inline-block;width:1em;height:1em;background-color:currentColor;
+      -webkit-mask-image:url('/img/brands/youtube.svg');
+      mask-image:url('/img/brands/youtube.svg');
+      -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+      -webkit-mask-position:center;mask-position:center;
+      -webkit-mask-size:contain;mask-size:contain;
+    "></span>
+  
+</a>
+
+  
+<a class="mdui-ripple"
+   href="https://medium.com/@dd565345421"
+   target="_blank"
+   mdui-tooltip="{content: 'Medium(EN)'}"
+   style="color:rgb(0,0,0);background-color:rgba(0,0,0,.10);font-size:18px">
+  
+    <span style="
+      display:inline-block;width:1em;height:1em;background-color:currentColor;
+      -webkit-mask-image:url('/img/brands/threads.svg');
+      mask-image:url('/img/brands/threads.svg');
+      -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+      -webkit-mask-position:center;mask-position:center;
+      -webkit-mask-size:contain;mask-size:contain;
+    "></span>
+  
+</a>
+
+  
+</div>
+
+		
+			
+	<div class="kira-widget-wrap">
+		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
+			<a href="/tags/AI/" style="font-size: 10px;">AI</a> <a href="/tags/IDS/" style="font-size: 13.33px;">IDS</a> <a href="/tags/Python/" style="font-size: 16.67px;">Python</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 16.67px;">工具</a> <a href="/tags/%E7%B6%B2%E7%AB%99%E7%BE%8E%E5%8C%96/" style="font-size: 20px;">網站美化</a> <a href="/tags/%E7%B6%B2%E8%B7%AF%E6%8A%80%E8%A1%93/" style="font-size: 16.67px;">網路技術</a> <a href="/tags/%E9%9D%A2%E8%A9%A6%E9%A1%8C%E7%9B%AE/" style="font-size: 10px;">面試題目</a>
+		</div>
+		
+	</div>
+
+
+		
+			<div class="kira-widget-wrap card-history">
+  <h3 class="kira-widget-title">
+    <i class="kirafont icon-time"></i>
+    歷史上的今天
+  </h3>
+
+  <!-- 只固定內容區高度 -->
+  <div class="history-card">
+    <div class="swiper" id="history-container" aria-live="off">
+      <div class="swiper-wrapper" id="history_container_wrapper"></div>
+    </div>
+    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+  </div>
+</div>
+
+		
+			<div class="kira-widget-wrap card-weather" data-lat="25.0375" data-lon="121.5637" data-city="台北">
+  <h3 class="kira-widget-title">
+    <i class="kirafont icon-weather"></i>
+    台北 · 今日天氣
+  </h3>
+
+  <div class="weather-body">
+    <div class="w-top">
+      <div class="w-left">
+        <div class="w-temp"><span id="w-now">--</span><span class="unit">°C</span></div>
+        <div class="w-hilo">H <span id="w-max">--</span>° · L <span id="w-min">--</span>°</div>
+      </div>
+      <div class="w-right">
+        <div id="w-icon" class="w-icon">⛅</div>
+        <div id="w-desc" class="w-desc">--</div>
+        <div id="w-time" class="w-time">--:--</div>
+      </div>
+    </div>
+
+    <!-- 原本是 <div class="w-grid"> -->
+<div class="w-grid chips-wide">
+  <div class="chip">
+    <span class="label">降雨</span>
+    <span class="value"><span id="w-pop">--</span><span class="unit">%</span></span>
+  </div>
+  <div class="chip">
+    <span class="label">濕度</span>
+    <span class="value"><span id="w-rh">--</span><span class="unit">%</span></span>
+  </div>
+</div>
+
+  </div>
+</div>
+
+		
+			<div class="kira-widget-wrap card-weather site-info-card">
+  <h3 class="kira-widget-title">
+    <i class="kirafont icon-chart"></i>
+    網站資訊
+  </h3>
+
+  <div class="weather-body">
+    <div class="w-grid chips-wide">
+      <div class="chip">
+        <span class="label">我寫的文章</span>
+        <span class="value">14</span> 篇
+      </div>
+      <div class="chip">
+        <span class="label">分類數</span>
+        <span class="value">5</span>
+      </div>
+      <div class="chip">
+        <span class="label">網站存活</span>
+        <span class="value"><span id="run-days">--</span> 天</span>
+      </div>
+      <div class="chip">
+        <span class="label">訪客數</span>
+        <span class="value"><span id="busuanzi_value_site_uv">讀取中…</span></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Busuanzi 統計 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+(function () {
+  const siteStartDate = new Date('2025-09-10');
+  const diff = Math.floor((new Date() - siteStartDate) / (1000 * 60 * 60 * 24));
+  document.getElementById('run-days').textContent = diff;
+})();
+</script>
+
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2025
+		<a href="/">Atom</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+		
+	</div>
+</div>
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
+        </div>
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div class="kira-post-cover">
+			<img
+				data-src="https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20250610/554%202436x1125_2691d7657ccf49f2b9186165bea24cd7.jpg"
+				data-sizes="auto"
+				alt="本站架站紀錄_第四篇"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>本站架站紀錄_第四篇</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2025年10月08日</a>
+			<a><i class="kirafont icon-edit-fill"></i>2.6k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 14 分鐘</a>
+		</div>
+		<html><head></head><body><p>新增今日天氣、歷史上的今天、留言區。</p>
+<span id="more"></span>
+
+<h2><span id="%E5%8A%A0%E5%85%A5%E4%BB%8A%E6%97%A5%E5%A4%A9%E6%B0%A3">加入今日天氣</span></h2><p>看到別人有加我也想說加個，給自己的blog加點小東西<br>這邊我們使用<a target="_blank" rel="noopener" href="https://open-meteo.com/">Free Weather API</a><br>可以自己選擇地點顯示當地天氣<br>新增一個<code>layout/_widget/weather.ejs</code>因為東西要放在側邊欄</p>
+<ul>
+<li>weather.ejs<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;div layout/_widget/weather.ejs<br>class="kira-widget-wrap card-weather" data-lat="25.0375" data-lon="121.5637" data-city="台北"&gt;<br>&lt;h3 class="kira-widget-title"&gt;<br>&lt;i class="kirafont icon-weather"&gt;&lt;/i&gt;<br>台北 · 今日天氣<br>&lt;/h3&gt;<br><br>&lt;div class="weather-body"&gt;<br>&lt;div class="w-top"&gt;<br>&lt;div class="w-left"&gt;<br>&lt;div class="w-temp"&gt;&lt;span id="w-now"&gt;--&lt;/span&gt;&lt;span class="unit"&gt;°C&lt;/span&gt;&lt;/div&gt;<br>&lt;div class="w-hilo"&gt;H &lt;span id="w-max"&gt;--&lt;/span&gt;° · L &lt;span id="w-min"&gt;--&lt;/span&gt;°&lt;/div&gt;<br>&lt;/div&gt;<br>&lt;div class="w-right"&gt;<br>&lt;div id="w-icon" class="w-icon"&gt;⛅&lt;/div&gt;<br>&lt;div id="w-desc" class="w-desc"&gt;--&lt;/div&gt;<br>&lt;div id="w-time" class="w-time"&gt;--:--&lt;/div&gt;<br>&lt;/div&gt;<br>&lt;/div&gt;<br><br>&lt;!-- 兩條長膠囊：降雨、濕度 --&gt;<br>&lt;div class="w-grid chips-wide"&gt;<br>&lt;div class="chip"&gt;<br>&lt;span class="label"&gt;降雨&lt;/span&gt;<br>&lt;span class="value"&gt;&lt;span id="w-pop"&gt;--&lt;/span&gt;&lt;span class="unit"&gt;%&lt;/span&gt;&lt;/span&gt;<br>&lt;/div&gt;<br>&lt;div class="chip"&gt;<br>&lt;span class="label"&gt;濕度&lt;/span&gt;<br>&lt;span class="value"&gt;&lt;span id="w-rh"&gt;--&lt;/span&gt;&lt;span class="unit"&gt;%&lt;/span&gt;&lt;/span&gt;<br>&lt;/div&gt;<br>&lt;/div&gt;<br>&lt;/div&gt;<br>&lt;/div&gt;<br></code></pre></td></tr></tbody></table></figure>
+然後是美化的部分</li>
+<li><code>source/weather-card.css</code><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">.kira-right-column .kira-widget-wrap.card-weather{ width:100%; }<br><br>/* 玻璃感卡片容器 */<br>.card-weather .weather-body{<br>border-radius:16px; background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));<br>border:1px solid var(--card-border, rgba(255,255,255,.18)); box-shadow:0 10px 22px rgba(0,0,0,.06);<br>padding:14px 16px;<br>}<br><br>/* 頂部：左大字溫度、右側圖示/描述/時間 */<br>.card-weather .w-top{ display:flex; align-items:center; justify-content:space-between; gap:12px; }<br>.card-weather .w-left{ display:flex; flex-direction:column; gap:4px; }<br>.card-weather .w-temp{ font-weight:900; line-height:1; letter-spacing:.5px; }<br>.card-weather .w-temp #w-now{ font-size:36px; }<br>.card-weather .w-temp .unit{ font-size:16px; opacity:.85; margin-left:2px; }<br>.card-weather .w-hilo{ opacity:.9 }<br>.card-weather .w-right{ display:flex; flex-direction:column; align-items:flex-end; gap:2px; text-align:right; }<br>.card-weather .w-icon{ font-size:28px; line-height:1; }<br>.card-weather .w-desc{ font-size:.95rem; opacity:.95; }<br>.card-weather .w-time{ font-size:.85rem; opacity:.7 }<br><br>/* 兩條長膠囊（單欄） */<br>.card-weather .w-grid.chips-wide{ display:grid; grid-template-columns: 1fr; row-gap:8px; margin-top:12px; }<br>.card-weather .chip{ display:flex; align-items:center; justify-content:space-between; gap:12px;<br>border-radius:12px; padding:10px 12px; background: rgba(255,255,255,.10);<br>border:1px solid var(--card-border, rgba(255,255,255,.18)); font-size:.95rem; line-height:1; }<br>.card-weather .chip .label{ font-weight:600; letter-spacing:.3px; white-space:nowrap; opacity:.85; }<br>.card-weather .chip .value{ font-weight:800; font-variant-numeric: tabular-nums; white-space:nowrap; display:inline-flex; align-items:baseline; gap:4px; }<br><br>@media (prefers-color-scheme: light){<br>.card-weather .weather-body{ background:#fff; border-color:rgba(0,0,0,.08); box-shadow:0 10px 22px rgba(0,0,0,.05); }<br>.card-weather .chip{ background:#f7f9fb; border-color:rgba(0,0,0,.06); }<br>}<br></code></pre></td></tr></tbody></table></figure></li>
+</ul>
+<p>最後是獲取天氣資料的腳本</p>
+<ul>
+<li>source/js/weather-card.js<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">(function () {<br>const box = document.querySelector('.kira-widget-wrap.card-weather');<br>if (!box) return;<br><br>const lat = parseFloat(box.dataset.lat || '25.0375');<br>const lon = parseFloat(box.dataset.lon || '121.5637');<br><br>const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&amp;longitude=${lon}`<br>+ `&amp;current=temperature_2m,precipitation,relative_humidity_2m,weather_code,wind_speed_10m`<br>+ `&amp;daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,sunrise,sunset`<br>+ `&amp;timezone=Asia%2FTaipei`;<br><br>const set = (id, val) =&gt; { const el = document.getElementById(id); if (el) el.textContent = val; };<br><br>const codeMap = (code, isNight) =&gt; {<br>const sun='☀️', moon='🌙', cloud='☁️', pcloud='⛅', rain='🌧️', lrain='🌦️', tstorm='⛈️', snow='❄️', fog='🌫️';<br>const txt = {0:'晴朗',1:'多雲時晴',2:'多雲',3:'陰',45:'霧',48:'霧凇',51:'毛毛雨',53:'小雨',55:'中雨',56:'凍雨(毛毛雨)',57:'凍雨',61:'小雨',63:'中雨',65:'大雨',66:'凍雨',67:'強凍雨',71:'小雪',73:'中雪',75:'大雪',77:'霰',80:'陣雨',81:'強陣雨',82:'暴陣雨',85:'陣雪',86:'強陣雪',95:'雷雨',96:'雷雨雹',99:'劇烈雷雨雹'};<br>const emoji = code===0 ? (isNight?moon:sun) : [1,2].includes(code)?pcloud : code===3?cloud :<br>[51,53,55,61,63,65,80,81,82].includes(code) ? (code===51?lrain:rain) :<br>[95,96,99].includes(code) ? tstorm : [71,73,75,77,85,86].includes(code)?snow : [45,48].includes(code)?fog : cloud;<br>return { emoji, text: txt[code] || '—' };<br>};<br><br>fetch(url).then(r=&gt;r.json()).then(d=&gt;{<br>const nowISO = d?.current?.time || new Date().toISOString();<br>const now = new Date(nowISO);<br>const sunrise = new Date(d?.daily?.sunrise?.[0] || now);<br>const sunset = new Date(d?.daily?.sunset?.[0] || now);<br>const isNight = now &lt; sunrise || now &gt; sunset;<br><br>const nowT = Math.round(d?.current?.temperature_2m ?? NaN);<br>const rh = d?.current?.relative_humidity_2m ?? null;<br>const wcode= d?.current?.weather_code ?? 3;<br><br>const maxT = Math.round(d?.daily?.temperature_2m_max?.[0] ?? NaN);<br>const minT = Math.round(d?.daily?.temperature_2m_min?.[0] ?? NaN);<br>const pop = d?.daily?.precipitation_probability_max?.[0];<br><br>if (Number.isFinite(nowT)) set('w-now', nowT);<br>if (Number.isFinite(maxT)) set('w-max', maxT);<br>if (Number.isFinite(minT)) set('w-min', minT);<br>if (typeof pop === 'number') set('w-pop', pop);<br>if (typeof rh === 'number') set('w-rh', rh);<br><br>const meta = codeMap(wcode, isNight);<br>set('w-icon', meta.emoji); set('w-desc', meta.text);<br>set('w-time', now.toLocaleTimeString('zh-TW',{hour:'2-digit',minute:'2-digit'}));<br>}).catch(()=&gt;{<br>box.querySelector('.weather-body').innerHTML = '&lt;div style="opacity:.85"&gt;天氣資料載入失敗，稍後再試&lt;/div&gt;';<br>});<br>})();<br></code></pre></td></tr></tbody></table></figure></li>
+</ul>
+<p>最後一樣，記得載入到header。</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;%- css('weather-card.css') %&gt;<br>&lt;script src="&lt;%- url_for('/js/weather-card.js') %&gt;" defer&gt;&lt;/script&gt;<br></code></pre></td></tr></tbody></table></figure>
+
+<h2><span id="%E6%AD%B7%E5%8F%B2%E4%B8%8A%E7%9A%84%E4%BB%8A%E5%A4%A9">歷史上的今天</span></h2><p>在這邊我們使用<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/">維基百科</a><br>除了歷史上的今天外你也可以改成顯示在維基上你有興趣的東西</p>
+<ul>
+<li><p>修改側邊欄</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;div class="kira-widget-wrap card-history"&gt;<br>&lt;h3 class="kira-widget-title"&gt;<br>&lt;i class="kirafont icon-time"&gt;&lt;/i&gt;<br>歷史上的今天<br>&lt;/h3&gt;<br><br><br>&lt;!-- 只固定內容區高度，外層不要鎖高避免切到標題 --&gt;<br>&lt;div class="history-card"&gt;<br>&lt;div class="swiper" id="history-container" aria-live="off"&gt;<br>&lt;div class="swiper-wrapper" id="history_container_wrapper"&gt;&lt;/div&gt;<br>&lt;/div&gt;<br>&lt;span class="swiper-notification" aria-live="assertive" aria-atomic="true"&gt;&lt;/span&gt;<br>&lt;/div&gt;<br>&lt;/div&gt;<br></code></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>修改樣式</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">:root{<br>--history-h: 132px; /* 內容區高度：120~160 皆可 */<br>--history-lines: 3; /* 每則顯示行數 */<br>}<br><br><br>.kira-right-column .kira-widget-wrap.card-history{ width:100%; }<br><br><br>/* 標題列沿用主題色，這裡只控間距與圖示大小 */<br>.kira-widget-wrap.card-history .kira-widget-title{<br>display:flex; align-items:center; gap:.5rem; margin:0 0 12px;<br>}<br>.kira-widget-wrap.card-history .kira-widget-title .kirafont{ font-size:1.05em; }<br><br><br>/* 固定內容高度，避免被長文字撐爆；左右留白 14px 看起來不擠 */<br>.kira-widget-wrap.card-history .history-card{ height:var(--history-h); overflow:hidden; }<br>.kira-widget-wrap.card-history .swiper{ width:100%; height:var(--history-h); }<br>#history_container_wrapper{ height:100% !important; }<br>.kira-widget-wrap.card-history .swiper-slide{<br>height:var(--history-h); padding:8px 14px; box-sizing:border-box; position:relative;<br>}<br><br><br>/* 多行顯示 + 截斷（避免爆版）；年份微強調 */<br>.kira-widget-wrap.card-history .history-year{ font-weight:700; letter-spacing:.5px; opacity:.85; }<br>.kira-widget-wrap.card-history .history-text{<br>white-space:normal; overflow:hidden; display:-webkit-box;<br>-webkit-box-orient: vertical; -webkit-line-clamp: var(--history-lines);<br>line-height:1.45; font-size:.95rem;<br>}<br><br><br>/* 分隔線用偽元素，不改變高度，翻頁更準 */<br>.kira-widget-wrap.card-history .swiper-slide::after{<br>content:""; position:absolute; left:0; right:0; bottom:0; height:1px;<br>background: var(--card-border, rgba(255,255,255,.15)); pointer-events:none;<br>}<br>@media (prefers-color-scheme: light){<br>.kira-widget-wrap.card-history .swiper-slide::after{ background: rgba(0,0,0,.08); }<br>}<br></code></pre></td></tr></tbody></table></figure></li>
+<li><p>最後是獲取資料的腳本</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/* Wikipedia On-This-Day — 手動翻頁、固定高度版 */<br>(function () {<br>const wrap = document.getElementById('history_container_wrapper');<br>if (!wrap) return;<br><br><br>const lang = 'zh';<br>const today = new Date();<br>const mm = String(today.getMonth() + 1).padStart(2, '0');<br>const dd = String(today.getDate()).padStart(2, '0');<br>const feedUrl = `https://api.wikimedia.org/feed/v1/wikipedia/${lang}/onthisday/all/${mm}/${dd}`;<br>const cacheKey = `HISTORY_TODAY_${lang}_${mm}${dd}`;<br><br><br>const render = (list) =&gt; {<br>wrap.innerHTML = '';<br>list.forEach(item =&gt; {<br>const slide = document.createElement('div');<br>slide.className = 'swiper-slide';<br>slide.innerHTML = `<br>&lt;div class="history-year"&gt;A.D.${item.year}&lt;/div&gt;<br>&lt;div class="history-text"&gt;${item.text}&lt;/div&gt;`;<br>if (item.link) slide.addEventListener('click', () =&gt; window.open(item.link, '_blank'));<br>wrap.appendChild(slide);<br>});<br>};<br><br>const createSwiper = () =&gt; {<br>if (window.__historySwiper__) window.__historySwiper__.destroy(true, true);<br>window.__historySwiper__ = new Swiper('#history-container', {<br>direction: 'vertical', effect: 'slide', slidesPerView: 1, spaceBetween: 0,<br>loop: false, centeredSlides: false, speed: 350, resistanceRatio: 0,<br>allowTouchMove: true,<br>mousewheel: { forceToAxis: true, releaseOnEdges: true, sensitivity: .7 },<br>keyboard: { enabled: true, onlyInViewport: true }<br>});<br>};<br><br>const run = list =&gt; { render(list); createSwiper(); };<br><br>// 快取先行<br>try { const cache = JSON.parse(localStorage.getItem(cacheKey) || 'null'); if (cache?.length) run(cache); } catch{}<br><br>// 再抓 API 更新<br>fetch(feedUrl).then(r=&gt;r.json()).then(data =&gt; {<br>const events = Array.isArray(data?.events) ? data.events : [];<br>const list = events.slice(0, 15).map(ev =&gt; {<br>const p = (ev.pages &amp;&amp; ev.pages[0]) || {};<br>const link = p?.content_urls?.desktop?.page || p?.content_urls?.mobile?.page || '';<br>return { year: ev.year, text: ev.text, link };<br>});<br>localStorage.setItem(cacheKey, JSON.stringify(list));<br>run(list);<br>}).catch(() =&gt; run([{ year: '—', text: '載入失敗，請稍後再試', link: '' }]));<br>})();<br></code></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>同樣，別忘了載入到頁面上</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"&gt;<br>&lt;%- css('css/history-today.css') %&gt;<br>&lt;script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer&gt;&lt;/script&gt;<br>&lt;script src="&lt;%- url_for('/js/history-today.js') %&gt;" defer&gt;&lt;/script&gt;<br></code></pre></td></tr></tbody></table></figure></li>
+</ul>
+<p>備註：頁面大小樣式等都是慢慢修改到我喜歡的大小的，這方面有要修改就再自己手動測試吧。</p>
+<h2><span id="%E7%95%99%E8%A8%80%E5%8D%80">留言區</span></h2><p>Kira主題中本身就有寫好的giscus跟gitalk可以直接用了<br>一開始我也是直接開來用<br>但使用這兩個需要登入github，所以我想改成不需要登入也能留言的方式，自由度比較高<br>最後我使用<code>[Twikoo](https://github.com/twikoojs/twikoo)</code></p>
+<p>免費搭建、簡單部屬<br>留言存放區我使用MongoDB，畢竟使用度不高沒人會留言所以免費額度就夠了</p>
+<h3><span id="%E6%AD%A5%E9%A9%9F1">步驟1</span></h3><ol>
+<li>在 GitHub 建立一個新的 repo，例如：<code>twikoo-vercel</code><br>結構如下：<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">twikoo-vercel/<br> ├─ api/<br> │   └─ index.js<br> ├─ package.json<br> └─ vercel.json<br></code></pre></td></tr></tbody></table></figure></li>
+<li><code>api/index.js</code><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">import twikoo from 'twikoo-vercel'<br><br>export default async function handler(req, res) {<br>  return twikoo(req, res)<br>}<br></code></pre></td></tr></tbody></table></figure></li>
+<li><code>package.json</code><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">{<br>  "name": "twikoo-vercel",<br>  "version": "1.0.0",<br>  "type": "module",<br>  "dependencies": {<br>    "twikoo-vercel": "^1.6.18"<br>  },<br>  "engines": {<br>    "node": "18.x"<br>  }<br>}<br></code></pre></td></tr></tbody></table></figure></li>
+<li><code>vercel.json</code><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">{<br>  "version": 2,<br>  "builds": [<br>    { "src": "api/index.js", "use": "@vercel/node" }<br>  ]<br>}<br></code></pre></td></tr></tbody></table></figure></li>
+</ol>
+<p>將這個repo部屬到<a target="_blank" rel="noopener" href="https://vercel.com/">Vercel</a><br>成功後就能拿到api網址</p>
+<h3><span id="%E6%AD%A5%E9%A9%9F2">步驟2</span></h3><p><strong>建立 MongoDB Atlas Database</strong></p>
+<ol>
+<li>註冊 <a target="_blank" rel="noopener" href="https://www.mongodb.com/products/platform/atlas-database">MongoDB Atlas</a></li>
+<li>建立一個免費的 Cluster。</li>
+<li>在 Database Access 新增一個使用者：<ul>
+<li>使用者名稱：twikooUser</li>
+<li>權限：Atlas Admin 或 Read and write to any database</li>
+</ul>
+</li>
+<li>在 Network Access 加入 IP 白名單：<ul>
+<li>設定 0.0.0.0/0（允許所有 IP）。</li>
+<li>這樣 Vercel 才能連上 Atlas</li>
+</ul>
+</li>
+<li>複製連線字串（Node.js Driver → 4.0+）：<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">mongodb+srv://twikooUser:yourPassword@cluster0.xxxxx.mongodb.net/twikoo?retryWrites=true&amp;w=majority<br></code></pre></td></tr></tbody></table></figure></li>
+</ol>
+<h3><span id="%E6%AD%A5%E9%A9%9F3">步驟3</span></h3><ol>
+<li>到 Vercel → twikoo-vercel → Settings → Environment Variables。</li>
+<li>新增一個變數：<ul>
+<li>Key：MONGODB_URI</li>
+<li>Value：剛剛複製的 MongoDB 連線字串</li>
+</ul>
+</li>
+<li>儲存並 Redeploy。</li>
+</ol>
+<h3><span id="%E6%AD%A5%E9%A9%9F4">步驟4</span></h3><ol>
+<li>在主題設定檔 <code>themes/kira/_config.yml</code> 新增：<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">comments:<br>  use: twikoo<br><br>twikoo:<br>  envId: https://twikoo-vercel-xxxx.vercel.app/api<br>  lang: zh-TW<br></code></pre></td></tr></tbody></table></figure></li>
+<li>在主題的 <code>layout/components/comments/</code> 新增一個 <code>twikoo.ejs</code>：<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;div id="tcomment"&gt;&lt;/div&gt;<br>&lt;script src="https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js"&gt;&lt;/script&gt;<br>&lt;script&gt;<br>  twikoo.init({<br>    envId: '&lt;%= theme.twikoo.envId %&gt;',<br>    el: '#tcomment',<br>    lang: '&lt;%= theme.twikoo.lang || "zh-TW" %&gt;'<br>  })<br>&lt;/script&gt;<br></code></pre></td></tr></tbody></table></figure></li>
+<li>在post中加入twikoo的選項<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;div class="kira-post-footer"&gt;<br>	&lt;%- partial('components/comments/gitalk') %&gt;<br>	&lt;%- partial('components/comments/giscus') %&gt;<br>	&lt;%- partial('components/comments/twikoo') %&gt;<br>&lt;/div&gt;<br></code></pre></td></tr></tbody></table></figure></li>
+</ol>
+<p>記得存檔，如果之後有更新比較多東西才會再繼續寫。</p>
+</body></html>
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>Atom<br>
+        <strong>本文鏈接：</strong><a href="https://d0ngd.github.io/2025/10/08/%E6%9C%AC%E7%AB%99%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84_%E7%AC%AC%E5%9B%9B%E7%AF%87/" title="https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;10&#x2F;08&#x2F;本站架站紀錄_第四篇&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;10&#x2F;08&#x2F;本站架站紀錄_第四篇&#x2F;</a><br>
+        
+            <strong>版權聲明：</strong>本文採用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 協議進行許可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			  
+			<!-- 先找到与当前文字相同的目录 -->
+			                  
+			<!-- 在找到当前文章所在的 index -->
+			                    
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2025/10/07/%E6%9C%AC%E7%AB%99%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84_%E7%AC%AC%E4%B8%89%E7%AF%87/"> 本站架站紀錄_第三篇</a>
+			</div>
+			                          
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+			<a class="kirafont icon-container-fill -link" href="/categories/Hexo/">Hexo</a>
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/%E7%B6%B2%E7%AB%99%E7%BE%8E%E5%8C%96/" rel="tag">網站美化</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+		<div id="tcomment"></div>
+<script src="https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js"></script>
+<script>
+  twikoo.init({
+    envId: 'https://twikoo-vercel-green-six.vercel.app/api',  // 從 _config.yml 讀取
+    el: '#tcomment',
+    lang: 'zh-TW'
+  })
+</script>
+
+	</div>
+	
+</div>
+
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到頂部" title="回到頂部">
+		<button class="mdui-fab mdui-ripple">
+			<i class="kirafont icon-caret-up"></i>
+		</button>
+	</a>
+</div>
+
+		</div>
+		
+		<script>
+		(function () {
+			var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+			var isMobile = Math.min(window.innerWidth, window.innerHeight) < 640;
+			if (prefersReduced || isMobile) return;
+
+			var s = document.createElement('script');
+			s.src = 'https://cdnjs.cloudflare.com/ajax/libs/canvas-nest.js/2.0.0/canvas-nest.js';
+
+			// 深藍色系（線條與節點）
+			s.setAttribute('color', '0,0,0');      // #0D47A1
+			s.setAttribute('pointColor', '0,0,0'); // #1565C0（比線條稍亮）
+			s.setAttribute('opacity', '0.40');          // 需要更顯眼可調到 0.35
+			s.setAttribute('count', '120');             // 太吃資源可降到 80~100
+			s.setAttribute('zIndex', '-1');             // 在最底層
+
+			document.body.appendChild(s);
+		})();
+		</script>
+	
+	</body>
+</html>
