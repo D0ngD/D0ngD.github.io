@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html 
+	lang="zh-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+<link rel="stylesheet" href="/css/layout.css">
+
+		
+		<title> 本站架站紀錄_第二篇 -  Atom&#39;s Blog</title>
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
+
+		
+<script src="/lib/mdui/mdui.min.js"></script>
+
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
+
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
+
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="/images/head.png"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+			
+				
+<link rel="stylesheet" href="/style.css">
+
+			
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+	<meta name="generator" content="Hexo 7.3.0"></head>
+
+	<body>
+		<div id="particles-js" aria-hidden="true"></div>
+		<div
+			class="kira-background"
+			style="background-image: url('https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20231114/91%202560x1440_b85ff564ff554921ab1089ccfdafec6a.jpg')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="導航"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="Atom&#39;s Blog">
+        <img
+			src="/images/head.png"
+			alt="Atom"
+		/>
+    </a>
+	
+	<script src="/js/avatar-redirect.js"></script>
+	<script src="/js/fit-embeds.js"></script>
+	<link rel="stylesheet" href="/brands.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+	<link rel="stylesheet" href="/history-today.css">
+
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+	<script src="/js/history-today.js" defer></script>
+	
+<link rel="stylesheet" href="/weather-card.css">
+
+	<script src="/js/weather-card.js" defer></script>
+
+<script>
+// 禁止右鍵選單
+document.addEventListener('contextmenu', function (e) {
+  e.preventDefault();
+});
+
+// 禁止文字選取
+document.addEventListener('selectstart', function (e) {
+  e.preventDefault();
+});
+
+// 禁止拖曳圖片
+document.addEventListener('dragstart', function (e) {
+  e.preventDefault();
+});
+</script>
+
+
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+
+	<div class="kira-avatar mdui-ripple">
+		<a href="/images/head.png" title="Atom">
+			<img
+				src="/images/head.png"
+				alt="Atom"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>12</div>
+		<div><span>標籤</span>8</div>
+		<div><span>分類</span>5</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/"
+			title="回到首頁"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				回到首頁
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章分類"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章分類
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/friends.html"
+			title="書籤列"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				書籤列
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget kira-social">
+  
+<a class="mdui-ripple"
+   href="https://x.com"
+   target="_blank"
+   mdui-tooltip="{content: 'X / Twitter'}"
+   style="color:rgb(0,0,0);background-color:rgba(0,0,0,.10);font-size:18px">
+  
+    <span style="
+      display:inline-block;width:1em;height:1em;background-color:currentColor;
+      -webkit-mask-image:url('/img/brands/x.svg');
+      mask-image:url('/img/brands/x.svg');
+      -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+      -webkit-mask-position:center;mask-position:center;
+      -webkit-mask-size:contain;mask-size:contain;
+    "></span>
+  
+</a>
+
+  
+<a class="mdui-ripple"
+   href="https://www.youtube.com/"
+   target="_blank"
+   mdui-tooltip="{content: 'YouTube'}"
+   style="color:rgb(255,0,0);background-color:rgba(255,0,0,.12);font-size:18px">
+  
+    <span style="
+      display:inline-block;width:1em;height:1em;background-color:currentColor;
+      -webkit-mask-image:url('/img/brands/youtube.svg');
+      mask-image:url('/img/brands/youtube.svg');
+      -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+      -webkit-mask-position:center;mask-position:center;
+      -webkit-mask-size:contain;mask-size:contain;
+    "></span>
+  
+</a>
+
+  
+<a class="mdui-ripple"
+   href="https://medium.com/@dd565345421"
+   target="_blank"
+   mdui-tooltip="{content: 'Medium(EN)'}"
+   style="color:rgb(0,0,0);background-color:rgba(0,0,0,.10);font-size:18px">
+  
+    <span style="
+      display:inline-block;width:1em;height:1em;background-color:currentColor;
+      -webkit-mask-image:url('/img/brands/threads.svg');
+      mask-image:url('/img/brands/threads.svg');
+      -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+      -webkit-mask-position:center;mask-position:center;
+      -webkit-mask-size:contain;mask-size:contain;
+    "></span>
+  
+</a>
+
+  
+</div>
+
+		
+			
+	<div class="kira-widget-wrap">
+		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
+			<a href="/tags/AI/" style="font-size: 10px;">AI</a> <a href="/tags/IDS/" style="font-size: 13.33px;">IDS</a> <a href="/tags/Python/" style="font-size: 16.67px;">Python</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 16.67px;">工具</a> <a href="/tags/%E7%B6%B2%E7%AB%99%E7%BE%8E%E5%8C%96/" style="font-size: 20px;">網站美化</a> <a href="/tags/%E7%B6%B2%E8%B7%AF%E6%8A%80%E8%A1%93/" style="font-size: 16.67px;">網路技術</a> <a href="/tags/%E9%9D%A2%E8%A9%A6%E9%A1%8C%E7%9B%AE/" style="font-size: 10px;">面試題目</a>
+		</div>
+		
+	</div>
+
+
+		
+			<div class="kira-widget-wrap card-history">
+  <h3 class="kira-widget-title">
+    <i class="kirafont icon-time"></i>
+    歷史上的今天
+  </h3>
+
+  <!-- 只固定內容區高度 -->
+  <div class="history-card">
+    <div class="swiper" id="history-container" aria-live="off">
+      <div class="swiper-wrapper" id="history_container_wrapper"></div>
+    </div>
+    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+  </div>
+</div>
+
+		
+			<div class="kira-widget-wrap card-weather" data-lat="25.0375" data-lon="121.5637" data-city="台北">
+  <h3 class="kira-widget-title">
+    <i class="kirafont icon-weather"></i>
+    台北 · 今日天氣
+  </h3>
+
+  <div class="weather-body">
+    <div class="w-top">
+      <div class="w-left">
+        <div class="w-temp"><span id="w-now">--</span><span class="unit">°C</span></div>
+        <div class="w-hilo">H <span id="w-max">--</span>° · L <span id="w-min">--</span>°</div>
+      </div>
+      <div class="w-right">
+        <div id="w-icon" class="w-icon">⛅</div>
+        <div id="w-desc" class="w-desc">--</div>
+        <div id="w-time" class="w-time">--:--</div>
+      </div>
+    </div>
+
+    <!-- 原本是 <div class="w-grid"> -->
+<div class="w-grid chips-wide">
+  <div class="chip">
+    <span class="label">降雨</span>
+    <span class="value"><span id="w-pop">--</span><span class="unit">%</span></span>
+  </div>
+  <div class="chip">
+    <span class="label">濕度</span>
+    <span class="value"><span id="w-rh">--</span><span class="unit">%</span></span>
+  </div>
+</div>
+
+  </div>
+</div>
+
+		
+			<div class="kira-widget-wrap card-weather site-info-card">
+  <h3 class="kira-widget-title">
+    <i class="kirafont icon-chart"></i>
+    網站資訊
+  </h3>
+
+  <div class="weather-body">
+    <div class="w-grid chips-wide">
+      <div class="chip">
+        <span class="label">我寫的文章</span>
+        <span class="value">12</span> 篇
+      </div>
+      <div class="chip">
+        <span class="label">分類數</span>
+        <span class="value">5</span>
+      </div>
+      <div class="chip">
+        <span class="label">網站存活</span>
+        <span class="value"><span id="run-days">--</span> 天</span>
+      </div>
+      <div class="chip">
+        <span class="label">訪客數</span>
+        <span class="value"><span id="busuanzi_value_site_uv">讀取中…</span></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Busuanzi 統計 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+(function () {
+  const siteStartDate = new Date('2025-09-01');
+  const diff = Math.floor((new Date() - siteStartDate) / (1000 * 60 * 60 * 24));
+  document.getElementById('run-days').textContent = diff;
+})();
+</script>
+
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2025
+		<a href="/">Atom</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+		
+	</div>
+</div>
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
+        </div>
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div class="kira-post-cover">
+			<img
+				data-src="https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20250610/560%202436x1125_3b90715561a14a35a61bbb576f62eef2.jpg"
+				data-sizes="auto"
+				alt="本站架站紀錄_第二篇"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>本站架站紀錄_第二篇</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2025年10月06日</a>
+			<a><i class="kirafont icon-edit-fill"></i>1.8k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 8 分鐘</a>
+		</div>
+		<html><head></head><body><p>滑鼠特效、隨機圖、音樂撥放器。</p>
+<span id="more"></span>
+
+<h2><span id="%E5%A5%97%E7%94%A8%E6%BB%91%E9%BC%A0%E7%89%B9%E6%95%88">套用滑鼠特效</span></h2><ul>
+<li><p>本網站套用特效： <a target="_blank" rel="noopener" href="https://github.com/hustcc/canvas-nest.js/">canvas-nest.js</a><br>滑鼠擺著那些線就會被吸引，無聊時看著挺好玩的。</p>
+</li>
+<li><p>額外推薦特效：<a target="_blank" rel="noopener" href="https://github.com/VincentGarreau/particles.js">particles.js</a><br>滑鼠移動過去線就會閃開</p>
+</li>
+<li><p>早期滑鼠特效： <a target="_blank" rel="noopener" href="https://github.com/tholman/cursor-effects">90s Cursor Effects</a><br>我最喜歡那個泡泡的特效</p>
+</li>
+<li><p>我們在<code>layout\layout.ejs</code>中加入套用特效</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;script&gt;<br>(function () {<br>  if (window.__canvasNestLoaded) return;      // 防重複載入<br>  window.__canvasNestLoaded = true;<br><br>  var prefersReduced = window.matchMedia &amp;&amp; window.matchMedia('(prefers-reduced-motion: reduce)').matches;<br>  var isMobile = Math.min(window.innerWidth, window.innerHeight) &lt; 640;<br>  if (prefersReduced || isMobile) return;<br><br>  var s = document.createElement('script');<br>  s.src = 'https://cdnjs.cloudflare.com/ajax/libs/canvas-nest.js/2.0.0/canvas-nest.js';<br><br>//我一開始用藍色但發現還是黑色比較顯眼最後固定黑色了<br>  s.setAttribute('color', '0,0,0');       // 線條顏色：黑<br>  s.setAttribute('pointColor', '0,0,0');  // 節點顏色：黑<br>  s.setAttribute('opacity', '0.40');      // 透明度<br>  s.setAttribute('count', '140');         // 顆數<br>  s.setAttribute('zIndex', '-1');         // 最底層<br><br>  document.body.appendChild(s);<br>})();<br>&lt;/script&gt;<br></code></pre></td></tr></tbody></table></figure></li>
+<li><p>然後是加入特效位置(當然是撲滿整個網站了！)<br>在我們的<code>source/style.css</code>中加入<code>position:fixed</code></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/* 讓 canvas-nest 鋪滿整個視窗（覆蓋它的 inline style） */<br>body &gt; canvas[style*="pointer-events: none"] {<br>  position: fixed !important;<br>  inset: 0 !important;<br>  width: 100vw !important;<br>  height: 100vh !important;<br>  pointer-events: none !important;<br>  z-index: 0 !important; /* 看不到就改 1~10 試試 */<br>}<br></code></pre></td></tr></tbody></table></figure></li>
+<li><p>存檔後重新啟動</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">hexo clean &amp;&amp; hexo s<br></code></pre></td></tr></tbody></table></figure>
+<p>我很常忘記clean直接hexo s就沒吃到更新…各位要記得或是就直接把兩個指令綁定一起打。</p>
+</li>
+</ul>
+<h2><span id="%E9%9A%A8%E6%A9%9F%E5%9C%96">隨機圖</span></h2><p>這是我看到還滿多人會用的，讓自己的blog塞隨機圖就能看到不同的圖片<br>或是你也可以作一個自己的隨機圖庫?<br><a target="_blank" rel="noopener" href="https://www.loliapi.com/">隨機圖LoliAPI</a></p>
+<p>使用方式很簡單<br>跟寫文章時一樣接加在最前頭的cover即可<br>使用方法跟前面文章一模一樣：直接加在文章cover裡面</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">---<br>title: ...<br>cover: https://www.loliapi.com/bg/<br>---<br></code></pre></td></tr></tbody></table></figure>
+<ul>
+<li>LoliApi 端點總覽：<ul>
+<li>自適應：/acg/依裝置回傳 PC/PE</li>
+<li>PC：/acg/pc/可 ?type=url|img|json、可 ?id=</li>
+<li>手機：/acg/pe/（同上）</li>
+<li>混合背景：/bg/（PC/PE 隨機擇一）</li>
+<li>頭像：/acg/pp</li>
+</ul>
+</li>
+</ul>
+<p>如果有圖片大小問題就和第一篇文章一樣，進行裁切遮罩等<br>一樣是在source/style.css修改即可</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/* 統一封面比例 + 強制視覺裁切（cover） */<br>:root { --cover-w: 16; --cover-h: 9; }        /* 想 21:9 就改 21/9；想 4:3 就 4/3 */<br><br>/* 1) 固定封面容器比例（覆蓋主題在元素上的 inline padding-bottom） */<br>.kira-post-cover{<br>  padding-bottom: calc(var(--cover-h) / var(--cover-w) * 100%) !important;<br>}<br><br>/* 2) 封面圖裁切填滿 */<br>.kira-post-cover img,<br>.kira-post-cover-image{<br>  position: absolute !important;<br>  inset: 0 !important;              /* = top/right/bottom/left:0 */<br>  width: 100% !important;<br>  height: 100% !important;<br>  object-fit: cover !important;     /* 視覺裁切 */<br>  object-position: center !important;<br>  display: block !important;<br>}<br></code></pre></td></tr></tbody></table></figure>
+<h2><span id="%E6%92%A5%E6%94%BE%E5%8F%B0%E7%81%A3%E7%8D%A8%E7%AB%8B%E9%9F%B3%E6%A8%82%E4%BA%BA%E7%9A%84%E6%AD%8C%E6%9B%B2">撥放台灣獨立音樂人的歌曲</span></h2><p>想聽各種沒聽過的新歌時我都會去的網站–<a target="_blank" rel="noopener" href="https://streetvoice.com/">街聲</a><br>街聲本身就有支援嵌入，可以直接到喜歡的歌曲中按分享然後複製嵌入碼即可</p>
+<blockquote>
+<p>具體效果可以看<strong>鐵人賽介紹用文章</strong>那篇</p>
+</blockquote>
+<p>不過他們提供的大小都是固定的，如果你要修改成與文章同樣大小則需要額外設定修改大小</p>
+<ul>
+<li><p>新增<code>source/js/fit-embeds.js</code></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">// StreetVoice 內嵌：滿版等比 + 可視高度裁切 + 標題列<br>(function(){<br>  const BASE_W = 330, BASE_H = 100;<br>  const selector = 'iframe[src*="streetvoice.com/music/embed"]';<br><br>  function ensureCard(iframe){<br>    // 外層卡片<br>    let card = iframe.closest('.sv-card');<br>    if(!card){<br>      card = document.createElement('div');<br>      card.className = 'sv-card';<br>      iframe.parentElement.insertBefore(card, iframe);<br>      card.appendChild(iframe);<br>    }<br>    // 內層容器<br>    let box = iframe.closest('.sv-embed');<br>    if(!box){<br>      box = document.createElement('div');<br>      box.className = 'sv-embed';<br>      card.insertBefore(box, iframe);<br>      box.appendChild(iframe);<br>    }<br>    // 標題列（只建一次；可用 data-sv-title 覆蓋文字）<br>    let title = card.querySelector('.sv-titlebar');<br>    const text = iframe.dataset.svTitle || '來聽點音樂吧～';<br>    if(!title){<br>      title = document.createElement('div');<br>      title.className = 'sv-titlebar';<br>      title.textContent = text;<br>      card.insertBefore(title, box);<br>    }else if(iframe.dataset.svTitle){<br>      title.textContent = text;<br>    }<br><br>    // 基本外觀<br>    card.style.borderRadius = '16px';<br>    card.style.padding = '14px 16px';<br>    card.style.margin = '12px 0 18px';<br>    card.style.background = 'linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.75))';<br>    card.style.boxShadow = '0 8px 24px rgba(0,0,0,.08)';<br>    card.style.backdropFilter = 'blur(6px)';<br><br>    box.style.width = '100%';<br>    box.style.overflow = 'hidden';<br>    box.style.borderRadius = '12px';<br><br>    iframe.style.border = '0';<br>    iframe.style.display = 'block';<br>    iframe.style.transformOrigin = 'top left';<br><br>    return { card, box };<br>  }<br><br>  function getCrop(iframe){<br>    const v =<br>      iframe.dataset.svCrop ||<br>      iframe.closest('.sv-card')?.dataset.svCrop ||<br>      iframe.closest('.sv-embed')?.dataset.svCrop;<br>    const r = parseFloat(v);<br>    return (r &gt; 0 &amp;&amp; r &lt;= 1) ? r : 1; // 預設不裁<br>  }<br><br>  function getAlign(iframe){<br>    const v =<br>      (iframe.dataset.svAlign ||<br>       iframe.closest('.sv-card')?.dataset.svAlign ||<br>       iframe.closest('.sv-embed')?.dataset.svAlign || 'center').toLowerCase();<br>    return (v === 'top' || v === 'bottom') ? v : 'center';<br>  }<br><br>  function fitOne(iframe){<br>    const { box } = ensureCard(iframe);<br><br>    const w = box.clientWidth || BASE_W;<br>    const scale = w / BASE_W;<br><br>    // 固定原始尺寸，再用 scale 放大<br>    iframe.style.width  = BASE_W + 'px';<br>    iframe.style.height = BASE_H + 'px';<br><br>    // 計算裁切後高度<br>    const crop  = getCrop(iframe);       // 0~1<br>    const fullH = BASE_H * scale;<br>    const visH  = fullH * crop;<br><br>    // 垂直對齊<br>    const align = getAlign(iframe);<br>    let offsetY = 0;<br>    if (crop &lt; 1) {<br>      if (align === 'center')      offsetY = (fullH - visH) / 2;<br>      else if (align === 'bottom') offsetY = (fullH - visH);<br>    }<br><br>    iframe.style.transform = `translateY(-${offsetY}px) scale(${scale})`;<br>    box.style.height = visH + 'px';<br>  }<br><br>  function fitAll(){<br>    document.querySelectorAll(selector).forEach(fitOne);<br>  }<br><br>  document.addEventListener('DOMContentLoaded', ()=&gt;{<br>    fitAll();<br>    setTimeout(fitAll, 300);<br>    setTimeout(fitAll, 1000);<br>  });<br>  window.addEventListener('resize', fitAll);<br>})();<br></code></pre></td></tr></tbody></table></figure>
+<p>我額外加了點特效(滑鼠移動過去會放大)<br>修改<code>source/style.css</code></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/* StreetVoice 卡片外觀與 hover 動效 */<br>.sv-card{<br>  transition: transform .18s ease, box-shadow .18s ease;<br>}<br>.sv-card:hover{<br>  transform: translateY(-1px) scale(1.01);<br>  box-shadow: 0 12px 28px rgba(0,0,0,.12);<br>}<br><br>/* 標題列樣式 */<br>.sv-titlebar{<br>  font-weight: 700;<br>  font-size: 14px;<br>  color: #333;<br>  margin-bottom: 10px;<br>  display: flex; align-items: center; gap: 8px;<br>}<br>.sv-titlebar::before{<br>  content: "🎵";<br>  font-size: 16px;<br>  opacity: .9;<br>}<br><br>/* 內嵌容器，維持圓角 */<br>.sv-embed{ width:100%; overflow:hidden; border-radius:12px; }<br>.sv-embed iframe{ border:0; display:block; }<br></code></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>記得要在header中引用寫好的大小設定</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;script src="&lt;%= url_for('/js/fit-embeds.js') %&gt;"&gt;&lt;/script&gt;<br></code></pre></td></tr></tbody></table></figure></li>
+</ul>
+<p><strong>鐵人賽介紹用文章</strong>那篇中的寫法</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;iframesrc="https://streetvoice.com/music/embed/?id=609974"<br>  frameborder="0" scrolling="no" allow="autoplay"<br>  data-sv-title="來聽點音樂吧～"  &lt;!-- 顯示在卡片上方；不寫則用預設句 --&gt;<br>  data-sv-crop="0.5"               &lt;!-- 顯示 50% 高度；0.35~0.8 都可 --&gt;<br>  data-sv-align="center"           &lt;!-- top / center / bottom --&gt;<br>&gt;&lt;/iframe&gt;<br></code></pre></td></tr></tbody></table></figure>
+
+<h2><span id="kira%E4%B8%BB%E9%A1%8C%E8%87%AA%E5%B8%B6%E5%8F%AF%E7%94%A8%E6%92%AD%E6%94%BE%E5%99%A8">KIRA主題自帶可用播放器</span></h2><p><a target="_blank" rel="noopener" href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md#%E4%BD%BF%E7%94%A8">播放器介紹</a></p>
+<p>首先安裝我們的<strong>aplayer</strong></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">npm install --save hexo-tag-aplayer<br></code></pre></td></tr></tbody></table></figure>
+
+<p>使用範例：</p>
+<blockquote>
+
+			<script>
+				console.error("Error: [hexo-tag-aplayer] Specified asset file not found ([picture_url,)");
+			</script>
+</blockquote>
+<ul>
+<li>標籤參數<ul>
+<li>title : 曲目標題</li>
+<li>author: 曲目作者</li>
+<li>url: 音樂檔案 URL 位址</li>
+<li>picture_url: (可選) 音樂對應的圖片位址</li>
+<li>narrow: （選購）播放器袖珍風格</li>
+<li>autoplay: (選購) 自動播放，行動裝置瀏覽器暫時不支援此功能</li>
+<li>width:xxx: (可選) 播放器寬度 (預設: 100%)</li>
+<li>lrc:xxx: （可選）歌詞檔案 URL 位址<blockquote>
+<p>圖片同樣可以用前面介紹的隨機圖</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>鐵人賽介紹用文章</strong>那篇中的寫法</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">{% aplayer "Demo" "Me" "By Myself - The Grey Room _ Clark Sims.mp3" %}<br></code></pre></td></tr></tbody></table></figure>
+
+<h2><span id="bilibili-%E6%92%AD%E6%94%BE%E5%99%A8">Bilibili 播放器</span></h2><p>使用方法非常簡單</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">{% biliplayer 影片編號 11 1 %}<br></code></pre></td></tr></tbody></table></figure>
+<p>比如說要使用 <code>https://www.bilibili.com/video/BV1Yb411a7ty/</code> 這部影片的話<br>在你的文章中將BV1Yb411a7ty這段貼到影片編號上</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">{% biliplayer BV1Yb411a7ty 1 %}<br></code></pre></td></tr></tbody></table></figure>
+
+
+<p>文章待續。</p>
+<hr>
+<p>留言區從原本需要登入github才能留言的方式改成使用 <code>Twikoo</code> 不須登入即可留言<br>如果你要匿名的話姓名、郵箱、網址可以隨便打沒關係<br>留QQ郵箱的話可以自動偵測郵箱頭像<br>有想多交流的話可以留網址我看到會過去逛逛</p>
+<hr>
+</body></html>
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>Atom<br>
+        <strong>本文鏈接：</strong><a href="https://d0ngd.github.io/2025/10/06/%E6%9C%AC%E7%AB%99%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84_%E7%AC%AC%E4%BA%8C%E7%AF%87/" title="https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;10&#x2F;06&#x2F;本站架站紀錄_第二篇&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;10&#x2F;06&#x2F;本站架站紀錄_第二篇&#x2F;</a><br>
+        
+            <strong>版權聲明：</strong>本文採用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 協議進行許可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			  
+			<!-- 先找到与当前文字相同的目录 -->
+			            
+			<!-- 在找到当前文章所在的 index -->
+			            
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2025/10/05/%E6%9C%AC%E7%AB%99%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84_%E7%AC%AC%E4%B8%80%E7%AF%87/"> 本站架站紀錄_第一篇</a>
+			</div>
+			                          
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+			<a class="kirafont icon-container-fill -link" href="/categories/Hexo/">Hexo</a>
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/%E7%B6%B2%E7%AB%99%E7%BE%8E%E5%8C%96/" rel="tag">網站美化</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+		<div id="tcomment"></div>
+<script src="https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js"></script>
+<script>
+  twikoo.init({
+    envId: 'https://twikoo-vercel-green-six.vercel.app/api',  // 從 _config.yml 讀取
+    el: '#tcomment',
+    lang: 'zh-TW'
+  })
+</script>
+
+	</div>
+	
+</div>
+
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到頂部" title="回到頂部">
+		<button class="mdui-fab mdui-ripple">
+			<i class="kirafont icon-caret-up"></i>
+		</button>
+	</a>
+</div>
+
+		</div>
+		
+		<script>
+		(function () {
+			var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+			var isMobile = Math.min(window.innerWidth, window.innerHeight) < 640;
+			if (prefersReduced || isMobile) return;
+
+			var s = document.createElement('script');
+			s.src = 'https://cdnjs.cloudflare.com/ajax/libs/canvas-nest.js/2.0.0/canvas-nest.js';
+
+			// 深藍色系（線條與節點）
+			s.setAttribute('color', '0,0,0');      // #0D47A1
+			s.setAttribute('pointColor', '0,0,0'); // #1565C0（比線條稍亮）
+			s.setAttribute('opacity', '0.40');          // 需要更顯眼可調到 0.35
+			s.setAttribute('count', '120');             // 太吃資源可降到 80~100
+			s.setAttribute('zIndex', '-1');             // 在最底層
+
+			document.body.appendChild(s);
+		})();
+		</script>
+	
+	</body>
+</html>
