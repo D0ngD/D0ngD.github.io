@@ -430,7 +430,7 @@ document.addEventListener('dragstart', function (e) {
     <div class="w-grid chips-wide">
       <div class="chip">
         <span class="label">我寫的文章</span>
-        <span class="value">10</span> 篇</span>
+        <span class="value">10</span> 篇
       </div>
       <div class="chip">
         <span class="label">分類數</span>
@@ -442,7 +442,7 @@ document.addEventListener('dragstart', function (e) {
       </div>
       <div class="chip">
         <span class="label">訪客數</span>
-        <span class="value"><span id="busuanzi_value_site_uv">讀取失敗</span></span>
+        <span class="value"><span id="busuanzi_value_site_uv">讀取中…</span></span>
       </div>
     </div>
   </div>
@@ -453,7 +453,7 @@ document.addEventListener('dragstart', function (e) {
 
 <script>
 (function () {
-  const siteStartDate = new Date('2025-09-01'); // ← 改成你的建站日期
+  const siteStartDate = new Date('2025-09-01');
   const diff = Math.floor((new Date() - siteStartDate) / (1000 * 60 * 60 * 24));
   document.getElementById('run-days').textContent = diff;
 })();
