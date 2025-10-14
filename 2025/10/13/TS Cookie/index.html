@@ -431,7 +431,7 @@ document.addEventListener('dragstart', function (e) {
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
 			<a><i class="kirafont icon-calendar-fill"></i>2025年10月13日</a>
-			<a><i class="kirafont icon-edit-fill"></i>1.1k 字</a>
+			<a><i class="kirafont icon-edit-fill"></i>1k 字</a>
 			<a><i class="kirafont icon-time-circle-fill"></i>大概 4 分鐘</a>
 		</div>
 		<html><head></head><body><p>在檢查Cookie時發現了TS開頭的的Cookie，紀錄一下這是什麼類型的cookie。</p>
@@ -445,7 +445,50 @@ document.addEventListener('dragstart', function (e) {
 <li>防<code>replay</code>或 <code>request fingerprinting</code></li>
 <li>協助 WAF 做初步風險判斷（是否允許請求進入後端）</li>
 </ul>
-<h2><span id="2-ts-cookie-%E8%88%87%E7%99%BB%E5%85%A5-cookie-%E7%9A%84%E4%B8%BB%E8%A6%81%E5%B7%AE%E5%88%A5">2. TS Cookie 與登入 cookie 的主要差別</span></h2><p>| 項目 | TS Cookie（ASM / WAF) | 登入 cookie（App / Session）|<br>|——|———-|—–|————–|<br>|來源 | WAF/ASM 或 injected JS | 應用程式伺服器（後端）|<br>|目的 | 瀏覽器/請求可信度驗證、阻擋機器人 | 使用者身分驗證、授權（session id / token） |<br>|設定方式 | 常由 injected JS 或 Set-Cookie 設定（需要 JS 時常非 HttpOnly） | 後端 Set-Cookie，常為 HttpOnly（提高安全） |<br>|HttpOnly | 常不是 HttpOnly（因為 JS 需要寫入/讀取) | 通常為 HttpOnly（不能由 JS 存取） |<br>|生命週期 | 短（驗證期）或一次性 | 依服務設計（短期 session 或長期 remember) |<br>|驗證順序 | WAF 驗證 → 再到應用程式 | 後端驗證使用者身份與權限 |<br>|可否互相替代 | 否 | 否 |</p>
+<h2><span id="2-ts-cookie-%E8%88%87%E7%99%BB%E5%85%A5-cookie-%E7%9A%84%E4%B8%BB%E8%A6%81%E5%B7%AE%E5%88%A5">2. TS Cookie 與登入 cookie 的主要差別</span></h2><table>
+<thead>
+<tr>
+<th>項目</th>
+<th>TS Cookie（ASM / WAF)</th>
+<th>登入 cookie（App / Session）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>來源</td>
+<td>WAF/ASM 或 injected JS</td>
+<td>應用程式伺服器（後端）</td>
+</tr>
+<tr>
+<td>目的</td>
+<td>可信度驗證</td>
+<td>使用者身分驗證、授權</td>
+</tr>
+<tr>
+<td>設定</td>
+<td>injected JS或Set-Cookie</td>
+<td>後端 Set-Cookie</td>
+</tr>
+<tr>
+<td>HttpOnly</td>
+<td>O</td>
+<td>X</td>
+</tr>
+<tr>
+<td>生命週期</td>
+<td>短或一次性</td>
+<td>依服務設計</td>
+</tr>
+<tr>
+<td>驗證順序</td>
+<td>WAF→應用程式</td>
+<td>使用者身份與權限</td>
+</tr>
+<tr>
+<td>可否互相替代</td>
+<td>否</td>
+<td>否</td>
+</tr>
+</tbody></table>
 <h2><span id="3-ts-cookie-%E7%9A%84%E9%81%8B%E4%BD%9C%E6%B5%81%E7%A8%8B%E7%B0%A1%E8%A6%81">3. TS Cookie 的運作流程（簡要）</span></h2><p>使用者或自動化程式<strong>第一次</strong>請求網站。<br>ASM 以 HTML/JS 注入或在回應 header 設置 <code>Set-Cookie</code> 要求瀏覽器執行<strong>驗證</strong>（通常會注入一段 JS 來計算或簽發 cookie）。<br>瀏覽器執行 JS，產生或回填 <code>TS Cookie</code>（如 TS01234567=…）。<br>後續請求帶上 <code>TS Cookie</code>，WAF 檢查 cookie 是否有效（檢查簽章、時間戳、<strong>指紋</strong>等）。<br>驗證通過 → 請求被轉送到後端；驗證失敗 → 阻擋 / 轉驗證頁 / 重導。</p>
 <ul>
 <li>所以流程上，<code>TS Cookie</code> 驗證通常發生在到達後端之前，而後端才會處理（或拒絕）登入 session 的檢查。</li>
@@ -464,15 +507,15 @@ document.addEventListener('dragstart', function (e) {
 <h2><span id="5-%E5%B8%B8%E8%A6%8B%E6%83%85%E5%A2%83">5. 常見情境</span></h2><ul>
 <li>A：掃描器被 WAF 阻擋或不斷重導向驗證頁面</li>
 </ul>
-<p>原因：掃描工具沒有執行頁面 JS，拿不到 TS Cookie。<br>處理：<br>    用能執行 JS 的工具（headless Chrome / Puppeteer / Selenium / Burp 的 embedded browser）<br>    手動在瀏覽器先取得 <code>TS Cookie</code>，然後把 cookie 加到掃描器的請求上（simulated replay）<br>    若為<strong>測試環境</strong>，可暫時放寬 WAF 的 browser verification（正式環境慎用）<br>    但要跟客戶溝通到這邊比較麻煩(窗口不是開發者，也不一定懂我們要做什麼)</p>
+<p>原因：掃描工具沒有執行頁面 JS，拿不到 TS Cookie。<br>處理：<br>    - 用能執行 JS 的工具（headless Chrome / Puppeteer / Selenium / Burp 的 embedded browser）<br>    - 手動在瀏覽器先取得 <code>TS Cookie</code>，然後把 cookie 加到掃描器的請求上（simulated replay）<br>    - 若為<strong>測試環境</strong>，可暫時放寬 WAF 的 browser verification（正式環境慎用）<br>    - 但要跟客戶溝通到這邊比較麻煩(窗口不是開發者，也不一定懂我們要做什麼)</p>
 <ul>
 <li>B：多機器或負載平衡下驗證失敗</li>
 </ul>
-<p>原因：不同 node 未同步 cookie 驗證或 session info。<br>處理：<br>    啟用 <code>cookie/session sync</code>（或讓 ASM 走同一個處理 path）<br>    檢查 F5 設定是否為 single point of verification(問窗口)</p>
+<p>原因：不同 node 未同步 cookie 驗證或 session info。<br>處理：<br>    - 啟用 <code>cookie/session sync</code>（或讓 ASM 走同一個處理 path）<br>    - 檢查 F5 設定是否為 single point of verification(問窗口)</p>
 <ul>
 <li>C：看不出是哪個 cookie 在阻擋</li>
 </ul>
-<p>處理：<br>    清除所有 cookie，只留下 session，測試行為；再反過來只留 TS，逐一排查<br>    檢查 <code>response header</code> 的 <code>Set-Cookie</code> 以判別是哪個端（WAF 或 app）在設定 cookie</p>
+<p>處理：<br>    - 清除所有 cookie，只留下 session，測試行為；再反過來只留 TS，逐一排查<br>    - 檢查 <code>response header</code> 的 <code>Set-Cookie</code> 以判別是哪個端（WAF 或 app）在設定 cookie</p>
 <h2><span id="6-%E7%A2%B0%E5%88%B0%E9%98%BB%E6%93%8B%E6%99%82%E7%9A%84%E5%AF%A6%E9%9A%9B%E5%BB%BA%E8%AD%B0">6. 碰到阻擋時的實際建議</span></h2><p>自動化掃描器若不執行頁面 JS，多半拿不到 TS Cookie，會被 WAF 阻擋或遭遇不必要的 false positives。</p>
 <p>建議工具：<br>    - 能執行 <code>JS</code> 的 <code>headless browser</code>（Puppeteer / Playwright / Selenium）<br>    - <code>Burp</code> 的 <code>Embedded Browser</code>（或 Burp + Selenium）</p>
 <p>測試：<br>    - 以真實瀏覽器流程先取得 <code>TS Cookie</code> + <code>session cookie</code>。<br>    - 將兩個 cookie 加到掃描器請求中（重放/回放）。<br>    - 若需全自動化，寫 script 先用 headless chrome 做 login + js 驗證，再取得 cookie 並把 cookie 作為後續 API / 掃描用。</p>
