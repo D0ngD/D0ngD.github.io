@@ -57,6 +57,9 @@
 <script src="/deps/js/APlayer.min.js"></script>
 <script src="/deps/js/Meting.min.js"></script>
 
+		<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+
+
 	<meta name="generator" content="Hexo 7.3.0"></head>
 
 	<body>
@@ -66,52 +69,44 @@
 			style="background-image: url('https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20231114/91%202560x1440_b85ff564ff554921ab1089ccfdafec6a.jpg')"
 		></div>
 		<div class="kira-header">
-    <a
-        class="kira-drawer-button mdui-ripple"
-        title="導航"
-        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
-    >
-        <i class="kirafont icon-menu"></i>
-    </a>
-    <a href="/" title="Atom&#39;s Blog">
-        <img
-			src="/images/head.png"
-			alt="Atom"
-		/>
-    </a>
-	
-	<script src="/js/avatar-redirect.js"></script>
-	<script src="/js/fit-embeds.js"></script>
-	<link rel="stylesheet" href="/brands.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-	<link rel="stylesheet" href="/history-today.css">
+  <a
+    class="kira-drawer-button mdui-ripple"
+    title="導航"
+    onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+  >
+    <i class="kirafont icon-menu"></i>
+  </a>
+  <a href="/" title="Atom&#39;s Blog">
+    <img
+      src="/images/head.png"
+      alt="Atom"
+    />
+  </a>
 
-	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-	<script src="/js/history-today.js" defer></script>
-	
+  <script src="/js/avatar-redirect.js"></script>
+  <script src="/js/fit-embeds.js"></script>
+  <link rel="stylesheet" href="/brands.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/history-today.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="/js/history-today.js" defer></script>
+  
 <link rel="stylesheet" href="/weather-card.css">
 
-	<script src="/js/weather-card.js" defer></script>
+  <script src="/js/weather-card.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
 
-<script>
-// 禁止右鍵選單
-document.addEventListener('contextmenu', function (e) {
-  e.preventDefault();
-});
-
-// 禁止文字選取
-document.addEventListener('selectstart', function (e) {
-  e.preventDefault();
-});
-
-// 禁止拖曳圖片
-document.addEventListener('dragstart', function (e) {
-  e.preventDefault();
-});
-</script>
-
-
+  <script>
+    // 禁止右鍵選單
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    // 禁止文字選取
+    document.addEventListener('selectstart', e => e.preventDefault());
+    // 禁止拖曳圖片
+    document.addEventListener('dragstart', e => e.preventDefault());
+  </script>
 </div>
+
 		<div class="kira-body">
 			<div class="kira-sidebar" id="sidebar">
 
@@ -342,6 +337,8 @@ document.addEventListener('dragstart', function (e) {
 
 		
 	</aside>
+
+
 	<div class="kira-copyright">
 		&copy; 2025
 		<a href="/">Atom</a>
@@ -520,7 +517,7 @@ document.addEventListener('dragstart', function (e) {
 <p>建議工具：<br>    - 能執行 <code>JS</code> 的 <code>headless browser</code>（Puppeteer / Playwright / Selenium）<br>    - <code>Burp</code> 的 <code>Embedded Browser</code>（或 Burp + Selenium）</p>
 <p>測試：<br>    - 以真實瀏覽器流程先取得 <code>TS Cookie</code> + <code>session cookie</code>。<br>    - 將兩個 cookie 加到掃描器請求中（重放/回放）。<br>    - 若需全自動化，寫 script 先用 headless chrome 做 login + js 驗證，再取得 cookie 並把 cookie 作為後續 API / 掃描用。</p>
 <p>實際上之前碰到被阻擋的狀況時是靠客戶調整WAF才能連線上……這邊建議要是做案子前能跟客戶確定好就不用在這上面花時間溝通。</p>
-</body></html>
+<!-- hexo injector body_end start --><script data-pjax src="https://unpkg.com/oh-my-live2d"></script><script>const oml2d = OML2D.loadOml2d({dockedPosition:"right",mobileDisplay:true,models:[{"path":"/live2d_models/ellot/ellot.model3.json","position":[-10,20],"scale":0.15,"stageStyle":{"width":350,"height":350},"mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"ALL"}],parentElement:document.body,primaryColor:"var(--btn-bg)",sayHello:false,tips:{style: {"width":230,"height":120,"left":"calc(50% - 20px)","top":"-100px"},mobileStyle: {"width":180,"height":80,"left":"calc(50% - 30px)","top":"-100px"},idleTips:{interval:3600,message:["你好呀~"]}}});</script><!-- hexo injector body_end end --></body></html>
 	</article>
 
 	 
@@ -535,7 +532,7 @@ document.addEventListener('dragstart', function (e) {
   
 	<div class="kira-post-nav">
 		<nav class="post-nav">
-			      
+			  
 			<!-- 先找到与当前文字相同的目录 -->
 			            
 			<!-- 在找到当前文章所在的 index -->
@@ -545,7 +542,7 @@ document.addEventListener('dragstart', function (e) {
 				<span>上一章</span>
 				<a href="/2025/09/28/%E9%80%9A%E9%81%8EUDP%E6%A8%A1%E6%93%ACGTP/"> 通過UDP模擬GTP</a>
 			</div>
-			                      
+			                          
 		</nav>
 	</div>
 	
@@ -607,6 +604,5 @@ document.addEventListener('dragstart', function (e) {
 			document.body.appendChild(s);
 		})();
 		</script>
-	
 	</body>
 </html>
