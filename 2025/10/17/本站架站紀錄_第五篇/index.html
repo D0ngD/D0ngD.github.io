@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/css/layout.css">
 
 		
-		<title> 在 Maltrail 上回放封包 -  Atom&#39;s Blog</title>
+		<title> 本站架站紀錄_第五篇 -  Atom&#39;s Blog</title>
 		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
 		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
 		
@@ -412,59 +412,67 @@
 		
 		<div class="kira-post-cover">
 			<img
-				data-src="https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20250722/607%202436x1125_f7f268a2cd9f4dad9f1da8bba5cfc1ee.jpg"
+				data-src="https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20250501/501%202436x1125_e49329d0540d4d8b9bf00553a7ab6f54.jpg"
 				data-sizes="auto"
-				alt="在 Maltrail 上回放封包"
+				alt="本站架站紀錄_第五篇"
 				class="lazyload kira-post-cover-image disabled-kira-image"
 			/>
-			<h1>在 Maltrail 上回放封包</h1>
+			<h1>本站架站紀錄_第五篇</h1>
 		</div>
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
-			<a><i class="kirafont icon-calendar-fill"></i>2025年09月29日</a>
-			<a><i class="kirafont icon-edit-fill"></i>409 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 1 分鐘</a>
+			<a><i class="kirafont icon-calendar-fill"></i>2025年10月17日</a>
+			<a><i class="kirafont icon-edit-fill"></i>1.2k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 5 分鐘</a>
 		</div>
-		<html><head></head><body><p>每次要回放封包時都會忘記指令，所以寫成文章記在這邊。</p>
+		<html><head></head><body><p>新增網站旅伴(看板娘/郎)。</p>
 <span id="more"></span>
 
-<h2><span id="%E5%89%8D%E7%BD%AE%E6%BA%96%E5%82%99">前置準備</span></h2><p>需要先有準備以下環境與檔案：</p>
+<p>……搞了四天，一直在失敗的路上。自己也是真蠢，沒先搞懂版本問題。<br>原本想說把踩坑過程也記錄下來，但總共搞了四天，時間一長也懶得紀錄了，因此這邊就只寫最後怎麼成功設定的。</p>
+<p>看了網路上好多的紀錄，結果一樣的坑(版本、檔案等等問題)又踩下去也真是笨的沒誰了。<br>先放我看過的參考網站，因為每個人的方式都不太一樣，或許其他方式你就用得上。</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/LSTM-Kirigaya/Live2dRender">Live2dRender</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/stevenjoezhang/live2d-widget/tree/master">live2d-widget</a></li>
+<li><a target="_blank" rel="noopener" href="https://jiangzc.github.io/live2d-widget/">Live2D Widget</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.empty-city.top/posts/de3e4889/">在Hexo博客上添加本地Live 2D模型</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.morlvoid.pro/2025/09/22/%E6%97%A5%E8%AE%B0-%E6%97%A0%E6%B3%95%E6%88%90%E5%8A%9F%E7%9A%84%E7%9C%8B%E6%9D%BF%E5%A8%98/">日记–无法成功的看板娘</a></li>
+</ol>
+<p>本次所使用<strong>成功</strong>插件： <a target="_blank" rel="noopener" href="https://oml2d.hacxy.cn/">OhMyLive2D</a></p>
 <ul>
-<li>安裝好 Python 3 的 Linux 環境</li>
-<li>安裝完成的 <a target="_blank" rel="noopener" href="https://github.com/stamparm/maltrail">Maltrail</a></li>
-<li>一個或多個 <code>.pcap</code> 封包擷取檔</li>
+<li><p>你可以跟著<a target="_blank" rel="noopener" href="https://oml2d.hacxy.cn/guide/">指南</a> 進行安裝。</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">npm install oh-my-live2d<br></code></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>安裝完後是<a target="_blank" rel="noopener" href="https://oml2d.hacxy.cn/guide/hexo.html">配置</a> 的部分。</p>
+</li>
 </ul>
-<hr>
-<h2><span id="%E5%96%AE%E4%B8%80%E5%B0%81%E5%8C%85%E5%9B%9E%E6%94%BE%E6%8C%87%E4%BB%A4">單一封包回放指令</span></h2><p>Maltrail 本身提供 <code>--pcap</code> 參數，可讓我們將 PCAP 封包導入 <code>sensor.py</code> 進行離線分析。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> python3 sensor.py --pcap /path/to/capture.pcap<br></code></pre></td></tr></tbody></table></figure>
+<p>首先先準備好你要的看板娘，初期我是使用網路上的公開免費模型進行配置。</p>
+<ul>
+<li>你可以直接登入並<a target="_blank" rel="noopener" href="https://booth.pm/zh-tw/items/4862237">下載</a></li>
+</ul>
+<p>下載完後放到<code>souce</code>內，如果你有很多個模型建議多建立一層資料夾。</p>
+<ul>
+<li>然後打開你的<code>_config</code>加入：<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">OhMyLive2d:<br>  enable: true<br>  CDN: https://unpkg.com/oh-my-live2d<br>  option:<br>    # 模型位置，可選在網頁左右<br>    dockedPosition: 'right'<br>	# 使用手機瀏覽時是否開啟模型(手機瀏覽打開的話加載會慢很多，建議關掉)<br>    mobileDisplay: false<br>	# 開始設定模型<br>    models:<br>      - name: '填入你的模型名稱'<br>	    # 使用你剛剛放模型的路徑，我在souce底下新建立一個live2d_models的資料夾。<br>        path: [ /live2d_models/v1a4_306601_37/v1a4_306601_37.model3.json ]<br>		# 模型位置(靠左還是靠右)<br>        position: [-10, 20]<br>		# 模型鏡頭位置(鏡頭照過去的位置，往上就是照頭，往下就是照腳)<br>        anchor: [0.1, -0.4]<br>		# 模型的縮放比例<br>        scale: 0.18<br>		# 模型預設在網頁占比大小<br>        stageStyle:<br>          width: 350<br>          height: 350<br>		# 手機模式的位置，如果沒有開啟手機瀏覽的話可以刪掉<br>        mobilePosition: [-10, 23]<br>        mobileScale: 0.1<br>        mobileStageStyle:<br>          width: 180<br>          height: 166<br>		# 模型預設動作<br>        motionPreloadStrategy: ALL<br></code></pre></td></tr></tbody></table></figure>
+詳細的模型位置數值因為每個人的模型檔案不一，所以需要自己慢慢調整豎直到你認為適合的大小。</li>
+<li>有想要用的參數可以參考：<a target="_blank" rel="noopener" href="https://oml2d.hacxy.cn/api/interfaces/ModelOptions.html">模型選項</a></li>
+</ul>
+<p>如果你有<strong>多個模型</strong>就一樣複製上面的配置，更改<code>name</code>跟<code>路徑</code>即可。</p>
+<p>可自己更改的地方：MENU<a target="_blank" rel="noopener" href="https://oml2d.hacxy.cn/api/interfaces/MenusOptions.html">菜單</a> 、看板娘講的話<a target="_blank" rel="noopener" href="https://oml2d.hacxy.cn/api/interfaces/TipsOptions.html">tips</a> 、最右邊的<a target="_blank" rel="noopener" href="https://oml2d.hacxy.cn/api/interfaces/StatusBarOptions.html">模型狀態欄</a><br>所有配置與選項直接參考上面的網站即可，這邊就不贅述了。<br>寫法都跟我上面的<code>models</code>一樣，要注意的是<strong>縮排</strong>問題。</p>
+<p>這邊紀錄一下初始模型的官方重定位。<br>由於meun上最底下的按鈕還是倒回舊域名，因此我先加了一個重導向設置。<br>不過在模型更改時會重新渲染變回舊域名，因此這個重導向只有在剛進網站時的第一個模型出現時適用。</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">live2d-custom.js<br>(function () {<br>  // 等待外掛把 #oml2d-menus 渲染出來再 patch<br>  function waitFor(sel, cb, timeout = 10000) {<br>    const t0 = Date.now();<br>    (function loop() {<br>      const el = document.querySelector(sel);<br>      if (el) return cb(el);<br>      if (Date.now() - t0 &gt; timeout) return; // 超時就放棄<br>      requestAnimationFrame(loop);<br>    })();<br>  }<br><br>  window.addEventListener('load', function () {<br>    // 1) 覆蓋 info 動作（把舊網址改成新站）<br>    try {<br>      if (window.OML2D &amp;&amp; window.OML2D.MenusActions) {<br>        window.OML2D.MenusActions.info = () =&gt; {<br>          window.open('https://oml2d.hacxy.cn/', '_blank');<br>        };<br>      }<br>    } catch (e) {}<br><br>    // 2) 等選單出來後，直接改 info 按鈕的點擊事件（雙保險）<br>    waitFor('#oml2d-menus', function (menus) {<br>      // 預設的按鈕 id 通常為：Sleep / SwitchTexture / SwitchModel / Info<br>      const infoBtn =<br>        menus.querySelector('#Info') ||<br>        menus.querySelector('[data-action="info"]') ||<br>        menus.querySelector('.oml2d-menus-item:last-child');<br><br>      if (infoBtn) {<br>        infoBtn.title = '關於 OML2D（新官網）';<br>        infoBtn.addEventListener('click', function (ev) {<br>          ev.preventDefault();<br>          ev.stopPropagation();<br>          window.open('https://oml2d.hacxy.cn/', '_blank');<br>        }, { capture: true });<br>      }<br><br>      // 3) 覆寫選單樣式<br>      const css = `<br>        /* 外層間距（每顆之間 10px） */<br>        #oml2d-menus .oml2d-menus-item:not(:last-child) {<br>          margin-bottom: 10px !important;<br>        }<br>        /* 每顆按鈕底色/邊框/文字色 */<br>        #oml2d-menus .oml2d-menus-item {<br>          width: 36px !important;<br>          height: 36px !important;<br>          border-radius: 50% !important;<br>		  #改成你自己喜歡的顏色，相關顏色說明可以參考之前的文章<br>          background-color: rgba(101,153,179,0.25) !important; /* 霧藍青 */<br>          border: 1px solid #BCAD76 !important;                 /* 花冠金 */<br>          color: #485868 !important;                             /* 石板藍 */<br>          display: flex !important;<br>          justify-content: center !important;<br>          align-items: center !important;<br>          box-shadow: 0 2px 5px rgba(0,0,0,0.15) !important;<br>          transition: all 0.25s ease !important;<br>        }<br>        /* hover 效果 */<br>        #oml2d-menus .oml2d-menus-item:hover {<br>          transform: scale(1.05) !important;<br>          box-shadow: 0 0 8px #BCAD76AA !important;<br>          color: #BCAD76 !important;<br>        }<br>        #oml2d-menus {<br>          --btn-bg: #485868 !important; <br>        }<br>      `;<br>      const styleEl = document.createElement('style');<br>      styleEl.setAttribute('data-oml2d-patch', 'menus-style');<br>      styleEl.textContent = css;<br>      document.head.appendChild(styleEl);<br>    });<br>  });<br>})();<br></code></pre></td></tr></tbody></table></figure>
 
-<p>執行後你會看到類似以下訊息：<br><code>using '/var/log/maltrail' for log storage</code><br><code>running...</code><br><code>cleaning up...</code><br>多個封包批次回放：使用 for 迴圈<br>如果你有大量封包需要回放，可以使用 bash 腳本批次處理：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><br>PCAP_DIR=<span class="hljs-string">"/path/to/pcap"</span><br>MALTRAIL_DIR=<span class="hljs-string">"/path/to/maltrail"</span><br><br><span class="hljs-built_in">cd</span> <span class="hljs-string">"<span class="hljs-variable">$MALTRAIL_DIR</span>"</span> || <span class="hljs-built_in">exit</span><br><br><span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> <span class="hljs-string">"<span class="hljs-variable">$PCAP_DIR</span>"</span>/*.pcap; <span class="hljs-keyword">do</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">"[*] 分析中：<span class="hljs-variable">$file</span>"</span><br>    <span class="hljs-built_in">sudo</span> python3 sensor.py --pcap <span class="hljs-string">"<span class="hljs-variable">$file</span>"</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">"[+] 完成：<span class="hljs-variable">$file</span>"</span><br>    <span class="hljs-built_in">echo</span><br><span class="hljs-keyword">done</span><br></code></pre></td></tr></tbody></table></figure>
+<p>在<code>layout.ejs</code>中進行引用</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;script src="&lt;%= url_for('/js/live2d-custom.js') %&gt;"&gt;&lt;/script&gt;<br></code></pre></td></tr></tbody></table></figure>
 
-<p>儲存為 replay_pcap.sh 並執行：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> +x replay_pcap.sh<br>./replay_pcap.sh<br></code></pre></td></tr></tbody></table></figure>
-
-<p>或是不寫成腳本，直接執行</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> 封包路徑; <span class="hljs-keyword">do</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">"Processing: <span class="hljs-variable">$file</span>"</span><br><span class="hljs-built_in">sudo</span> python3 sensor.py -r <span class="hljs-string">"<span class="hljs-variable">$file</span>"</span><br><span class="hljs-keyword">done</span><br></code></pre></td></tr></tbody></table></figure>
-
-<p>若你的封包為 <code>.pcapng</code> 格式，可使用 <code>editcap</code> 轉檔：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">editcap input.pcapng output.pcap<br></code></pre></td></tr></tbody></table></figure>
-<h2><span id="%E5%88%86%E6%9E%90%E7%B5%90%E6%9E%9C%E4%BD%8D%E7%BD%AE">分析結果位置</span></h2><p>Maltrail 預設會將分析結果記錄在：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">/var/log/maltrail/YYYY-MM-DD.<span class="hljs-built_in">log</span><br></code></pre></td></tr></tbody></table></figure>
-
-<p>要是回放中斷了可以下指令檢查最後讀到的檔案：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ls</span> -ltu 封包路徑 | <span class="hljs-built_in">head</span> -n 5<br></code></pre></td></tr></tbody></table></figure>
-
-<hr>
-<p>留言區從原本需要登入github才能留言的方式改成使用 <code>Twikoo</code> 不須登入即可留言<br>如果你要匿名的話姓名、郵箱、網址可以隨便打沒關係<br>留QQ郵箱的話可以自動偵測郵箱頭像<br>有想多交流的話可以留網址我看到會過去逛逛</p>
-<hr>
+<blockquote>
+<p>本站使用所有重返未來1999資源版權皆為原官方所有，本網站僅用於交流學習，禁止用於任何商業用途。</p>
+</blockquote>
 <!-- hexo injector body_end start --><script data-pjax src="https://unpkg.com/oh-my-live2d"></script><script>const oml2d = OML2D.loadOml2d({dockedPosition:"right",mobileDisplay:false,models:[{"name":"thirtseven","path":["/live2d_models/v1a4_306601_37/v1a4_306601_37.model3.json","/live2d_models/v2a2_306604_37/v2a2_306604_37.model3.json"],"position":[-10,20],"anchor":[0.1,-0.4],"scale":0.18,"stageStyle":{"width":350,"height":350},"mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"ALL"},{"name":"six","path":["/live2d_models/v1a4_307902_6/v1a4_307902_6.model3.json","/live2d_models/v1a4_307901_6/v1a4_307901_6.model3.json"],"position":[0,-10],"anchor":[0.15,-0.5],"scale":0.18,"stageStyle":{"width":350,"height":350},"motionPreloadStrategy":"ALL"},{"name":"alf","path":["/live2d_models/v3a1_311303_alf/v3a1_311303_alf.model3.json","/live2d_models/v2a6_311301_alf/v2a6_311301_alf.model3.json","/live2d_models/v2a6_311302_alf/v2a6_311302_alf.model3.json"],"position":[-10,23],"anchor":[0.1,-0.4],"scale":0.18,"stageStyle":{"width":350,"height":350},"motionPreloadStrategy":"ALL"},{"name":"bfsg","path":["/live2d_models/v3a1_307704_bfsg/v3a1_307704_bfsg.model3.json","/live2d_models/v2a5_307703_bfsg/v2a5_307703_bfsg.model3.json","/live2d_models/v1a8_307702_beifangshaoge/v1a8_307702_beifangshaoge.model3.json"],"position":[-10,23],"anchor":[0.2,-0.4],"scale":0.18,"stageStyle":{"width":350,"height":350},"motionPreloadStrategy":"ALL"},{"name":"huanzhuangshuixing","path":["/live2d_models/v2a0_309501_huanzhuangshuixing/v2a0_309501_huanzhuangshuixing.model3.json","/live2d_models/v2a0_309502_huanzhuangshuixing/v2a0_309502_huanzhuangshuixing.model3.json"],"position":[0,20],"anchor":[0.2,-0.4],"scale":0.13,"stageStyle":{"width":350,"height":350},"mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"ALL"}],parentElement:document.body,primaryColor:"var(--btn-bg)",sayHello:false,tips:{style: {"width":350,"height":120,"left":"calc(50% - 20px)","top":"-100px"},mobileStyle: {"width":180,"height":80,"left":"calc(50% - 30px)","top":"-100px"},welcomeTips: {"duration":4000,"message":{"daybreak":["新的一天到來"],"morning":["我會陪在你身邊，放心工作吧"],"noon":["午餐時間到了"],"afternoon":["需要一杯茶來提神嗎？"],"dusk":["讓我們期待夜晚降臨"],"night":["晚上吃了什麼？不要餓肚子了"],"lateNight":["是該休息了吧？"],"weeHours":["該去休息了，我也有點困了"]}},idleTips:{interval:3600,message:["想看什麼？知識可不會憑空產生","你是迷路至此還是帶有目的？"]}},statusBar:{"enable":true,"restMessage":"休息中","switchingMessage":"邀請下一位","reloadMessage":"重新邀請中","loadingMessage":"來到箱中的是誰","loadSuccessMessage":"歡迎到箱中","loadFailMessage":"箱中不開放","style":{"backgroundColor":"rgba(101,153,179,0.25)","color":"#485868","border":"1px solid #BCAD76","borderRadius":"10px","fontSize":"14px","fontWeight":"bold","boxShadow":"0 2px 5px rgba(0,0,0,0.15)"}},menus:{visible:true,draggable:true,style:{"borderColor":"#BCAD76","textColor":"#485868","hoverColor":"#BCAD76"}}});</script><!-- hexo injector body_end end --></body></html>
 	</article>
 
 	 
     <div class="kira-post-copyright">
         <strong>本文作者：</strong>Atom<br>
-        <strong>本文鏈接：</strong><a href="https://d0ngd.github.io/2025/09/29/%E4%BD%BF%E7%94%A8Maltrail%E5%9B%9E%E6%94%BE%E5%B0%81%E5%8C%85/" title="https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;09&#x2F;29&#x2F;使用Maltrail回放封包&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;09&#x2F;29&#x2F;使用Maltrail回放封包&#x2F;</a><br>
+        <strong>本文鏈接：</strong><a href="https://d0ngd.github.io/2025/10/17/%E6%9C%AC%E7%AB%99%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84_%E7%AC%AC%E4%BA%94%E7%AF%87/" title="https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;10&#x2F;17&#x2F;本站架站紀錄_第五篇&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;10&#x2F;17&#x2F;本站架站紀錄_第五篇&#x2F;</a><br>
         
             <strong>版權聲明：</strong>本文採用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 協議進行許可
         
@@ -473,26 +481,26 @@
   
 	<div class="kira-post-nav">
 		<nav class="post-nav">
-			                  
+			  
 			<!-- 先找到与当前文字相同的目录 -->
-			   
+			                     
 			<!-- 在找到当前文章所在的 index -->
-			       
-			<!-- 下一篇文章 -->
-			<div class="new">
-				<span>下一章</span>
-				<a href="/2025/10/03/%E5%AE%89%E8%A3%9D%E4%B8%8D%E5%90%8CPython%E7%89%88%E6%9C%AC%E7%9A%84Spyder(Anaconda)%E7%92%B0%E5%A2%83/"> 安裝不同Python版本的Spyder(Anaconda)環境</a>
+			                        
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2025/10/08/%E6%9C%AC%E7%AB%99%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84_%E7%AC%AC%E5%9B%9B%E7%AF%87/"> 本站架站紀錄_第四篇</a>
 			</div>
-			              
+			                              
 		</nav>
 	</div>
 	
 	<div class="kira-post-meta kira-rainbow">
 		
-			<a class="kirafont icon-container-fill -link" href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">工具使用</a>
+			<a class="kirafont icon-container-fill -link" href="/categories/Hexo/">Hexo</a>
 		
 		
-			<a class="kirafont icon-tag-fill -none-link" href="/tags/IDS/" rel="tag">IDS</a>
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/%E7%B6%B2%E7%AB%99%E7%BE%8E%E5%8C%96/" rel="tag">網站美化</a>
 		
 	</div>
 	

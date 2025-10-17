@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/css/layout.css">
 
 		
-		<title> 在 Maltrail 上回放封包 -  Atom&#39;s Blog</title>
+		<title> Luca Kaneshiro_Sleepover Voice 翻譯 -  Atom&#39;s Blog</title>
 		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
 		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
 		
@@ -412,59 +412,40 @@
 		
 		<div class="kira-post-cover">
 			<img
-				data-src="https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20250722/607%202436x1125_f7f268a2cd9f4dad9f1da8bba5cfc1ee.jpg"
+				data-src="https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20250501/521%202436x1125_772526e851194eaf9b08dda434897533.jpg"
 				data-sizes="auto"
-				alt="在 Maltrail 上回放封包"
+				alt="Luca Kaneshiro_Sleepover Voice 翻譯"
 				class="lazyload kira-post-cover-image disabled-kira-image"
 			/>
-			<h1>在 Maltrail 上回放封包</h1>
+			<h1>Luca Kaneshiro_Sleepover Voice 翻譯</h1>
 		</div>
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
-			<a><i class="kirafont icon-calendar-fill"></i>2025年09月29日</a>
-			<a><i class="kirafont icon-edit-fill"></i>409 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 1 分鐘</a>
+			<a><i class="kirafont icon-calendar-fill"></i>2025年10月18日</a>
+			<a><i class="kirafont icon-edit-fill"></i>2.2k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 10 分鐘</a>
 		</div>
-		<html><head></head><body><p>每次要回放封包時都會忘記指令，所以寫成文章記在這邊。</p>
+		<html><head></head><body><p>中英對照翻譯，好久沒有聽音聲了。</p>
 <span id="more"></span>
 
-<h2><span id="%E5%89%8D%E7%BD%AE%E6%BA%96%E5%82%99">前置準備</span></h2><p>需要先有準備以下環境與檔案：</p>
-<ul>
-<li>安裝好 Python 3 的 Linux 環境</li>
-<li>安裝完成的 <a target="_blank" rel="noopener" href="https://github.com/stamparm/maltrail">Maltrail</a></li>
-<li>一個或多個 <code>.pcap</code> 封包擷取檔</li>
-</ul>
-<hr>
-<h2><span id="%E5%96%AE%E4%B8%80%E5%B0%81%E5%8C%85%E5%9B%9E%E6%94%BE%E6%8C%87%E4%BB%A4">單一封包回放指令</span></h2><p>Maltrail 本身提供 <code>--pcap</code> 參數，可讓我們將 PCAP 封包導入 <code>sensor.py</code> 進行離線分析。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> python3 sensor.py --pcap /path/to/capture.pcap<br></code></pre></td></tr></tbody></table></figure>
-
-<p>執行後你會看到類似以下訊息：<br><code>using '/var/log/maltrail' for log storage</code><br><code>running...</code><br><code>cleaning up...</code><br>多個封包批次回放：使用 for 迴圈<br>如果你有大量封包需要回放，可以使用 bash 腳本批次處理：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><br>PCAP_DIR=<span class="hljs-string">"/path/to/pcap"</span><br>MALTRAIL_DIR=<span class="hljs-string">"/path/to/maltrail"</span><br><br><span class="hljs-built_in">cd</span> <span class="hljs-string">"<span class="hljs-variable">$MALTRAIL_DIR</span>"</span> || <span class="hljs-built_in">exit</span><br><br><span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> <span class="hljs-string">"<span class="hljs-variable">$PCAP_DIR</span>"</span>/*.pcap; <span class="hljs-keyword">do</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">"[*] 分析中：<span class="hljs-variable">$file</span>"</span><br>    <span class="hljs-built_in">sudo</span> python3 sensor.py --pcap <span class="hljs-string">"<span class="hljs-variable">$file</span>"</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">"[+] 完成：<span class="hljs-variable">$file</span>"</span><br>    <span class="hljs-built_in">echo</span><br><span class="hljs-keyword">done</span><br></code></pre></td></tr></tbody></table></figure>
-
-<p>儲存為 replay_pcap.sh 並執行：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> +x replay_pcap.sh<br>./replay_pcap.sh<br></code></pre></td></tr></tbody></table></figure>
-
-<p>或是不寫成腳本，直接執行</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> 封包路徑; <span class="hljs-keyword">do</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">"Processing: <span class="hljs-variable">$file</span>"</span><br><span class="hljs-built_in">sudo</span> python3 sensor.py -r <span class="hljs-string">"<span class="hljs-variable">$file</span>"</span><br><span class="hljs-keyword">done</span><br></code></pre></td></tr></tbody></table></figure>
-
-<p>若你的封包為 <code>.pcapng</code> 格式，可使用 <code>editcap</code> 轉檔：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">editcap input.pcapng output.pcap<br></code></pre></td></tr></tbody></table></figure>
-<h2><span id="%E5%88%86%E6%9E%90%E7%B5%90%E6%9E%9C%E4%BD%8D%E7%BD%AE">分析結果位置</span></h2><p>Maltrail 預設會將分析結果記錄在：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">/var/log/maltrail/YYYY-MM-DD.<span class="hljs-built_in">log</span><br></code></pre></td></tr></tbody></table></figure>
-
-<p>要是回放中斷了可以下指令檢查最後讀到的檔案：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ls</span> -ltu 封包路徑 | <span class="hljs-built_in">head</span> -n 5<br></code></pre></td></tr></tbody></table></figure>
-
-<hr>
-<p>留言區從原本需要登入github才能留言的方式改成使用 <code>Twikoo</code> 不須登入即可留言<br>如果你要匿名的話姓名、郵箱、網址可以隨便打沒關係<br>留QQ郵箱的話可以自動偵測郵箱頭像<br>有想多交流的話可以留網址我看到會過去逛逛</p>
-<hr>
+<p>是說我有時候用jp官方店買有時候用en官方店買導致每次要檢查音聲有沒有買過的時候就要兩個看好麻煩喔，他們為什麼不能統整一下…</p>
+<h2><span id="luca-kaneshiro_sleepover-voice">Luca Kaneshiro_Sleepover Voice</span></h2><p><em>靠近的腳步聲</em><br>Hey, nice work today.<br>嘿，今天辛苦了。<br>I can’t believe there was an unexpected meeting.I was pretty surprised too.<br>沒料到會有臨時會議，我也嚇了一跳。<br>But thanks to your fantastic scheduling skills, we were able to do something about it.<br>不過多虧你安排得很好，我們才能順利應對。<br>As expected of my <code>brilliant</code> <code>secretary</code>. You’re always saving me.<br>不愧是我<code>出色</code>的<code>秘書</code>，你總是能幫到我。<br>No, no, there’s no need to be <code>modest</code>. But your modesty is another thing that I like about you, though.<br>不、不、不用太<code>謙虛</code>——不過你這點謙虛我也是很喜歡的。</p>
+<p>Yeah, we’re free after this.<br>對，接下來我們就沒事了。<br>Since we’ve come out all this far, why (don’t) we spend some time dating?<br>既然都特地出來了，要不要順便去約會一下？<br>um, Isn’t that a good plan?<br>恩，這主意不錯吧？<br>I mean, we’re always <code>conscious</code> of this <code>scrutiny</code> around us, but out here we weren’t bumping to anyone from work.<br>平常在公司總是得注意別人的眼光，但在這種地方不會遇到熟人。<br>um, While we’re <code>heading back</code> to the hotel, let’s just stay openly.<br>恩，<code>回</code>飯店之前，就放鬆一點光明正大地相處吧。<br>Good idea?Right?I appreciate your <code>enthusiasm</code>.<br>好主意對吧？你這麼<code>期待</code>我也很開心。<br>Yeah, that’s the way. So then, let’s go for a look(s) around.<br>就是這樣，走吧。我們先去散散步。<br>Do you have any stores that you’d like to see?<br>你有特別想逛的店嗎？<br>I can’t think of anything in particular myself, but.<br>我自己倒是沒特別想到但…<br>oh… let’s just take a look around then.<br>不然就邊走邊看看吧。<br>Seems like a <code>sightseeing area</code> anyway, so there’s bound to be some good places.<br>這裡感覺是<code>觀光</code>區，應該有不少景點。<br>I’m sure we’ll find something that takes your interest.<br>我相信一定會有吸引你的東西。</p>
+<p>Alright, let’s start with that store over there.<br>好，先從那邊那間店開始吧。<br>Is that a jewelry store? Ah, famous brand at that.<br>那是珠寶店嗎？哇，還是名牌呢。<br>Well, just tell me if there’s anything you’d like.<br>如果有喜歡的就跟我說。<br>We’ve been acting like business partners for a while now, so I’d like to treat you to something nice.<br>我們一直以來都假裝成好搭檔，所以我想好好對待你。<br>Allow me to really treat you like my date for at least today.<br>讓我好好寵你一次，哪怕只有今天。</p>
+<p><em>靠近的腳步聲</em><br>Sorry, were you waiting long?<br>不好意思，讓你久等了嗎？<br>Oh, that’s good then.<br>哦，那就好。<br>I had one last thing I had to take care of.<br>我剛才還有一件事要處理。<br>Oh,nononono don’t worry about it.It’s all settled now.<br>喔不用擔心，事情都解決了。<br>So anyway, did you get your fill of the town?<br>話說回來，逛得還開心嗎？<br>That’s good then.<br>那就好。<br>But you’ve bought nothing other than gifts for your friends.<br>不過你除了幫朋友買禮物以外，什麼都沒買？<br>No, I mean, you should think about yourself sometimes too, you know.<br>不，我意思是——你也偶爾想想自己啊。<br>You’re not even aware of it, aren’t you?<br>你自己根本沒意識到吧？<br>Well, that’s fine. That’s why I’m here.No, no, just talking to myself. Here, hand over some of those…Then give me your hand?<br>算了，這就是為什麼我要在你身邊…沒有，我只是在自言自語。來，東西給我一些…把手伸過來？<br>This is nice, right?<br>這樣很棒吧？<br>I promise we wouldn’t have to worry about anyone else today.<br>我說過今天不用顧慮其他人了。<br>If it seems like I’m excited about this, that’s because I’m able to be openly affectionate with you.<br>如果我看起來很興奮，那是因為我難得可以光明正大地對你好。<br>It’s just such a pain to hide our relations all the time.<br>一直要隱藏我們的關係真的很痛苦。</p>
+<p>so…Yeah, I’ve heard the night view at the beach is particularly beautiful.<br>對了，我聽說海邊的夜景特別漂亮。<br>Why don’t we head out that way on our way back?<br>回去的路上順便去看看吧？<br>Going on a lovely date after work and seeing the night view and then being able to Relax at a hotel at the end of the day with the one you love.<br>下班後來個約會、看夜景，最後回飯店和最愛的人一起放鬆。<br>That’s absolutely the best.<br>這已經是最棒的行程了。<br>But we’ve got an early date tomorrow.Huh?Guess we won’t have time to soak it all in.<br>但我們明天一早又有行程…看來也沒辦法待太久。</p>
+<p>So come over this way. Be good now and get into bed.<br>來，這邊。乖乖上床。<br>And pull the covers up to your shoulders since you must be getting chilly.<br>把被子拉到肩膀，你覺得有點冷了對吧。<br><em>衣物摩擦聲</em><br>You look pretty pleased.<br>你看起來很滿足的樣子。<br>You enjoyed a long awaited date that much? Then I’m glad.<br>期待這次約會期待到這種程度嗎？那我就放心了。<br>If you didn’t, I would put me in an <code>awkward</code> situation.<br>如果你不開心的話我會覺得很<code>尷尬</code>的。<br>I’m so happy we were able to see the city together.<br>我真的很高興今天能和你一起逛街。<br>To the point that I wish it could always be like this.<br>我甚至希望能一直這樣下去。</p>
+<p>Don’t <code>grumble</code> at that.<br>別<code>抱怨</code>了。<br>I understand why you want to keep this from everyone else at work, but I think it’s about time we make this official.<br>我了解你為什麼不想讓公司裡的人知道，但我覺得差不多該公開我們的關係了。<br>You think we’d be mixing our work and private life.<br>你覺得這樣會把公事和私生活混在一起。<br>But we’ve been dating for a good couple of years now.<br>但我們已經交往好幾年了。<br>I’m sure we’ve been good at hiding it so far, but I feel like some people would have caught on by now.<br>我知道我們到目前為止藏得很好，但我覺得應該已經有人察覺了。<br>Surely. What’s that? You have another reason to keep a secret?<br>當然。怎麼了？你還有別的理由想保密嗎？<br>I mean, it’s okay. I’ll be mad or anything if you just tell me.<br>我是說，沒關係，只要你說出來我不會生氣。<br>Huh? You think others be jealous? You were worried about that?<br>嗯？你覺得別人會嫉妒？你是因為這個才擔心？<br>Nonono. I’m not making fun of you.<br>不不不，我不是在笑你。<br>Like, I did not see that coming at all.<br>我是真的完全沒想到這點。<br>You think I’m pretty popular, huh?<br>你覺得我挺受歡迎？嗯？<br>Well, I am the head of the company, so a certain degree of respect comes with a role. Come on now.<br>我是公司的頭頭，他們當然會尊重我啊。別這樣啦。<br>That’s not what I meant.<br>我不是那個意思。<br>But I worry about jealousy too, you know.<br>但是，我其實也會擔心別人吃醋。<br>It’s true. <code>Contrary</code> to what you’re saying, I feel like if we don’t make it clear that you’re my partner, that’s what’ll lead to <code>jealousy</code>.<br>真的啦。跟你想的<code>相反</code>，我覺得如果我們不公開你是我的伴侶，反而更容易讓別人<code>吃醋</code>。<br>You think I’m making that up? Please. There’s a whole bunch of people practically lined up for you.<br>你以為我在亂講嗎？拜託，追你的人都快排隊排到門外去了。<br>And then I have to discourage it each and every time I see it.<br>然後每次我看到都得一個一個去打消他們的念頭。<br>Don’t laugh at me for that.<br>不要因為這個笑我。<br>I’m not joking around, you know.<br>我可是認真的。<br>That makes you happy. Hmm. You’re always giving me <code>grief</code><br>這樣你反而開心，嗯？你總是讓我<code>頭疼</code>。<br>Hmm. You’re feeling sleepy?<br>嗯？你想睡了嗎？<br>Yeah, sure. We can sleep now. Don’t worry about it.<br>好啦，可以睡了，別想太多。<br>(we) Can talk more about this later. Good night.<br>這件事我們之後再聊。晚安。</p>
+<p>END</p>
+<p>如果有聽錯是我英聽太爛，請直接在留言區講一下(趴<br>嚕在錄音聲有時候講話跟我大老闆一樣超級含滷蛋的，只能靠上下文去確定在講什麼，超容易分心。<br>(對我在開會聽英文的時候根本沒認真聽)<br>我原本是猜測可能是畢旅之類的嚕跑來玩牌(?)然後累到睡著，沒想到這麼成人。<br>戌亥的才是過了一次畢旅好好笑XDD</p>
+<p>短短將近七分鐘我翻譯了兩個小時左右好可怕<br>EX超級甜，聽得超爽！推薦連EX一起買來聽</p>
 <!-- hexo injector body_end start --><script data-pjax src="https://unpkg.com/oh-my-live2d"></script><script>const oml2d = OML2D.loadOml2d({dockedPosition:"right",mobileDisplay:false,models:[{"name":"thirtseven","path":["/live2d_models/v1a4_306601_37/v1a4_306601_37.model3.json","/live2d_models/v2a2_306604_37/v2a2_306604_37.model3.json"],"position":[-10,20],"anchor":[0.1,-0.4],"scale":0.18,"stageStyle":{"width":350,"height":350},"mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"ALL"},{"name":"six","path":["/live2d_models/v1a4_307902_6/v1a4_307902_6.model3.json","/live2d_models/v1a4_307901_6/v1a4_307901_6.model3.json"],"position":[0,-10],"anchor":[0.15,-0.5],"scale":0.18,"stageStyle":{"width":350,"height":350},"motionPreloadStrategy":"ALL"},{"name":"alf","path":["/live2d_models/v3a1_311303_alf/v3a1_311303_alf.model3.json","/live2d_models/v2a6_311301_alf/v2a6_311301_alf.model3.json","/live2d_models/v2a6_311302_alf/v2a6_311302_alf.model3.json"],"position":[-10,23],"anchor":[0.1,-0.4],"scale":0.18,"stageStyle":{"width":350,"height":350},"motionPreloadStrategy":"ALL"},{"name":"bfsg","path":["/live2d_models/v3a1_307704_bfsg/v3a1_307704_bfsg.model3.json","/live2d_models/v2a5_307703_bfsg/v2a5_307703_bfsg.model3.json","/live2d_models/v1a8_307702_beifangshaoge/v1a8_307702_beifangshaoge.model3.json"],"position":[-10,23],"anchor":[0.2,-0.4],"scale":0.18,"stageStyle":{"width":350,"height":350},"motionPreloadStrategy":"ALL"},{"name":"huanzhuangshuixing","path":["/live2d_models/v2a0_309501_huanzhuangshuixing/v2a0_309501_huanzhuangshuixing.model3.json","/live2d_models/v2a0_309502_huanzhuangshuixing/v2a0_309502_huanzhuangshuixing.model3.json"],"position":[0,20],"anchor":[0.2,-0.4],"scale":0.13,"stageStyle":{"width":350,"height":350},"mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"ALL"}],parentElement:document.body,primaryColor:"var(--btn-bg)",sayHello:false,tips:{style: {"width":350,"height":120,"left":"calc(50% - 20px)","top":"-100px"},mobileStyle: {"width":180,"height":80,"left":"calc(50% - 30px)","top":"-100px"},welcomeTips: {"duration":4000,"message":{"daybreak":["新的一天到來"],"morning":["我會陪在你身邊，放心工作吧"],"noon":["午餐時間到了"],"afternoon":["需要一杯茶來提神嗎？"],"dusk":["讓我們期待夜晚降臨"],"night":["晚上吃了什麼？不要餓肚子了"],"lateNight":["是該休息了吧？"],"weeHours":["該去休息了，我也有點困了"]}},idleTips:{interval:3600,message:["想看什麼？知識可不會憑空產生","你是迷路至此還是帶有目的？"]}},statusBar:{"enable":true,"restMessage":"休息中","switchingMessage":"邀請下一位","reloadMessage":"重新邀請中","loadingMessage":"來到箱中的是誰","loadSuccessMessage":"歡迎到箱中","loadFailMessage":"箱中不開放","style":{"backgroundColor":"rgba(101,153,179,0.25)","color":"#485868","border":"1px solid #BCAD76","borderRadius":"10px","fontSize":"14px","fontWeight":"bold","boxShadow":"0 2px 5px rgba(0,0,0,0.15)"}},menus:{visible:true,draggable:true,style:{"borderColor":"#BCAD76","textColor":"#485868","hoverColor":"#BCAD76"}}});</script><!-- hexo injector body_end end --></body></html>
 	</article>
 
 	 
     <div class="kira-post-copyright">
         <strong>本文作者：</strong>Atom<br>
-        <strong>本文鏈接：</strong><a href="https://d0ngd.github.io/2025/09/29/%E4%BD%BF%E7%94%A8Maltrail%E5%9B%9E%E6%94%BE%E5%B0%81%E5%8C%85/" title="https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;09&#x2F;29&#x2F;使用Maltrail回放封包&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;09&#x2F;29&#x2F;使用Maltrail回放封包&#x2F;</a><br>
+        <strong>本文鏈接：</strong><a href="https://d0ngd.github.io/2025/10/18/Luca_Sleepover%20Voice%20%E7%BF%BB%E8%AD%AF/" title="https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;10&#x2F;18&#x2F;Luca_Sleepover Voice 翻譯&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;10&#x2F;18&#x2F;Luca_Sleepover Voice 翻譯&#x2F;</a><br>
         
             <strong>版權聲明：</strong>本文採用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 協議進行許可
         
@@ -473,26 +454,26 @@
   
 	<div class="kira-post-nav">
 		<nav class="post-nav">
-			                  
+			      
 			<!-- 先找到与当前文字相同的目录 -->
-			   
+			      
 			<!-- 在找到当前文章所在的 index -->
-			       
-			<!-- 下一篇文章 -->
-			<div class="new">
-				<span>下一章</span>
-				<a href="/2025/10/03/%E5%AE%89%E8%A3%9D%E4%B8%8D%E5%90%8CPython%E7%89%88%E6%9C%AC%E7%9A%84Spyder(Anaconda)%E7%92%B0%E5%A2%83/"> 安裝不同Python版本的Spyder(Anaconda)環境</a>
+			    
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2025/10/16/%E4%B8%80%E4%BA%9Bidioms/"> 一些Idioms</a>
 			</div>
-			              
+			                          
 		</nav>
 	</div>
 	
 	<div class="kira-post-meta kira-rainbow">
 		
-			<a class="kirafont icon-container-fill -link" href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">工具使用</a>
+			<a class="kirafont icon-container-fill -link" href="/categories/%E5%A4%96%E6%96%87%E7%9B%B8%E9%97%9C/">外文相關</a>
 		
 		
-			<a class="kirafont icon-tag-fill -none-link" href="/tags/IDS/" rel="tag">IDS</a>
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/%E5%A4%96%E6%96%87%E7%9B%B8%E9%97%9C/" rel="tag">外文相關</a>
 		
 	</div>
 	
