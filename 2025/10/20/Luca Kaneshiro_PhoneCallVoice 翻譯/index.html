@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/css/layout.css">
 
 		
-		<title> 查看Windows Update更新紀錄以及關閉更新 -  Atom&#39;s Blog</title>
+		<title> Luca Kaneshiro_PhoneCallVoice 翻譯 -  Atom&#39;s Blog</title>
 		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
 		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
 		
@@ -412,93 +412,40 @@
 		
 		<div class="kira-post-cover">
 			<img
-				data-src="https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20250722/595%202436x1125_26ca7f3427b4455395cd3b5113fe7287.jpg"
+				data-src="https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20250501/529%202436x1125_0516fd6202e14527aefccbaf573c4359.jpg"
 				data-sizes="auto"
-				alt="查看Windows Update更新紀錄以及關閉更新"
+				alt="Luca Kaneshiro_PhoneCallVoice 翻譯"
 				class="lazyload kira-post-cover-image disabled-kira-image"
 			/>
-			<h1>查看Windows Update更新紀錄以及關閉更新</h1>
+			<h1>Luca Kaneshiro_PhoneCallVoice 翻譯</h1>
 		</div>
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
-			<a><i class="kirafont icon-calendar-fill"></i>2025年09月30日</a>
-			<a><i class="kirafont icon-edit-fill"></i>593 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 2 分鐘</a>
+			<a><i class="kirafont icon-calendar-fill"></i>2025年10月20日</a>
+			<a><i class="kirafont icon-edit-fill"></i>2.7k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 13 分鐘</a>
 		</div>
-		<html><head></head><body><p>每次都被微軟的更新搞到，今天紀錄一下檢查更新紀錄方法，以及關閉更新的方式。</p>
+		<html><head></head><body><p>中英對照翻譯</p>
 <span id="more"></span>
-
-<h2><span id="%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B-windows-update-%E7%9A%84%E6%9B%B4%E6%96%B0%E6%99%82%E9%96%93%E8%88%87%E6%88%90%E5%8A%9F%E8%88%87%E5%90%A6">如何查看 Windows Update 的更新時間與成功與否</span></h2><h3><span id="%E6%96%B9%E6%B3%95%E4%B8%80%E4%BD%BF%E7%94%A8%E4%BA%8B%E4%BB%B6%E6%AA%A2%E8%A6%96%E5%99%A8-event-viewer">方法一：使用事件檢視器 (Event Viewer)</span></h3><ol>
-<li>打開「<strong>事件檢視器</strong>」（在搜尋列輸入 <code>事件檢視器</code> 或 <code>Event Viewer</code>）。</li>
-<li>展開左側選單到：</li>
-</ol>
-<p>事件檢視器 &gt; 應用程式與服務記錄 &gt; Microsoft &gt; Windows &gt; WindowsUpdateClient &gt; Operational</p>
-<ol start="3">
-<li>常見的事件 ID：</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>事件 ID</th>
-<th>意義</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>19</td>
-<td>更新成功安裝</td>
-</tr>
-<tr>
-<td>20</td>
-<td>更新安裝失敗</td>
-</tr>
-<tr>
-<td>21</td>
-<td>開始下載</td>
-</tr>
-<tr>
-<td>22</td>
-<td>開始安裝</td>
-</tr>
-<tr>
-<td>31</td>
-<td>安裝完成（需重新啟動）</td>
-</tr>
-</tbody></table>
-<ol start="4">
-<li>點選任一事件可查看詳細資訊，包括 <strong>時間、更新名稱、結果碼</strong> 等。</li>
-</ol>
-<hr>
-<h3><span id="%E6%96%B9%E6%B3%95%E4%BA%8Creliability-monitor%E7%A9%A9%E5%AE%9A%E6%80%A7%E7%9B%A3%E8%A6%96%E5%99%A8">方法二：Reliability Monitor（穩定性監視器）</span></h3><ol>
-<li>在搜尋欄輸入 <code>Reliability Monitor</code> 或「<strong>穩定性歷程記錄檢視器</strong>」。</li>
-<li>查看時間軸上的「Windows Update」事件。</li>
-<li>點擊任一事件，可查看詳細更新記錄與錯誤訊息。</li>
-</ol>
-<p>這是最直覺的 GUI 工具。</p>
-<hr>
-<h3><span id="%E6%96%B9%E6%B3%95%E4%B8%89%E4%BD%BF%E7%94%A8-powershell-%E6%9F%A5%E8%A9%A2%E5%B7%B2%E5%AE%89%E8%A3%9D%E6%9B%B4%E6%96%B0">方法三：使用 PowerShell 查詢已安裝更新</span></h3><p>打開 PowerShell 輸入以下指令可查看已安裝更新列表：</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">Get-HotFix</span> | <span class="hljs-built_in">Sort-Object</span> InstalledOn <span class="hljs-literal">-Descending</span><br></code></pre></td></tr></tbody></table></figure>
-
-<p>也可列出更新日誌：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Get-WindowsUpdateLog<br></code></pre></td></tr></tbody></table></figure>
-
-<h2><span id="%E5%A6%82%E4%BD%95%E9%97%9C%E9%96%89%E6%88%96%E5%BB%B6%E5%BE%8C-windows-update">如何關閉或延後 Windows Update</span></h2><h3><span id="%E6%96%B9%E6%B3%95%E4%B8%80%E5%BE%9E%E8%A8%AD%E5%AE%9A%E4%B8%AD%E6%9A%AB%E5%81%9C%E6%9B%B4%E6%96%B0%E9%81%A9%E7%94%A8%E6%96%BC%E5%AE%B6%E5%BA%AD%E7%89%88%E5%B0%88%E6%A5%AD%E7%89%88">方法一：從設定中暫停更新（適用於家庭版/專業版）</span></h3><p>開啟「設定」 &gt;「Windows Update」</p>
-<p>點選「暫停更新」，可選擇 1～5 週不更新</p>
-<h3><span id="%E6%96%B9%E6%B3%95%E4%BA%8C%E9%80%8F%E9%81%8E%E7%BE%A4%E7%B5%84%E5%8E%9F%E5%89%87%E5%81%9C%E7%94%A8%E6%9B%B4%E6%96%B0%E5%83%85%E9%99%90-windows-%E5%B0%88%E6%A5%AD%E7%89%88%E4%BC%81%E6%A5%AD%E7%89%88">方法二：透過群組原則停用更新（僅限 Windows 專業版/企業版）</span></h3><p>執行 gpedit.msc</p>
-<p>進入<code>電腦設定 &gt; 系統管理範本 &gt; Windows 元件 &gt; Windows Update &gt; 管理的更新安裝</code><br>雙擊「設定自動更新」，選擇「已停用」或改為「通知下載與安裝」。</p>
-<h3><span id="%E6%96%B9%E6%B3%95%E4%B8%89%E5%81%9C%E7%94%A8-windows-update-%E6%9C%8D%E5%8B%99%E9%81%A9%E7%94%A8%E6%96%BC%E6%89%80%E6%9C%89%E7%89%88%E6%9C%AC%E4%BD%86%E4%B8%8D%E6%8E%A8%E8%96%A6">方法三：停用 Windows Update 服務（適用於所有版本，但不推薦）</span></h3><p>執行 services.msc</p>
-<p>找到 Windows Update 服務</p>
-<p>右鍵 &gt; 停用，啟動類型改為「停用」</p>
-<p><code>注意：某些版本的 Windows 會在重開機後自動重啟該服務，建議與群組原則搭配使用。</code></p>
-<hr>
-<p>留言區從原本需要登入github才能留言的方式改成使用 <code>Twikoo</code> 不須登入即可留言<br>如果你要匿名的話姓名、郵箱、網址可以隨便打沒關係<br>留QQ郵箱的話可以自動偵測郵箱頭像<br>有想多交流的話可以留網址我看到會過去逛逛</p>
-<hr>
+<p>感覺自己英聽還行但是要逐字打出來單詞時還是有點困難，尤其嚕講話又含滷蛋(汗</p>
+<h2><span id="luca-kaneshiro_phonecallvoice-%E7%BF%BB%E8%AD%AF">Luca Kaneshiro_PhoneCallVoice 翻譯</span></h2><p>Hey, it’s me, Luca.<br>嘿，是我，Luca。<br>Mmm. Long time no talk.<br>嗯嗯，好久沒聊了。<br>How are things holding up for you?<br>你最近還好嗎？<br>Haha. Yeah, I know it’s (we’ve) been a few days since I last saw you, but, you know, it still feels like a long time, though.<br>哈哈，我知道我們才幾天沒見面，但感覺好像過了好久一樣。<br>Yeah. Same old, same old with me.<br>嗯，我這邊還是老樣子。<br>I figured you were starting to miss my beautiful voice, so I called.<br>我想你應該開始想念我迷人的聲音了，所以打個電話來。<br>Was I right?<br>我說對了吧？<br>But hey, come on, it’s okay. You don’t have to pretend like you were fine.<br>別這樣啦，沒關係，你不用假裝自己一切都好。<br>Anyways, I’m sorry I haven’t really been able to call.<br>總之，抱歉這段時間沒怎麼打電話給你。<br>It must be <code>nighttime</code> over there, so you’re probably getting ready for bed.<br>你那邊現在應該是<code>晚上</code>吧，可能正準備要睡了？<br>But it’s still noon around here.<br>但我這裡還是中午呢。</p>
+<p>Whenever I think about calling you, I remember it’s the middle of the night for you, and I can’t stop myself.<br>每次想打給你時我都會想到那邊還是半夜，可是我還是忍不住想打。<br>And then when it’s a good time to call, I get held up by work.<br>等到時間OK時工作又太忙沒法打給你。<br>I keep telling myself every day that (you know) I’ll just call next time, but the same thing happens every single time.<br>我每天都告訴自己「下次一定要打」，結果每次都一樣。<br>Oh. Just in case you’re worried. I’m not cheating on you or anything.<br>喔，先說好，你不用擔心，我可沒有劈腿或什麼的。<br>You’re the only one for me. And I really mean that.<br>你是我的唯一，我是認真的。<br>It’s a little embarrassing to say, but. Yeah. I love you anyway.<br>雖然說起來有點害羞，但……嗯，我真的愛你。<br>I’m glad to hear you’re doing well.<br>聽你過得好我很開心。<br>How’s the work I asked you to do? Coming along.<br>我交代給你的工作，進展得怎麼樣了？<br>Are you almost finished?<br>快完成了嗎？<br>Ah, nice. That’s what I’m talking about.<br>啊，不錯，這才是我認識的你。<br>I knew I could count on you, but I know you’re basically the boss now, but just let me know if you need anything, okay?<br>我就知道可以依靠你。雖然你現在幾乎是老闆了，但有需要就跟我說，好嗎？<br>If any of our men are giving you trouble, just let me know. I’ll <code>set them straight</code>.<br>如果有人讓你為難，告訴我，我會好好<code>教訓他們</code>。<br>Hmm. What? You don’t like being called the boss?<br>嗯？怎麼了？你不喜歡被叫老闆嗎？<br>Wha. Too much responsibility.<br>蛤，覺得責任太重？<br>It’s okay. It sounds like work’s going well for you, though, so that’s a <code>relief</code>.<br>沒關係啦。聽起來你的工作順利，我就<code>放心</code>了。</p>
+<p>But it’s still gonna be a while before I can come home.<br>不過我還要再過一陣子才能回家。<br>I’m counting on you, though.<br>這段時間就拜託你撐著啦。<br>Mm. Yeah. Everything’s going smoothly here.<br>嗯，這邊一切都進展順利。<br>You really don’t have anything to worry about.<br>你真的不用太擔心。<br>I should be home within a week.<br>我應該一週內就能回去。<br>At this rate, I think so.<br>照目前情況來看，應該沒問題。<br>But the only thing I have to worry about now is their boss.<br>不過我現在唯一要煩惱的是他們的老闆。<br>You see, if he agrees, we have a deal and I can go home early.<br>如果他同意，我們就能達成協議，我也能提前回家。<br>But I hear it’s pretty <code>stubborn</code>, so I hope the rumors aren’t true.<br>但聽說那人很<code>固執</code>，希望傳聞是假的。<br>Who knows? Well, I’ll <code>figure something out</code>.<br>誰知道呢？總之我會<code>想辦法</code>的。<br>Don’t worry, though. I’m used to this stuff.<br>別擔心，我已經習慣這種事了。<br>I know. I won’t do anything dangerous.<br>我知道，我不會做危險的事。<br>Yeah, I don’t really want to worry you.<br>我也不想讓你擔心。<br>And I definitely don’t want to stay here any longer than I have to.<br>而且我絕對不想在這裡多待。</p>
+<p>I Mean, I’m still gonna go crazy without you already.<br>說真的，沒有你我都快瘋了。<br>Hmm. Yeah. I really do miss your cooking.<br>嗯，我真的很想念你做的菜。<br>Of course, there’s plenty of food here, but nothing really beats your meals.<br>雖然這裡食物不少，但沒有一樣比得上你的手藝。<br>The city I’m in is really nice, though, so I’ll have to bring you here on vacation one of these days.<br>不過我這座城市真的很漂亮，以後有假時一定要帶你來玩。<br>I’ll make a list of good restaurants and views while I’m here, so. Look forward to it.<br>我會把這裡好吃又好看的地方都記下來，等著吧。<br>Okay.(laughter) What? You’re getting sleepy already?<br>好啦。 <strong>笑聲</strong> 什麼？你已經開始想睡了？什麼？你已經開始想睡了？</p>
+<p>Don’t worry about it. It’s my fault for calling you this late, but I really would like to talk a little bit longer, if that’s okay.<br>沒關係啦，是我太晚打來。不過如果你願意的話，我還想多聊一會兒。<br>I mean, we’ve only been talking for, what, a minute or two?<br>畢竟我們才講了不到兩分鐘吧？<br>And who knows when I’ll be able to call you again?<br>誰知道下次我什麼時候才能再打給你呢？<br>I just want to enjoy our time together.<br>我只是想多享受一下和你在一起的時間。<br>Just a little longer, Please?<br>再讓我多待一會兒，好嗎？<br>Mmm.(laughter) You’re right. I probably do get lonely a lot more easily than you.<br>嗯<strong>笑聲</strong>，你說得對，我大概比你更容易感到孤單。<br>Can you blame me, though?<br>但你能怪我嗎？<br>We were spending every day together until the day I finally left.<br>在我出差前，我們每天都膩在一起啊。<br>And now I really haven’t seen you in weeks.<br>而現在，我已經好幾週沒見到你了。<br>I’m not gonna complain about how I want to go home like a little kid, but, yeah, I do get lonely.<br>我不想像小孩一樣一直說想回家，但，對，我真的很想你。<br>Really? You feel the same way, too?<br>真的？你也有同樣的感覺？<br>Yeah, of course. Makes me really happy to hear you say that.<br>當然有啊，聽你這麼說我真的很開心。<br>You know, you’re really being open with me today.<br>你今天對我特別坦率呢。<br>It’s a little surprising, but, yeah.<br>雖然有點意外，但我很喜歡。<br>You know what? Maybe going on a business trip isn’t so bad after all.<br>你知道嗎？這樣想想，出差好像也沒那麼糟。<br>I wish we could be together right now, but I like how open you are with your feelings.<br>雖然我希望現在就能在你身邊，但我很喜歡你這樣坦率的樣子。<br>In fact, I kind of wish you were always as honest with your feelings.<br>其實，我希望你能一直這麼真誠地表達自己。<br>(laughter)Hey, it’s not a bad thing. I love it.<br><strong>笑聲</strong> 嘿，這不是壞事，我很喜歡。<br>Yeah, of course. Although I like how confident and tough you usually are, too.<br>是啊，雖然我也喜歡你平時那種自信又堅強的樣子。</p>
+<p>Yeah, definitely. But. Yeah. Anyways, I know you’re getting sleepy.<br>嗯，真的。不過，好吧，我知道你快撐不住了。<br>I can hear in your voice. Sorry to keep you for so long.<br>我聽得出來你的聲音都有點困了，抱歉讓你聊這麼久。<br>Yeah, I’m just glad I got to hear your voice, that’s all.<br>不過我很高興能聽到你的聲音，這就夠了。<br>I’ll call you again tomorrow if I get the time.<br>如果明天有空，我再打給你。<br>Okay. Hey, thanks for staying up late, you know, to talk to me.<br>好嗎？嘿，謝謝你為了和我說話還撐著不睡。<br>So if you’re ever feeling lonely, you know, just give me a call.<br>如果你哪天覺得孤單，就打電話給我吧。<br>Yeah, it’d be my pleasure, but. Yeah. Anyways, I’m counting on you to hold the fort for the next few days until I get back.<br>我很樂意，不過……好啦，接下來幾天就靠你撐著啦。<br>Mm. I’ll be back as soon as I finish my business here.<br>嗯，我一結束這邊的事就馬上回去。<br>Oh, yeah. I’ll make sure to pick you up a souvenir, too, or something.<br>對了，我會幫你帶個小禮物回去。<br>Yeah, okay. Well, good night.<br>好啦，晚安。<br>Yeah, I love you, too.<br>嗯，我也愛你。</p>
+<h2><span id="ex-%E7%BF%BB%E8%AD%AF">EX 翻譯</span></h2><p><del>每次都是EX比正篇更棒是怎樣QQ</del></p>
+<p>Come on. Look, look, I got you some chocolates that I thought looked good.<br>來嘛，看看，我買了些覺得不錯的巧克力給你。<br>And yeah, this here is honey, the high end stuff.<br>還有這罐蜂蜜，是高級貨喔。<br>What do you think? You’re pretty, right?<br>怎麼樣？是不是很不錯？<br>I really wish I could have brought more, but you told me not to, so.<br>其實我很想多帶一些，但你不是叫我別亂買太多嘛。<br>Yeah, this is it.<br>所以就這些啦。</p>
+<p>You know, you’re really, really good at this.<br>你真的好厲害喔！<br>I can’t believe you predicted what I was going to do.<br>我真不敢相信你居然猜到我會做什麼。<br>You knew I was gonna try and buy a lot of <code>souvenirs</code>, so you placed that note in my wallet.<br>你早就知道我會亂買<code>紀念品</code>，所以才在我錢包偷放紙條。<br>You know, I would’ve brought back a lot more. Otherwise you’re only allowed to bring back three souvenirs.<br>要不是你寫了「最多只能帶三樣」那句話，我大概會扛一堆回來。</p>
+<p>Hm. Treating me like a child.<br>哼，把我當小孩一樣。<br>(laughter)<br><strong>笑聲</strong><br>Oh, this box. Well, that’s another souvenir. Kinda.<br>喔，這個盒子？算是另一個紀念品啦。<br>Come on, open it up.<br>來嘛，打開看看。<br>Hmm<del>Yeah? I found a necklace that I thought would look good on you. So yeah, I bought it.<br>嗯</del>對，我看到這條項鍊的時候就覺得一定很適合你，所以，對，我買了。<br>It’s pretty, don’t you think?<br>很漂亮吧？對吧？<br>That look on your face. Oh, cute.<br>看你那表情，啊，好可愛。<br>I’m so glad you like it.<br>你喜歡就太好了。</p>
+<p>But yeah. Here, turn around. Let me put it on for you.<br>好啦，轉過來，我幫你戴上。<br>There we go. That should do it.<br>好了，這樣就剛剛好。<br>Okay. Look at me.<br>好，看過來。<br>Wow, you look beautiful. More beautiful than anyone else in the world.<br>哇，你真的好美，全世界都沒有比你更美的。<br>What? You don’t believe me?<br>什麼？你不相信？<br>More beautiful than anyone else in the world. I said it. You can’t take it back.<br>全世界最美的就是你，這話我都說出來了，不准反悔。<br>But how about we go out for a fancy dinner, tonight?<br>那這樣吧，我們今晚去吃頓好一點的晚餐怎麼樣？<br>Yeah, Just the two of us.<br>嗯，就我們兩個。<br>We’ve gotta make up for a lost time.<br>得好好補回之前錯過的時間。<br>Okay, Good. Let’s go, m’. Lady.<br>好，太好了。走吧，我的小姐。<br>(laughter)<br><strong>笑聲</strong></p>
 <!-- hexo injector body_end start --><script data-pjax src="https://unpkg.com/oh-my-live2d"></script><script>const oml2d = OML2D.loadOml2d({dockedPosition:"right",mobileDisplay:false,models:[{"name":"thirtseven","path":["/live2d_models/v1a4_306601_37/v1a4_306601_37.model3.json","/live2d_models/v2a2_306604_37/v2a2_306604_37.model3.json"],"position":[-10,20],"anchor":[0.1,-0.4],"scale":0.18,"stageStyle":{"width":350,"height":350},"mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"ALL"},{"name":"six","path":["/live2d_models/v1a4_307902_6/v1a4_307902_6.model3.json","/live2d_models/v1a4_307901_6/v1a4_307901_6.model3.json"],"position":[0,-10],"anchor":[0.15,-0.5],"scale":0.18,"stageStyle":{"width":350,"height":350},"motionPreloadStrategy":"ALL"},{"name":"alf","path":["/live2d_models/v3a1_311303_alf/v3a1_311303_alf.model3.json","/live2d_models/v2a6_311301_alf/v2a6_311301_alf.model3.json","/live2d_models/v2a6_311302_alf/v2a6_311302_alf.model3.json"],"position":[-10,23],"anchor":[0.1,-0.4],"scale":0.18,"stageStyle":{"width":350,"height":350},"motionPreloadStrategy":"ALL"},{"name":"bfsg","path":["/live2d_models/v3a1_307704_bfsg/v3a1_307704_bfsg.model3.json","/live2d_models/v2a5_307703_bfsg/v2a5_307703_bfsg.model3.json","/live2d_models/v1a8_307702_beifangshaoge/v1a8_307702_beifangshaoge.model3.json"],"position":[-10,23],"anchor":[0.2,-0.4],"scale":0.18,"stageStyle":{"width":350,"height":350},"motionPreloadStrategy":"ALL"},{"name":"huanzhuangshuixing","path":["/live2d_models/v2a0_309501_huanzhuangshuixing/v2a0_309501_huanzhuangshuixing.model3.json","/live2d_models/v2a0_309502_huanzhuangshuixing/v2a0_309502_huanzhuangshuixing.model3.json"],"position":[0,20],"anchor":[0.2,-0.4],"scale":0.13,"stageStyle":{"width":350,"height":350},"mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"ALL"}],parentElement:document.body,primaryColor:"var(--btn-bg)",sayHello:false,tips:{style: {"width":350,"height":120,"left":"calc(50% - 20px)","top":"-100px"},mobileStyle: {"width":180,"height":80,"left":"calc(50% - 30px)","top":"-100px"},welcomeTips: {"duration":4000,"message":{"daybreak":["新的一天到來"],"morning":["我會陪在你身邊，放心工作吧"],"noon":["午餐時間到了"],"afternoon":["需要一杯茶來提神嗎？"],"dusk":["讓我們期待夜晚降臨"],"night":["晚上吃了什麼？不要餓肚子了"],"lateNight":["是該休息了吧？"],"weeHours":["該去休息了，我也有點困了"]}},idleTips:{interval:3600,message:["想看什麼？知識可不會憑空產生","你是迷路至此還是帶有目的？"]}},statusBar:{"enable":true,"restMessage":"休息中","switchingMessage":"邀請下一位","reloadMessage":"重新邀請中","loadingMessage":"來到箱中的是誰","loadSuccessMessage":"歡迎到箱中","loadFailMessage":"箱中不開放","style":{"backgroundColor":"rgba(101,153,179,0.25)","color":"#485868","border":"1px solid #BCAD76","borderRadius":"10px","fontSize":"14px","fontWeight":"bold","boxShadow":"0 2px 5px rgba(0,0,0,0.15)"}},menus:{visible:true,draggable:true,style:{"borderColor":"#BCAD76","textColor":"#485868","hoverColor":"#BCAD76"}}});</script><!-- hexo injector body_end end --></body></html>
 	</article>
 
 	 
     <div class="kira-post-copyright">
         <strong>本文作者：</strong>Atom<br>
-        <strong>本文鏈接：</strong><a href="https://d0ngd.github.io/2025/09/30/%E6%9F%A5%E7%9C%8BWindows-Update%E7%B4%80%E9%8C%84/" title="https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;09&#x2F;30&#x2F;查看Windows-Update紀錄&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;09&#x2F;30&#x2F;查看Windows-Update紀錄&#x2F;</a><br>
+        <strong>本文鏈接：</strong><a href="https://d0ngd.github.io/2025/10/20/Luca%20Kaneshiro_PhoneCallVoice%20%E7%BF%BB%E8%AD%AF/" title="https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;10&#x2F;20&#x2F;Luca Kaneshiro_PhoneCallVoice 翻譯&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;10&#x2F;20&#x2F;Luca Kaneshiro_PhoneCallVoice 翻譯&#x2F;</a><br>
         
             <strong>版權聲明：</strong>本文採用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 協議進行許可
         
@@ -507,20 +454,26 @@
   
 	<div class="kira-post-nav">
 		<nav class="post-nav">
-			                      
+			  
 			<!-- 先找到与当前文字相同的目录 -->
-			   
+			         
 			<!-- 在找到当前文章所在的 index -->
-			          
+			        
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2025/10/18/Luca_Sleepover%20Voice%20%E7%BF%BB%E8%AD%AF/"> Luca Kaneshiro_Sleepover Voice 翻譯</a>
+			</div>
+			                              
 		</nav>
 	</div>
 	
 	<div class="kira-post-meta kira-rainbow">
 		
-			<a class="kirafont icon-container-fill -link" href="/categories/Windows/">Windows</a>
+			<a class="kirafont icon-container-fill -link" href="/categories/%E5%A4%96%E6%96%87%E7%9B%B8%E9%97%9C/">外文相關</a>
 		
 		
-			<a class="kirafont icon-tag-fill -none-link" href="/tags/Windows/" rel="tag">Windows</a>
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/%E5%A4%96%E6%96%87%E7%9B%B8%E9%97%9C/" rel="tag">外文相關</a>
 		
 	</div>
 	

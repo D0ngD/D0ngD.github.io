@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/css/layout.css">
 
 		
-		<title> 查看Windows Update更新紀錄以及關閉更新 -  Atom&#39;s Blog</title>
+		<title> 將外網網址指向內網環境 -  Atom&#39;s Blog</title>
 		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
 		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
 		
@@ -412,93 +412,104 @@
 		
 		<div class="kira-post-cover">
 			<img
-				data-src="https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20250722/595%202436x1125_26ca7f3427b4455395cd3b5113fe7287.jpg"
+				data-src="https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20250501/527%202436x1125_e71d04fb7a664e228b65b3dd4cda4620.jpg"
 				data-sizes="auto"
-				alt="查看Windows Update更新紀錄以及關閉更新"
+				alt="將外網網址指向內網環境"
 				class="lazyload kira-post-cover-image disabled-kira-image"
 			/>
-			<h1>查看Windows Update更新紀錄以及關閉更新</h1>
+			<h1>將外網網址指向內網環境</h1>
 		</div>
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
-			<a><i class="kirafont icon-calendar-fill"></i>2025年09月30日</a>
-			<a><i class="kirafont icon-edit-fill"></i>593 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 2 分鐘</a>
+			<a><i class="kirafont icon-calendar-fill"></i>2025年10月30日</a>
+			<a><i class="kirafont icon-edit-fill"></i>922 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 4 分鐘</a>
 		</div>
-		<html><head></head><body><p>每次都被微軟的更新搞到，今天紀錄一下檢查更新紀錄方法，以及關閉更新的方式。</p>
+		<html><head></head><body><p>臨時在內網需要連到外網的網站，所以需要設定指向。</p>
 <span id="more"></span>
-
-<h2><span id="%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B-windows-update-%E7%9A%84%E6%9B%B4%E6%96%B0%E6%99%82%E9%96%93%E8%88%87%E6%88%90%E5%8A%9F%E8%88%87%E5%90%A6">如何查看 Windows Update 的更新時間與成功與否</span></h2><h3><span id="%E6%96%B9%E6%B3%95%E4%B8%80%E4%BD%BF%E7%94%A8%E4%BA%8B%E4%BB%B6%E6%AA%A2%E8%A6%96%E5%99%A8-event-viewer">方法一：使用事件檢視器 (Event Viewer)</span></h3><ol>
-<li>打開「<strong>事件檢視器</strong>」（在搜尋列輸入 <code>事件檢視器</code> 或 <code>Event Viewer</code>）。</li>
-<li>展開左側選單到：</li>
+<p>環境是內網沒法直接到外網。</p>
+<hr>
+<h3><span id="%E6%9C%AC%E6%AC%A1%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A">本次環境設定：</span></h3><ul>
+<li><p>需要連線網站：<code>https://www.example.com</code></p>
+</li>
+<li><p>實際伺服器IP：<code>10.10.10.5</code></p>
+</li>
+</ul>
+<p>而該 IP 只有在內網能存取。<br>若直接連線外部 DNS，會解析到正式站的公網 IP；若直接掃 IP，產出的工具報告會顯示「10.10.10.5」，不符原本的掃描URL需求。<br><del>雖然可以偷吃步直接修改工具報告上的名稱，不過這邊我們還是乖乖進行設定吧</del></p>
+<h3><span id="%E5%9C%A8%E6%8E%83%E6%8F%8F%E7%AB%AFclient-%E7%AB%AF%E8%A8%AD%E5%AE%9A%E5%B0%8E%E5%90%91">在掃描端（Client 端）設定導向</span></h3><ol>
+<li>修改 hosts（最簡單）</li>
 </ol>
-<p>事件檢視器 &gt; 應用程式與服務記錄 &gt; Microsoft &gt; Windows &gt; WindowsUpdateClient &gt; Operational</p>
+<h2><span id="%E9%80%99%E6%98%AF%E6%9C%80%E5%B8%B8%E7%94%A8%E6%9C%80%E7%A9%A9%E5%AE%9A%E7%9A%84%E6%96%B9%E6%B3%95%E5%9C%A8-windowsmacos-%E6%88%96-linux-%E9%83%BD%E5%8F%AF%E9%80%8F%E9%81%8E-hosts-%E6%AA%94%E6%A1%88%E6%8C%87%E5%AE%9A%E7%B6%B2%E5%9F%9F%E8%A7%A3%E6%9E%90%E5%88%B0%E5%85%A7%E9%83%A8-ip">這是最常用、最穩定的方法。<br>在 Windows、macOS 或 Linux 都可透過 hosts 檔案指定網域解析到內部 IP。</span></h2><ul>
+<li>Windows：以<strong>系統管理員</strong>開啟記事本<br>編輯：<code>C:\Windows\System32\drivers\etc\hosts</code><br>最後加上：<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">10.10.10.5   www.example.com<br></code></pre></td></tr></tbody></table></figure>
+儲存後執行<code>Terminal</code>：<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ipconfig /flushdns<br></code></pre></td></tr></tbody></table></figure></li>
+</ul>
+<hr>
+<ul>
+<li>Linux / macOS：<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo nano /etc/hosts<br></code></pre></td></tr></tbody></table></figure>
+加入：<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">10.10.10.5   www.example.com<br></code></pre></td></tr></tbody></table></figure>
+然後：<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo systemd-resolve --flush-caches  # Linux<br>sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder  # macOS<br></code></pre></td></tr></tbody></table></figure></li>
+</ul>
+<ol start="2">
+<li>在掃描工具內設定 <code>DNS Override</code></li>
+</ol>
+<p>部分工具（如 Acunetix, Burp Suite, OWASP ZAP）支援自訂 DNS 對應或 HTTP Header。</p>
+<p>以 Acunetix 為例：</p>
+<p>在 <code>Target → Advanced → Custom Headers</code>加入：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Host: www.example.com<br></code></pre></td></tr></tbody></table></figure>
+
+<p>將掃描目標設為：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">https://10.10.10.5/<br></code></pre></td></tr></tbody></table></figure>
+
+<p>這樣請求的實際 IP 為 <code>10.10.10.5</code>，但送出的 Host Header 仍是 <code>www.example.com</code>，<br>報告上就會保留網域名稱。</p>
+<p>Burp 或 ZAP 也有類似設定，在<code>Hostname Resolution</code>或<code>DNS override</code>處輸入：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">www.example.com → 10.10.10.5<br></code></pre></td></tr></tbody></table></figure>
 <ol start="3">
-<li>常見的事件 ID：</li>
+<li>臨時測試用 curl</li>
 </ol>
-<table>
-<thead>
-<tr>
-<th>事件 ID</th>
-<th>意義</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>19</td>
-<td>更新成功安裝</td>
-</tr>
-<tr>
-<td>20</td>
-<td>更新安裝失敗</td>
-</tr>
-<tr>
-<td>21</td>
-<td>開始下載</td>
-</tr>
-<tr>
-<td>22</td>
-<td>開始安裝</td>
-</tr>
-<tr>
-<td>31</td>
-<td>安裝完成（需重新啟動）</td>
-</tr>
-</tbody></table>
-<ol start="4">
-<li>點選任一事件可查看詳細資訊，包括 <strong>時間、更新名稱、結果碼</strong> 等。</li>
-</ol>
-<hr>
-<h3><span id="%E6%96%B9%E6%B3%95%E4%BA%8Creliability-monitor%E7%A9%A9%E5%AE%9A%E6%80%A7%E7%9B%A3%E8%A6%96%E5%99%A8">方法二：Reliability Monitor（穩定性監視器）</span></h3><ol>
-<li>在搜尋欄輸入 <code>Reliability Monitor</code> 或「<strong>穩定性歷程記錄檢視器</strong>」。</li>
-<li>查看時間軸上的「Windows Update」事件。</li>
-<li>點擊任一事件，可查看詳細更新記錄與錯誤訊息。</li>
-</ol>
-<p>這是最直覺的 GUI 工具。</p>
-<hr>
-<h3><span id="%E6%96%B9%E6%B3%95%E4%B8%89%E4%BD%BF%E7%94%A8-powershell-%E6%9F%A5%E8%A9%A2%E5%B7%B2%E5%AE%89%E8%A3%9D%E6%9B%B4%E6%96%B0">方法三：使用 PowerShell 查詢已安裝更新</span></h3><p>打開 PowerShell 輸入以下指令可查看已安裝更新列表：</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">Get-HotFix</span> | <span class="hljs-built_in">Sort-Object</span> InstalledOn <span class="hljs-literal">-Descending</span><br></code></pre></td></tr></tbody></table></figure>
+<p>用 curl 可以直接模擬：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">curl -vk https://10.10.10.5 -H "Host: www.example.com"<br></code></pre></td></tr></tbody></table></figure>
 
-<p>也可列出更新日誌：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Get-WindowsUpdateLog<br></code></pre></td></tr></tbody></table></figure>
+<p>這樣能確認伺服器是否正確回應，或是否有 redirect / cookie 問題。<br>若要避免被重導太多次，可加：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">--max-redirs 0<br></code></pre></td></tr></tbody></table></figure>
+<h3><span id="%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%AB%AF%E7%9A%84%E8%A8%AD%E5%AE%9A%E5%BB%BA%E8%AD%B0">伺服器端的設定建議</span></h3><p>若你是伺服器管理者，並希望外網域名能「臨時導向」到內部測試站，有以下幾種方式可做：</p>
+<ol>
+<li>反向代理<code>Reverse Proxy</code></li>
+</ol>
+<p>使用一台中介伺服器（例如 Nginx、Apache、或 IIS），設定反向代理：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">server {<br>    listen 443 ssl;<br>    server_name www.example.com;<br><br>    ssl_certificate     /etc/ssl/example.crt;<br>    ssl_certificate_key /etc/ssl/example.key;<br><br>    location / {<br>        proxy_pass https://10.10.10.5;<br>        proxy_set_header Host www.example.com;<br>        proxy_set_header X-Forwarded-For $remote_addr;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
 
-<h2><span id="%E5%A6%82%E4%BD%95%E9%97%9C%E9%96%89%E6%88%96%E5%BB%B6%E5%BE%8C-windows-update">如何關閉或延後 Windows Update</span></h2><h3><span id="%E6%96%B9%E6%B3%95%E4%B8%80%E5%BE%9E%E8%A8%AD%E5%AE%9A%E4%B8%AD%E6%9A%AB%E5%81%9C%E6%9B%B4%E6%96%B0%E9%81%A9%E7%94%A8%E6%96%BC%E5%AE%B6%E5%BA%AD%E7%89%88%E5%B0%88%E6%A5%AD%E7%89%88">方法一：從設定中暫停更新（適用於家庭版/專業版）</span></h3><p>開啟「設定」 &gt;「Windows Update」</p>
-<p>點選「暫停更新」，可選擇 1～5 週不更新</p>
-<h3><span id="%E6%96%B9%E6%B3%95%E4%BA%8C%E9%80%8F%E9%81%8E%E7%BE%A4%E7%B5%84%E5%8E%9F%E5%89%87%E5%81%9C%E7%94%A8%E6%9B%B4%E6%96%B0%E5%83%85%E9%99%90-windows-%E5%B0%88%E6%A5%AD%E7%89%88%E4%BC%81%E6%A5%AD%E7%89%88">方法二：透過群組原則停用更新（僅限 Windows 專業版/企業版）</span></h3><p>執行 gpedit.msc</p>
-<p>進入<code>電腦設定 &gt; 系統管理範本 &gt; Windows 元件 &gt; Windows Update &gt; 管理的更新安裝</code><br>雙擊「設定自動更新」，選擇「已停用」或改為「通知下載與安裝」。</p>
-<h3><span id="%E6%96%B9%E6%B3%95%E4%B8%89%E5%81%9C%E7%94%A8-windows-update-%E6%9C%8D%E5%8B%99%E9%81%A9%E7%94%A8%E6%96%BC%E6%89%80%E6%9C%89%E7%89%88%E6%9C%AC%E4%BD%86%E4%B8%8D%E6%8E%A8%E8%96%A6">方法三：停用 Windows Update 服務（適用於所有版本，但不推薦）</span></h3><p>執行 services.msc</p>
-<p>找到 Windows Update 服務</p>
-<p>右鍵 &gt; 停用，啟動類型改為「停用」</p>
-<p><code>注意：某些版本的 Windows 會在重開機後自動重啟該服務，建議與群組原則搭配使用。</code></p>
+<p>這樣外部使用者打 <code>https://www.example.com</code> 時，其實由代理伺服器轉送到內部 <code>10.10.10.5</code></p>
+<ol start="2">
+<li>內部 DNS（若公司內部有 AD / Bind / Dnsmasq）</li>
+</ol>
+<p>可建立一筆內部 DNS A 記錄：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">www.example.com → 10.10.10.5<br></code></pre></td></tr></tbody></table></figure>
+
+<p>這樣所有連上內部網域的用戶（含掃描器）都會解析成內部 IP。</p>
+<ol start="3">
+<li>hosts 維護（開發或測試環境用）</li>
+</ol>
+<p>若伺服器是多台測試機，可以讓內部使用者在共用登入腳本中，自動修改 <code>/etc/hosts</code>：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">echo "10.10.10.5   www.example.com" | sudo tee -a /etc/hosts<br></code></pre></td></tr></tbody></table></figure>
+
+<p>這適合<strong>臨時開發測試用</strong>，但不建議放正式環境。</p>
+<h3><span id="%E5%B8%B8%E8%A6%8B%E9%8C%AF%E8%AA%A4%E8%88%87%E6%8E%92%E6%9F%A5">常見錯誤與排查</span></h3><p>問題	可能原因	解法<br>ping 得到 IP，但開網頁連不上	HTTPS 憑證 mismatch、redirect 錯誤	用 <code>curl -v 查看回應 header</code><br>ERR_TOO_MANY_REDIRECTS	網站內設定重導循環（www / 非 www、HTTP↔HTTPS）	清除 cookie、或請伺服器端<code>修正 rewrite 規則</code><br>掃描器報告 IP 而非 URL	未使用 hosts 或 Host header 未設定	改成 URL + hosts 對應<br>掃描超時	防火牆或 proxy 攔截	請客戶<code>確認內部白名單</code></p>
 <hr>
-<p>留言區從原本需要登入github才能留言的方式改成使用 <code>Twikoo</code> 不須登入即可留言<br>如果你要匿名的話姓名、郵箱、網址可以隨便打沒關係<br>留QQ郵箱的話可以自動偵測郵箱頭像<br>有想多交流的話可以留網址我看到會過去逛逛</p>
-<hr>
+<h3><span id="%E5%B0%8F%E7%B5%90">小結</span></h3><ol>
+<li><p>在客戶端（測試端）：<br>改 hosts 或掃描器內設定 <code>DNS override</code>，保留網址名稱、導向內部 IP。</p>
+</li>
+<li><p>在伺服器端：<br>可用<code>反向代理</code>或<code>內部 DNS</code>，使同一網址可在內外網指向不同伺服器。</p>
+</li>
+<li><p>在測試過程中：<br>使用 curl -v <code>檢查 redirect、Header、SSL 狀態</code>，是最直觀的診斷方法。</p>
+</li>
+</ol>
 <!-- hexo injector body_end start --><script data-pjax src="https://unpkg.com/oh-my-live2d"></script><script>const oml2d = OML2D.loadOml2d({dockedPosition:"right",mobileDisplay:false,models:[{"name":"thirtseven","path":["/live2d_models/v1a4_306601_37/v1a4_306601_37.model3.json","/live2d_models/v2a2_306604_37/v2a2_306604_37.model3.json"],"position":[-10,20],"anchor":[0.1,-0.4],"scale":0.18,"stageStyle":{"width":350,"height":350},"mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"ALL"},{"name":"six","path":["/live2d_models/v1a4_307902_6/v1a4_307902_6.model3.json","/live2d_models/v1a4_307901_6/v1a4_307901_6.model3.json"],"position":[0,-10],"anchor":[0.15,-0.5],"scale":0.18,"stageStyle":{"width":350,"height":350},"motionPreloadStrategy":"ALL"},{"name":"alf","path":["/live2d_models/v3a1_311303_alf/v3a1_311303_alf.model3.json","/live2d_models/v2a6_311301_alf/v2a6_311301_alf.model3.json","/live2d_models/v2a6_311302_alf/v2a6_311302_alf.model3.json"],"position":[-10,23],"anchor":[0.1,-0.4],"scale":0.18,"stageStyle":{"width":350,"height":350},"motionPreloadStrategy":"ALL"},{"name":"bfsg","path":["/live2d_models/v3a1_307704_bfsg/v3a1_307704_bfsg.model3.json","/live2d_models/v2a5_307703_bfsg/v2a5_307703_bfsg.model3.json","/live2d_models/v1a8_307702_beifangshaoge/v1a8_307702_beifangshaoge.model3.json"],"position":[-10,23],"anchor":[0.2,-0.4],"scale":0.18,"stageStyle":{"width":350,"height":350},"motionPreloadStrategy":"ALL"},{"name":"huanzhuangshuixing","path":["/live2d_models/v2a0_309501_huanzhuangshuixing/v2a0_309501_huanzhuangshuixing.model3.json","/live2d_models/v2a0_309502_huanzhuangshuixing/v2a0_309502_huanzhuangshuixing.model3.json"],"position":[0,20],"anchor":[0.2,-0.4],"scale":0.13,"stageStyle":{"width":350,"height":350},"mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"ALL"}],parentElement:document.body,primaryColor:"var(--btn-bg)",sayHello:false,tips:{style: {"width":350,"height":120,"left":"calc(50% - 20px)","top":"-100px"},mobileStyle: {"width":180,"height":80,"left":"calc(50% - 30px)","top":"-100px"},welcomeTips: {"duration":4000,"message":{"daybreak":["新的一天到來"],"morning":["我會陪在你身邊，放心工作吧"],"noon":["午餐時間到了"],"afternoon":["需要一杯茶來提神嗎？"],"dusk":["讓我們期待夜晚降臨"],"night":["晚上吃了什麼？不要餓肚子了"],"lateNight":["是該休息了吧？"],"weeHours":["該去休息了，我也有點困了"]}},idleTips:{interval:3600,message:["想看什麼？知識可不會憑空產生","你是迷路至此還是帶有目的？"]}},statusBar:{"enable":true,"restMessage":"休息中","switchingMessage":"邀請下一位","reloadMessage":"重新邀請中","loadingMessage":"來到箱中的是誰","loadSuccessMessage":"歡迎到箱中","loadFailMessage":"箱中不開放","style":{"backgroundColor":"rgba(101,153,179,0.25)","color":"#485868","border":"1px solid #BCAD76","borderRadius":"10px","fontSize":"14px","fontWeight":"bold","boxShadow":"0 2px 5px rgba(0,0,0,0.15)"}},menus:{visible:true,draggable:true,style:{"borderColor":"#BCAD76","textColor":"#485868","hoverColor":"#BCAD76"}}});</script><!-- hexo injector body_end end --></body></html>
 	</article>
 
 	 
     <div class="kira-post-copyright">
         <strong>本文作者：</strong>Atom<br>
-        <strong>本文鏈接：</strong><a href="https://d0ngd.github.io/2025/09/30/%E6%9F%A5%E7%9C%8BWindows-Update%E7%B4%80%E9%8C%84/" title="https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;09&#x2F;30&#x2F;查看Windows-Update紀錄&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;09&#x2F;30&#x2F;查看Windows-Update紀錄&#x2F;</a><br>
+        <strong>本文鏈接：</strong><a href="https://d0ngd.github.io/2025/10/30/%E5%B0%87%E5%A4%96%E7%B6%B2%E7%B6%B2%E5%9D%80%E6%8C%87%E5%90%91%E5%85%A7%E7%B6%B2%E7%92%B0%E5%A2%83/" title="https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;10&#x2F;30&#x2F;將外網網址指向內網環境&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;10&#x2F;30&#x2F;將外網網址指向內網環境&#x2F;</a><br>
         
             <strong>版權聲明：</strong>本文採用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 協議進行許可
         
@@ -507,20 +518,26 @@
   
 	<div class="kira-post-nav">
 		<nav class="post-nav">
-			                      
-			<!-- 先找到与当前文字相同的目录 -->
-			   
-			<!-- 在找到当前文章所在的 index -->
 			          
+			<!-- 先找到与当前文字相同的目录 -->
+			               
+			<!-- 在找到当前文章所在的 index -->
+			                
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2025/10/13/TS%20Cookie/"> TS Cookie</a>
+			</div>
+			                      
 		</nav>
 	</div>
 	
 	<div class="kira-post-meta kira-rainbow">
 		
-			<a class="kirafont icon-container-fill -link" href="/categories/Windows/">Windows</a>
+			<a class="kirafont icon-container-fill -link" href="/categories/%E7%B6%B2%E8%B7%AF%E6%8A%80%E8%A1%93/">網路技術</a>
 		
 		
-			<a class="kirafont icon-tag-fill -none-link" href="/tags/Windows/" rel="tag">Windows</a>
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/%E7%B6%B2%E8%B7%AF%E6%8A%80%E8%A1%93/" rel="tag">網路技術</a>
 		
 	</div>
 	
