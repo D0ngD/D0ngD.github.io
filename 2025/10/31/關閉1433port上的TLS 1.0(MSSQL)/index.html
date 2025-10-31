@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/css/layout.css">
 
 		
-		<title> 在 Maltrail 上回放封包 -  Atom&#39;s Blog</title>
+		<title> 關閉1433port上的TLS 1.0(MSSQL) 修補104743 -  Atom&#39;s Blog</title>
 		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
 		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
 		
@@ -412,59 +412,74 @@
 		
 		<div class="kira-post-cover">
 			<img
-				data-src="https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20250722/607%202436x1125_f7f268a2cd9f4dad9f1da8bba5cfc1ee.jpg"
+				data-src="https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20250610/552%202436x1125_73e7c23107334924857d968089fcc5b1.jpg"
 				data-sizes="auto"
-				alt="在 Maltrail 上回放封包"
+				alt="關閉1433port上的TLS 1.0(MSSQL) 修補104743"
 				class="lazyload kira-post-cover-image disabled-kira-image"
 			/>
-			<h1>在 Maltrail 上回放封包</h1>
+			<h1>關閉1433port上的TLS 1.0(MSSQL) 修補104743</h1>
 		</div>
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
-			<a><i class="kirafont icon-calendar-fill"></i>2025年09月29日</a>
-			<a><i class="kirafont icon-edit-fill"></i>409 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 1 分鐘</a>
+			<a><i class="kirafont icon-calendar-fill"></i>2025年10月31日</a>
+			<a><i class="kirafont icon-edit-fill"></i>538 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 2 分鐘</a>
 		</div>
-		<html><head></head><body><p>每次要回放封包時都會忘記指令，所以寫成文章記在這邊。</p>
+		<html><head></head><body><p>稍微講一下怎麼關，有客戶不知道怎麼關所以教了一下。</p>
 <span id="more"></span>
 
-<h2><span id="%E5%89%8D%E7%BD%AE%E6%BA%96%E5%82%99">前置準備</span></h2><p>需要先有準備以下環境與檔案：</p>
-<ul>
-<li>安裝好 Python 3 的 Linux 環境</li>
-<li>安裝完成的 <a target="_blank" rel="noopener" href="https://github.com/stamparm/maltrail">Maltrail</a></li>
-<li>一個或多個 <code>.pcap</code> 封包擷取檔</li>
+<p><img src="/images/d.png"></p>
+<h3><span id="%E6%B3%A8%E6%84%8F%E5%9C%A8%E6%9B%B4%E5%8B%95%E6%89%80%E6%9C%89%E8%A8%AD%E5%AE%9A%E5%89%8D%E8%AB%8B%E5%85%88%E9%80%B2%E8%A1%8C%E5%82%99%E4%BB%BD%E9%98%B2%E6%AD%A2%E6%90%8D%E5%A3%9E%E6%88%96%E5%BE%8C%E7%BA%8C%E9%A0%88%E8%AA%BF%E6%95%B4%E5%9B%9E%E5%8E%9F%E8%A8%AD%E5%AE%9A">注意，在更動所有設定前請先進行備份防止損壞或後續須調整回原設定</span></h3><p>首先是確認你的 SQL Server 支援 TLS 1.2</p>
+<ol>
+<li><p>確認 <code>SQL Server</code> 版本：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">SELECT @@VERSION;<br></code></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>SQL Server 2008 以上才有可能支援 TLS 1.2。<br><strong>若是舊版（如 2008 R2 SP3 以前），需安裝 TLS 1.2 支援更新 KB3135244</strong></p>
+</blockquote>
+</li>
+<li><p>確認 <code>.NET Framework</code> 版本：</p>
+<blockquote>
+<p>需至少安裝 .NET Framework 4.6 以上（內建 TLS 1.2 支援）。</p>
+</blockquote>
+</li>
+</ol>
+<h2><span id="%E5%9C%A8-windows-%E5%81%9C%E7%94%A8-tls-10%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%AB%AF">在 Windows <strong>停用</strong> TLS 1.0（伺服器端）</span></h2><h3><span id="%E6%96%B9%E6%B3%95%E4%B8%80">方法一</span></h3><ul>
+<li>進入<code>登錄編輯器</code>：<br>win+R後執行：<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">regedit<br></code></pre></td></tr></tbody></table></figure></li>
+<li>找到路徑：<br><code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\</code><br>建立或修改以下金鑰：</li>
+<li>禁用 TLS 1.0：<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Server]<br>"Enabled"=dword:00000000<br>"DisabledByDefault"=dword:00000001<br></code></pre></td></tr></tbody></table></figure></li>
+<li>禁用 TLS 1.1：<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Server]<br>"Enabled"=dword:00000000<br>"DisabledByDefault"=dword:00000001<br></code></pre></td></tr></tbody></table></figure></li>
+<li>啟用 TLS 1.2：<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server]<br>"Enabled"=dword:00000001<br>"DisabledByDefault"=dword:00000000<br></code></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>若沒有 TLS 1.0 或 TLS 1.2 子目錄，請自行建立資料夾與 DWORD。</p>
+</blockquote>
+</li>
 </ul>
 <hr>
-<h2><span id="%E5%96%AE%E4%B8%80%E5%B0%81%E5%8C%85%E5%9B%9E%E6%94%BE%E6%8C%87%E4%BB%A4">單一封包回放指令</span></h2><p>Maltrail 本身提供 <code>--pcap</code> 參數，可讓我們將 PCAP 封包導入 <code>sensor.py</code> 進行離線分析。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> python3 sensor.py --pcap /path/to/capture.pcap<br></code></pre></td></tr></tbody></table></figure>
-
-<p>執行後你會看到類似以下訊息：<br><code>using '/var/log/maltrail' for log storage</code><br><code>running...</code><br><code>cleaning up...</code><br>多個封包批次回放：使用 for 迴圈<br>如果你有大量封包需要回放，可以使用 bash 腳本批次處理：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><br>PCAP_DIR=<span class="hljs-string">"/path/to/pcap"</span><br>MALTRAIL_DIR=<span class="hljs-string">"/path/to/maltrail"</span><br><br><span class="hljs-built_in">cd</span> <span class="hljs-string">"<span class="hljs-variable">$MALTRAIL_DIR</span>"</span> || <span class="hljs-built_in">exit</span><br><br><span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> <span class="hljs-string">"<span class="hljs-variable">$PCAP_DIR</span>"</span>/*.pcap; <span class="hljs-keyword">do</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">"[*] 分析中：<span class="hljs-variable">$file</span>"</span><br>    <span class="hljs-built_in">sudo</span> python3 sensor.py --pcap <span class="hljs-string">"<span class="hljs-variable">$file</span>"</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">"[+] 完成：<span class="hljs-variable">$file</span>"</span><br>    <span class="hljs-built_in">echo</span><br><span class="hljs-keyword">done</span><br></code></pre></td></tr></tbody></table></figure>
-
-<p>儲存為 replay_pcap.sh 並執行：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> +x replay_pcap.sh<br>./replay_pcap.sh<br></code></pre></td></tr></tbody></table></figure>
-
-<p>或是不寫成腳本，直接執行</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> 封包路徑; <span class="hljs-keyword">do</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">"Processing: <span class="hljs-variable">$file</span>"</span><br><span class="hljs-built_in">sudo</span> python3 sensor.py -r <span class="hljs-string">"<span class="hljs-variable">$file</span>"</span><br><span class="hljs-keyword">done</span><br></code></pre></td></tr></tbody></table></figure>
-
-<p>若你的封包為 <code>.pcapng</code> 格式，可使用 <code>editcap</code> 轉檔：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">editcap input.pcapng output.pcap<br></code></pre></td></tr></tbody></table></figure>
-<h2><span id="%E5%88%86%E6%9E%90%E7%B5%90%E6%9E%9C%E4%BD%8D%E7%BD%AE">分析結果位置</span></h2><p>Maltrail 預設會將分析結果記錄在：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">/var/log/maltrail/YYYY-MM-DD.<span class="hljs-built_in">log</span><br></code></pre></td></tr></tbody></table></figure>
-
-<p>要是回放中斷了可以下指令檢查最後讀到的檔案：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ls</span> -ltu 封包路徑 | <span class="hljs-built_in">head</span> -n 5<br></code></pre></td></tr></tbody></table></figure>
-
+<h3><span id="%E6%96%B9%E6%B3%95%E4%BA%8C">方法二</span></h3><ul>
+<li>使用powershell腳本<br>此腳本<a target="_blank" rel="noopener" href="https://github.com/microsoft/sql-server-samples/blob/master/samples/features/security/tls-1-3/set-reset-tls.ps1">來源</a><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"># Learn more at https://learn.microsoft.com/en-us/windows-server/security/tls/tls-registry-settings?tabs=diffie-hellman<br>Set-StrictMode -Version Latest<br><br>$base = 'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\'<br>$protocols = [ordered]@{<br>    "SSL 2.0" = $false<br>    "SSL 3.0" = $false<br>    "TLS 1.0" = $false<br>    "TLS 1.1" = $false<br>    "TLS 1.2" = $true<br>    "TLS 1.3" = $true<br>}<br><br>foreach ($version in $protocols.Keys) {<br><br>$enabledValue = $protocols[$version]<br>    $path = $base + $version + '\Server'<br><br>New-Item $path -Force | Out-Null<br>    New-ItemProperty -Path $path -Name 'Enabled' -Value $enabledValue -PropertyType 'DWord' -Force | Out-Null<br>                     <br>    Write-Host "$version is $enabledValue."<br>}<br></code></pre></td></tr></tbody></table></figure></li>
+</ul>
 <hr>
-<p>留言區從原本需要登入github才能留言的方式改成使用 <code>Twikoo</code> 不須登入即可留言<br>如果你要匿名的話姓名、郵箱、網址可以隨便打沒關係<br>留QQ郵箱的話可以自動偵測郵箱頭像<br>有想多交流的話可以留網址我看到會過去逛逛</p>
+<h3><span id="%E6%96%B9%E6%B3%95%E4%B8%89">方法三</span></h3><p>啟用個體嚴格加密，設定<code>Force Strict Encryption</code><br>依照圖上進行調整即可<br><img src="/images/c.png"></p>
 <hr>
+<h2><span id="%E9%87%8D%E5%95%9F-sql-server-%E8%88%87%E7%B3%BB%E7%B5%B1%E6%9C%8D%E5%8B%99">重啟 <code>SQL Server</code> 與系統服務</span></h2><ul>
+<li>執行：<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">net stop mssqlserver<br>net start mssqlserver<br></code></pre></td></tr></tbody></table></figure>
+或直接重開機以確保新 TLS 設定生效。</li>
+</ul>
+<h2><span id="%E9%A9%97%E8%AD%89%E7%B5%90%E6%9E%9C">驗證結果</span></h2><p>用 nmap 檢查伺服器 1433 是否仍允許 TLS 1.0：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">nmap --script ssl-enum-ciphers -p 1433 &lt;server_ip&gt;<br></code></pre></td></tr></tbody></table></figure>
+
+<p>若成功關閉，輸出中應只顯示：<code>TLSv1.2</code></p>
+<p>或使用 <code>PowerShell</code> 測試：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Test-NetConnection -ComputerName &lt;server_ip&gt; -Port 1433<br></code></pre></td></tr></tbody></table></figure>
+
+<p>若 TLS 1.0 關閉，舊版客戶端（僅支援 TLS 1.0）會無法連線。<br>如果有人來靠腰那就代表1.0不能關了關了會進不去。</p>
 <!-- hexo injector body_end start --><script data-pjax src="https://unpkg.com/oh-my-live2d"></script><script>const oml2d = OML2D.loadOml2d({dockedPosition:"right",mobileDisplay:false,models:[{"name":"thirtseven","path":["/live2d_models/v1a4_306601_37/v1a4_306601_37.model3.json","/live2d_models/v2a2_306604_37/v2a2_306604_37.model3.json"],"position":[-10,20],"anchor":[0.1,-0.4],"scale":0.18,"stageStyle":{"width":350,"height":350},"mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"ALL"},{"name":"six","path":["/live2d_models/v1a4_307902_6/v1a4_307902_6.model3.json","/live2d_models/v1a4_307901_6/v1a4_307901_6.model3.json"],"position":[0,-10],"anchor":[0.15,-0.5],"scale":0.18,"stageStyle":{"width":350,"height":350},"motionPreloadStrategy":"ALL"},{"name":"alf","path":["/live2d_models/v3a1_311303_alf/v3a1_311303_alf.model3.json","/live2d_models/v2a6_311301_alf/v2a6_311301_alf.model3.json","/live2d_models/v2a6_311302_alf/v2a6_311302_alf.model3.json"],"position":[-10,23],"anchor":[0.1,-0.4],"scale":0.18,"stageStyle":{"width":350,"height":350},"motionPreloadStrategy":"ALL"},{"name":"bfsg","path":["/live2d_models/v3a1_307704_bfsg/v3a1_307704_bfsg.model3.json","/live2d_models/v2a5_307703_bfsg/v2a5_307703_bfsg.model3.json","/live2d_models/v1a8_307702_beifangshaoge/v1a8_307702_beifangshaoge.model3.json"],"position":[-10,23],"anchor":[0.2,-0.4],"scale":0.18,"stageStyle":{"width":350,"height":350},"motionPreloadStrategy":"ALL"},{"name":"huanzhuangshuixing","path":["/live2d_models/v2a0_309501_huanzhuangshuixing/v2a0_309501_huanzhuangshuixing.model3.json","/live2d_models/v2a0_309502_huanzhuangshuixing/v2a0_309502_huanzhuangshuixing.model3.json"],"position":[0,20],"anchor":[0.2,-0.4],"scale":0.13,"stageStyle":{"width":350,"height":350},"mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"ALL"}],parentElement:document.body,primaryColor:"var(--btn-bg)",sayHello:false,tips:{style: {"width":350,"height":120,"left":"calc(50% - 20px)","top":"-100px"},mobileStyle: {"width":180,"height":80,"left":"calc(50% - 30px)","top":"-100px"},welcomeTips: {"duration":4000,"message":{"daybreak":["新的一天到來"],"morning":["我會陪在你身邊，放心工作吧"],"noon":["午餐時間到了"],"afternoon":["需要一杯茶來提神嗎？"],"dusk":["讓我們期待夜晚降臨"],"night":["晚上吃了什麼？不要餓肚子了"],"lateNight":["是該休息了吧？"],"weeHours":["該去休息了，我也有點困了"]}},idleTips:{interval:3600,message:["想看什麼？知識可不會憑空產生","你是迷路至此還是帶有目的？"]}},statusBar:{"enable":true,"restMessage":"休息中","switchingMessage":"邀請下一位","reloadMessage":"重新邀請中","loadingMessage":"來到箱中的是誰","loadSuccessMessage":"歡迎到箱中","loadFailMessage":"箱中不開放","style":{"backgroundColor":"rgba(101,153,179,0.25)","color":"#485868","border":"1px solid #BCAD76","borderRadius":"10px","fontSize":"14px","fontWeight":"bold","boxShadow":"0 2px 5px rgba(0,0,0,0.15)"}},menus:{visible:true,draggable:true,style:{"borderColor":"#BCAD76","textColor":"#485868","hoverColor":"#BCAD76"}}});</script><!-- hexo injector body_end end --></body></html>
 	</article>
 
 	 
     <div class="kira-post-copyright">
         <strong>本文作者：</strong>Atom<br>
-        <strong>本文鏈接：</strong><a href="https://d0ngd.github.io/2025/09/29/%E4%BD%BF%E7%94%A8Maltrail%E5%9B%9E%E6%94%BE%E5%B0%81%E5%8C%85/" title="https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;09&#x2F;29&#x2F;使用Maltrail回放封包&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;09&#x2F;29&#x2F;使用Maltrail回放封包&#x2F;</a><br>
+        <strong>本文鏈接：</strong><a href="https://d0ngd.github.io/2025/10/31/%E9%97%9C%E9%96%891433port%E4%B8%8A%E7%9A%84TLS%201.0(MSSQL)/" title="https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;10&#x2F;31&#x2F;關閉1433port上的TLS 1.0(MSSQL)&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;d0ngd.github.io&#x2F;2025&#x2F;10&#x2F;31&#x2F;關閉1433port上的TLS 1.0(MSSQL)&#x2F;</a><br>
         
             <strong>版權聲明：</strong>本文採用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 協議進行許可
         
@@ -473,26 +488,32 @@
   
 	<div class="kira-post-nav">
 		<nav class="post-nav">
-			                  
+			                
+			<!-- 先找到与当前文字相同的目录 -->
+			                                 
+			<!-- 先找到与当前文字相同的目录 -->
+			      
+			<!-- 在找到当前文章所在的 index -->
+			    
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2025/09/30/%E6%9F%A5%E7%9C%8BWindows-Update%E7%B4%80%E9%8C%84/"> 查看Windows Update更新紀錄以及關閉更新</a>
+			</div>
+			                
 			<!-- 先找到与当前文字相同的目录 -->
 			   
 			<!-- 在找到当前文章所在的 index -->
-			       
-			<!-- 下一篇文章 -->
-			<div class="new">
-				<span>下一章</span>
-				<a href="/2025/10/03/%E5%AE%89%E8%A3%9D%E4%B8%8D%E5%90%8CPython%E7%89%88%E6%9C%AC%E7%9A%84Spyder(Anaconda)%E7%92%B0%E5%A2%83/"> 安裝不同Python版本的Spyder(Anaconda)環境</a>
-			</div>
-			                  
+			          
 		</nav>
 	</div>
 	
 	<div class="kira-post-meta kira-rainbow">
 		
-			<a class="kirafont icon-container-fill -link" href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">工具使用</a>
+			<a class="kirafont icon-container-fill -link" href="/categories/Windows/">Windows</a><a class="kirafont icon-container-fill -link" href="/categories/Windows/%E7%B6%B2%E8%B7%AF%E6%8A%80%E8%A1%93/">網路技術</a>
 		
 		
-			<a class="kirafont icon-tag-fill -none-link" href="/tags/IDS/" rel="tag">IDS</a>
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/%E7%B6%B2%E8%B7%AF%E6%8A%80%E8%A1%93/" rel="tag">網路技術</a>
 		
 	</div>
 	
