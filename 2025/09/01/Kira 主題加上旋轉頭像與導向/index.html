@@ -122,8 +122,8 @@
 	</div>
 	<div class="kira-count">
 		<div><span>文章</span>21</div>
-		<div><span>標籤</span>9</div>
-		<div><span>分類</span>7</div>
+		<div><span>標籤</span>10</div>
+		<div><span>分類</span>6</div>
 	</div>
 	<div class="kira-list">
 		
@@ -240,7 +240,7 @@
 			
 	<div class="kira-widget-wrap">
 		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
-			<a href="/tags/AI/" style="font-size: 10px;">AI</a> <a href="/tags/IDS/" style="font-size: 12.5px;">IDS</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/%E5%A4%96%E6%96%87%E7%9B%B8%E9%97%9C/" style="font-size: 15px;">外文相關</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E7%B6%B2%E7%AB%99%E7%BE%8E%E5%8C%96/" style="font-size: 20px;">網站美化</a> <a href="/tags/%E7%B6%B2%E8%B7%AF%E6%8A%80%E8%A1%93/" style="font-size: 17.5px;">網路技術</a> <a href="/tags/%E9%9D%A2%E8%A9%A6%E9%A1%8C%E7%9B%AE/" style="font-size: 10px;">面試題目</a>
+			<a href="/tags/AI/" style="font-size: 10px;">AI</a> <a href="/tags/IDS/" style="font-size: 12.5px;">IDS</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/%E5%A4%96%E6%96%87%E7%9B%B8%E9%97%9C/" style="font-size: 15px;">外文相關</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E7%B6%B2%E7%AB%99%E7%BE%8E%E5%8C%96/" style="font-size: 20px;">網站美化</a> <a href="/tags/%E7%B6%B2%E8%B7%AF%E6%8A%80%E8%A1%93/" style="font-size: 17.5px;">網路技術</a> <a href="/tags/%E7%B6%B2%E8%B7%AF%E6%8A%80%E8%A1%93%E3%80%81Windows/" style="font-size: 10px;">網路技術、Windows</a> <a href="/tags/%E9%9D%A2%E8%A9%A6%E9%A1%8C%E7%9B%AE/" style="font-size: 10px;">面試題目</a>
 		</div>
 		
 	</div>
@@ -453,12 +453,12 @@
 <figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* Avatar hover 旋轉一圈 */</span><br><span class="hljs-selector-class">.site-avatar</span> <span class="hljs-selector-tag">img</span>,<br><span class="hljs-selector-class">.avatar</span> <span class="hljs-selector-tag">img</span>,<br><span class="hljs-selector-class">.kira-avatar</span> <span class="hljs-selector-tag">img</span>,<br><span class="hljs-selector-class">.site-author-image</span> <span class="hljs-selector-tag">img</span> {<br>  <span class="hljs-attribute">transition</span>: transform .<span class="hljs-number">6s</span> <span class="hljs-built_in">cubic-bezier</span>(.<span class="hljs-number">22</span>,.<span class="hljs-number">61</span>,.<span class="hljs-number">36</span>,<span class="hljs-number">1</span>);<br>  <span class="hljs-attribute">transform-origin</span>: center center;<br>  <span class="hljs-attribute">will-change</span>: transform;<br>}<br><span class="hljs-selector-class">.site-avatar</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">img</span>,<br><span class="hljs-selector-class">.avatar</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">img</span>,<br><span class="hljs-selector-class">.kira-avatar</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">img</span>,<br><span class="hljs-selector-class">.site-author-image</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">img</span> {<br>  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(<span class="hljs-number">360deg</span>);<br>}<br><br><span class="hljs-comment">/* 無障礙：偏好減少動態時停用動畫 */</span><br><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">prefers-reduced-motion</span>: reduce) {<br>  <span class="hljs-selector-class">.site-avatar</span> <span class="hljs-selector-tag">img</span>,<br>  <span class="hljs-selector-class">.avatar</span> <span class="hljs-selector-tag">img</span>,<br>  <span class="hljs-selector-class">.kira-avatar</span> <span class="hljs-selector-tag">img</span>,<br>  <span class="hljs-selector-class">.site-author-image</span> <span class="hljs-selector-tag">img</span> { <span class="hljs-attribute">transition</span>: none; }<br>  <span class="hljs-selector-class">.site-avatar</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">img</span>,<br>  <span class="hljs-selector-class">.avatar</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">img</span>,<br>  <span class="hljs-selector-class">.kira-avatar</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">img</span>,<br>  <span class="hljs-selector-class">.site-author-image</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">img</span> { <span class="hljs-attribute">transform</span>: none; }<br>}<br></code></pre></td></tr></tbody></table></figure>
 
 <h2><span id="%E5%85%B6%E4%BB%96%E5%8A%9F%E8%83%BD%E5%B1%95%E7%A4%BA">其他功能展示</span></h2><h2><span id="%E6%92%AD%E6%94%BE%E8%87%AA%E5%B7%B1%E9%9F%B3%E6%A8%82">播放自己音樂</span></h2>
-        <div id="aplayer-oruavmXU" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-fVSrbZyz" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-oruavmXU"),
+            element: document.getElementById("aplayer-fVSrbZyz"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -509,7 +509,7 @@
 				<span>下一章</span>
 				<a href="/2025/10/04/%E6%96%87%E7%AB%A0%E7%99%BC%E8%A1%A8%E6%A0%BC%E5%BC%8F%E8%88%87%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/"> 文章發表格式與注意事項</a>
 			</div>
-			                                                                     
+			                                                                 
 		</nav>
 	</div>
 	
